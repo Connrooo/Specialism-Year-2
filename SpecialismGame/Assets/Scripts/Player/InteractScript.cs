@@ -1,0 +1,96 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+
+public class InteractScript : MonoBehaviour
+{
+    Camera Cam;
+    PlayerMotion playerMotion;
+    PInputManager pInputManager;
+    [SerializeField] GameObject loadBar;
+    [Range(0, 1)]
+    public int controlScheme;
+    [Header("Object Detection")]
+    bool canDetect;
+    [SerializeField] private float rayLength = 5;
+    [SerializeField] private LayerMask layerMaskInteract;
+    [SerializeField] private string excludeLayerName = null;
+    [Header("Loading Bar")]
+    GameObject loadingCurrent;
+    public GameObject currentObject;
+    public bool loading;
+    public Vector3 pointOfInterest;
+
+    void Awake()
+    {
+        pInputManager = FindObjectOfType<PInputManager>();
+        Cam = Camera.main;
+    }
+
+    public void InteractHandler()
+    {
+        InputChecker();
+        
+    }
+    private void InputChecker()
+    {
+        
+        switch (controlScheme)
+        {
+            case 0:
+                canDetect = pInputManager.interactInput;
+                break;
+            case 1:
+                canDetect = true;
+                break;
+        }
+        InteractRaycast();
+            
+    }
+
+    private void InteractRaycast()
+    {
+        RaycastHit hit;
+        Vector3 front = Cam.transform.TransformDirection(Vector3.forward);
+        int mask = 1 << LayerMask.NameToLayer(excludeLayerName) | layerMaskInteract.value;
+        Debug.DrawRay(Cam.transform.position, front, Color.green);
+        if (Physics.Raycast(Cam.transform.position, front, out hit, rayLength, mask))
+        {
+            pointOfInterest = hit.point;
+            if (canDetect)
+            {
+                switch (hit.collider.tag)
+                {
+                    case "Interact":
+                        if (!loading)
+                        {
+                            
+                            currentObject = hit.transform.gameObject;
+                            loading = true;
+                            LoadingBar();
+                        }
+                        break;
+                }
+            }
+            if (hit.collider.tag != "Interact" || !canDetect)
+            {
+                notInting();
+            }
+        }
+        else
+        {
+            notInting();
+        }
+    }
+    void notInting()
+    {
+        loading = false;
+        Destroy(loadingCurrent);
+    }    
+
+    void LoadingBar()
+    {
+        loadingCurrent = Instantiate(loadBar,new Vector3(pointOfInterest.x,pointOfInterest.y,pointOfInterest.z), Quaternion.identity);
+    }
+}
