@@ -678,7 +678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
   controlScheme: 0
-  rayLength: 5
+  rayLength: 1
   layerMaskInteract:
     serializedVersion: 2
     m_Bits: 55
