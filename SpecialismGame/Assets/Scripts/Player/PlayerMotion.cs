@@ -8,6 +8,7 @@ using UnityEditor;
 public class PlayerMotion : MonoBehaviour
 {
     PInputManager PInputManager;
+    ControlSchemeState controlSchemeState;
     Vector3 moveDirection;
     Transform cameraObject;
     Rigidbody pRB;
@@ -19,6 +20,7 @@ public class PlayerMotion : MonoBehaviour
     {
         PInputManager = GetComponent<PInputManager>();
         pRB = GetComponent<Rigidbody>();
+        controlSchemeState = FindObjectOfType<ControlSchemeState>();
         cameraObject = Camera.main.transform;
     }
     public void MovementHandler()
@@ -27,12 +29,41 @@ public class PlayerMotion : MonoBehaviour
     }
     private void Move()
     {
-        moveDirection = cameraObject.forward * PInputManager.vertInput;
-        moveDirection = moveDirection + cameraObject.right * PInputManager.horInput;
-        moveDirection.Normalize();
+        switch (controlSchemeState.controlScheme)
+        {
+            case 0:
+                DefaultControls();
+                break;
+            case 1:
+                DefaultControls();
+                break;
+            case 2:
+                MouseOnly();
+                break;
+        }
         moveDirection.y = 0;
         moveDirection = moveDirection * movementSpeed;
         Vector3 movementVelocity = moveDirection;
         pRB.velocity = movementVelocity;
+    }
+    private void DefaultControls()
+    {
+        moveDirection = cameraObject.forward * PInputManager.vertInput;
+        moveDirection = moveDirection + cameraObject.right * PInputManager.horInput;
+        moveDirection.Normalize();
+    }
+    private void MouseOnly()
+    {
+        moveDirection = Vector3.zero;
+        if (PInputManager.interactInput)
+        {
+            moveDirection = cameraObject.forward;
+        }
+        if(PInputManager.backwardsInput)
+        {
+            moveDirection = -cameraObject.forward;
+        }
+        moveDirection = moveDirection + cameraObject.right * 0;
+
     }
 }

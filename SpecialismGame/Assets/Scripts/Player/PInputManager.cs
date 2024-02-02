@@ -17,6 +17,8 @@ public class PInputManager : MonoBehaviour
     public float cameraInputY;
     [Header("Interact Button")]
     public bool interactInput;
+    [Header("Backwards Button")]
+    public bool backwardsInput;
 
     [Header("Vert/Hor Input")]
     public float vertInput;
@@ -30,6 +32,8 @@ public class PInputManager : MonoBehaviour
             PlayerInput.Main.Turn.performed += i => cameraInput = i.ReadValue<Vector2>();
             PlayerInput.Main.Interact.performed += i => interactInput = true;
             PlayerInput.Main.Interact.canceled += i => interactInput = false;
+            PlayerInput.Main.Backwards.performed += i => backwardsInput = true;
+            PlayerInput.Main.Backwards.canceled += i => backwardsInput = false;
         }
         PlayerInput.Enable();
     }

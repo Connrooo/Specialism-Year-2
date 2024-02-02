@@ -53,6 +53,15 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Backwards"",
+                    ""type"": ""Button"",
+                    ""id"": ""f732c5d9-8181-411b-88d7-a4bf60d63e7d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -198,6 +207,39 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Interact"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ce840ba5-95db-4504-8744-c6397b953edd"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Backwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""ecd4a590-711d-487c-a50a-d5857666dcd9"",
+                    ""path"": ""<Keyboard>/s"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Default"",
+                    ""action"": ""Backwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c44be57a-3ac3-4c88-9a95-7b97ed5302c2"",
+                    ""path"": ""<Gamepad>/leftStick/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Default"",
+                    ""action"": ""Backwards"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -215,6 +257,7 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
         m_Main_Movement = m_Main.FindAction("Movement", throwIfNotFound: true);
         m_Main_Turn = m_Main.FindAction("Turn", throwIfNotFound: true);
         m_Main_Interact = m_Main.FindAction("Interact", throwIfNotFound: true);
+        m_Main_Backwards = m_Main.FindAction("Backwards", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -279,6 +322,7 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_Main_Movement;
     private readonly InputAction m_Main_Turn;
     private readonly InputAction m_Main_Interact;
+    private readonly InputAction m_Main_Backwards;
     public struct MainActions
     {
         private @ISInputSystem m_Wrapper;
@@ -286,6 +330,7 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
         public InputAction @Movement => m_Wrapper.m_Main_Movement;
         public InputAction @Turn => m_Wrapper.m_Main_Turn;
         public InputAction @Interact => m_Wrapper.m_Main_Interact;
+        public InputAction @Backwards => m_Wrapper.m_Main_Backwards;
         public InputActionMap Get() { return m_Wrapper.m_Main; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -304,6 +349,9 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
             @Interact.started += instance.OnInteract;
             @Interact.performed += instance.OnInteract;
             @Interact.canceled += instance.OnInteract;
+            @Backwards.started += instance.OnBackwards;
+            @Backwards.performed += instance.OnBackwards;
+            @Backwards.canceled += instance.OnBackwards;
         }
 
         private void UnregisterCallbacks(IMainActions instance)
@@ -317,6 +365,9 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
             @Interact.started -= instance.OnInteract;
             @Interact.performed -= instance.OnInteract;
             @Interact.canceled -= instance.OnInteract;
+            @Backwards.started -= instance.OnBackwards;
+            @Backwards.performed -= instance.OnBackwards;
+            @Backwards.canceled -= instance.OnBackwards;
         }
 
         public void RemoveCallbacks(IMainActions instance)
@@ -348,5 +399,6 @@ public partial class @ISInputSystem: IInputActionCollection2, IDisposable
         void OnMovement(InputAction.CallbackContext context);
         void OnTurn(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
+        void OnBackwards(InputAction.CallbackContext context);
     }
 }

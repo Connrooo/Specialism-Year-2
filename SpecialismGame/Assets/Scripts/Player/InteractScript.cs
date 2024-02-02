@@ -8,11 +8,10 @@ public class InteractScript : MonoBehaviour
     Camera Cam;
     PlayerMotion playerMotion;
     PInputManager pInputManager;
+    ControlSchemeState controlSchemeState;
     [SerializeField] GameObject loadBar;
-    [Range(0, 1)]
-    public int controlScheme;
     [Header("Object Detection")]
-    bool canDetect;
+    public static bool canDetect;
     [SerializeField] private float rayLength = 5;
     [SerializeField] private LayerMask layerMaskInteract;
     [SerializeField] private string excludeLayerName = null;
@@ -25,18 +24,13 @@ public class InteractScript : MonoBehaviour
     void Awake()
     {
         pInputManager = FindObjectOfType<PInputManager>();
+        controlSchemeState = FindObjectOfType<ControlSchemeState>();
         Cam = Camera.main;
     }
 
     public void InteractHandler()
     {
-        InputChecker();
-        
-    }
-    private void InputChecker()
-    {
-        
-        switch (controlScheme)
+        switch (controlSchemeState.controlScheme)
         {
             case 0:
                 canDetect = pInputManager.interactInput;
@@ -44,7 +38,15 @@ public class InteractScript : MonoBehaviour
             case 1:
                 canDetect = true;
                 break;
+            case 2:
+                canDetect = true;
+                break;
         }
+        InputChecker();
+        
+    }
+    private void InputChecker()
+    {
         InteractRaycast();
             
     }
@@ -75,15 +77,15 @@ public class InteractScript : MonoBehaviour
             }
             if (hit.collider.tag != "Interact" || !canDetect)
             {
-                notInting();
+                NotInteracting();
             }
         }
         else
         {
-            notInting();
+            NotInteracting();
         }
     }
-    void notInting()
+    void NotInteracting()
     {
         loading = false;
         Destroy(loadingCurrent);

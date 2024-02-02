@@ -7,6 +7,7 @@ using UnityEngine.UIElements;
 public class LoadingLookAt : MonoBehaviour
 {
     InteractScript interactScript;
+    ControlSchemeState controlSchemeState;
     [SerializeField] GameObject Player;
     Camera cameraMain;
     GameObject currentObject;
@@ -16,16 +17,16 @@ public class LoadingLookAt : MonoBehaviour
         cameraMain = Camera.main;
         Player = GameObject.FindWithTag("Player");
         interactScript = Player.GetComponent<InteractScript>();
+        controlSchemeState = Player.GetComponent<ControlSchemeState>();
     }
     void Update()
     {
         transform.LookAt(cameraMain.transform.position);
-        if (interactScript.controlScheme == 1)
+        if (controlSchemeState.controlScheme == 1)
         {
             transform.position = interactScript.pointOfInterest;
         }
     }
-
     void Kill()
     {
         interactScript.loading = false;

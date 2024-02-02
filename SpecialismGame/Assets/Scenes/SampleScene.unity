@@ -523,6 +523,7 @@ GameObject:
   - component: {fileID: 518781152}
   - component: {fileID: 518781151}
   - component: {fileID: 518781150}
+  - component: {fileID: 518781155}
   - component: {fileID: 518781154}
   m_Layer: 0
   m_Name: Player
@@ -662,6 +663,7 @@ MonoBehaviour:
   cameraInputX: 0
   cameraInputY: 0
   interactInput: 0
+  backwardsInput: 0
   vertInput: 0
   horInput: 0
 --- !u!114 &518781153
@@ -677,7 +679,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
-  controlScheme: 0
   rayLength: 1
   layerMaskInteract:
     serializedVersion: 2
@@ -713,6 +714,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &518781155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518781145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5863523e5d909c9448b7a187aa58f077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controlScheme: 0
 --- !u!1 &717493116
 GameObject:
   m_ObjectHideFlags: 0
