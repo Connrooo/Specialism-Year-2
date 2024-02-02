@@ -519,7 +519,7 @@ GameObject:
   - component: {fileID: 518781148}
   - component: {fileID: 518781147}
   - component: {fileID: 518781146}
-  - component: {fileID: 518781153}
+  - component: {fileID: 518781156}
   - component: {fileID: 518781152}
   - component: {fileID: 518781151}
   - component: {fileID: 518781150}
@@ -666,27 +666,6 @@ MonoBehaviour:
   backwardsInput: 0
   vertInput: 0
   horInput: 0
---- !u!114 &518781153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518781145}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d385d12973ce744e836db81fca8596a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
-  rayLength: 1
-  layerMaskInteract:
-    serializedVersion: 2
-    m_Bits: 55
-  excludeLayerName: 
-  currentObject: {fileID: 0}
-  loading: 0
-  pointOfInterest: {x: 0, y: 0, z: 0}
 --- !u!54 &518781154
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -727,6 +706,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controlScheme: 0
+--- !u!114 &518781156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518781145}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d385d12973ce744e836db81fca8596a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
+  rayLength: 1
+  layerMaskInteract:
+    serializedVersion: 2
+    m_Bits: 63
+  excludeLayerName: 
+  currentObject: {fileID: 0}
+  loading: 0
+  pointOfInterest: {x: 0, y: 0, z: 0}
 --- !u!1 &717493116
 GameObject:
   m_ObjectHideFlags: 0

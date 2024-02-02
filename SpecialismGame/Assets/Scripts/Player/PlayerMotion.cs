@@ -63,6 +63,10 @@ public class PlayerMotion : MonoBehaviour
         {
             moveDirection = -cameraObject.forward;
         }
+        if (PInputManager.interactInput&& PInputManager.backwardsInput)
+        {
+            moveDirection = -cameraObject.forward*0;
+        }
         moveDirection = moveDirection + cameraObject.right * 0;
 
     }

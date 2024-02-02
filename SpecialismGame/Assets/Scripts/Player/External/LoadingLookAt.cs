@@ -22,7 +22,7 @@ public class LoadingLookAt : MonoBehaviour
     void Update()
     {
         transform.LookAt(cameraMain.transform.position);
-        if (controlSchemeState.controlScheme == 1)
+        if (controlSchemeState.controlScheme == 1|| controlSchemeState.controlScheme == 2)
         {
             transform.position = interactScript.pointOfInterest;
         }

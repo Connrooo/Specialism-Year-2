@@ -11,6 +11,7 @@ public class InteractScript : MonoBehaviour
     ControlSchemeState controlSchemeState;
     [SerializeField] GameObject loadBar;
     [Header("Object Detection")]
+    
     public static bool canDetect;
     [SerializeField] private float rayLength = 5;
     [SerializeField] private LayerMask layerMaskInteract;
