@@ -24,18 +24,16 @@ public class PlayerManager : MonoBehaviour
     }
     private void Update()
     {
-        
+        PlayerMotion.MovementHandler();
     }
 
     private void FixedUpdate()
     {
         PInputManager.InputHandler();
-        PlayerMotion.MovementHandler();
         InteractScript.InteractHandler();
     }
 
     private void LateUpdate()
     {
-        CameraScript.CameraFunction();
     }
 }

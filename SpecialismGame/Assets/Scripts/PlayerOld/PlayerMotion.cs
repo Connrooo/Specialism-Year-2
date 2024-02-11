@@ -11,7 +11,7 @@ public class PlayerMotion : MonoBehaviour
     ControlSchemeState controlSchemeState;
     Vector3 moveDirection;
     Transform cameraObject;
-    Rigidbody pRB;
+    CharacterController characterController;
     [Header("Player Speed")]
     [SerializeField] float movementSpeed;
     
@@ -19,7 +19,7 @@ public class PlayerMotion : MonoBehaviour
     private void Awake()
     {
         PInputManager = GetComponent<PInputManager>();
-        pRB = GetComponent<Rigidbody>();
+        characterController= GetComponent<CharacterController>();
         controlSchemeState = FindObjectOfType<ControlSchemeState>();
         cameraObject = Camera.main.transform;
     }
@@ -42,9 +42,7 @@ public class PlayerMotion : MonoBehaviour
                 break;
         }
         moveDirection.y = 0;
-        moveDirection = moveDirection * movementSpeed;
-        Vector3 movementVelocity = moveDirection;
-        pRB.velocity = movementVelocity;
+        characterController.Move(moveDirection *movementSpeed* Time.deltaTime);
     }
     private void DefaultControls()
     {
