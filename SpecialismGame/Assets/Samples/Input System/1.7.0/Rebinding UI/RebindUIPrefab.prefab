@@ -121,7 +121,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6680292650503350826}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: ResetToDefault
         m_Mode: 1
@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 6680292650503350825}
   - component: {fileID: 6680292650503350827}
   - component: {fileID: 6680292650503350824}
-  - component: {fileID: 6680292650503350826}
+  - component: {fileID: 6241926956006159078}
   m_Layer: 5
   m_Name: RebindUIPrefab
   m_TagString: Untagged
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &6680292650503350826
+--- !u!114 &6241926956006159078
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -355,27 +355,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6680292650503350822}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc11d99b1a6682f4cbc4aba1fcd9ac5d, type: 3}
+  m_Script: {fileID: 11500000, guid: 53bd09eff2ef2014ab33281d45185590, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Action: {fileID: 0}
-  m_BindingId: 
-  m_DisplayStringOptions: 0
-  m_ActionLabel: {fileID: 4125576805834752509}
-  m_BindingText: {fileID: 2816784242403815188}
-  m_RebindOverlay: {fileID: 0}
-  m_RebindText: {fileID: 0}
-  m_UpdateBindingUIEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_RebindStartEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_RebindStopEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_OverRideActionLabel: 0
-  m_ActionLabelString: 
+  inputActionReference: {fileID: 0}
+  excludeMouse: 1
+  selectedBinding: 0
+  displayStringOptions: 0
+  inputBinding:
+    m_Name: 
+    m_Id: 
+    m_Path: 
+    m_Interactions: 
+    m_Processors: 
+    m_Groups: 
+    m_Action: 
+    m_Flags: 0
+  actionText: {fileID: 0}
+  rebindButton: {fileID: 0}
+  rebindText: {fileID: 0}
+  resetButton: {fileID: 0}
 --- !u!1 &7151199058150955503
 GameObject:
   m_ObjectHideFlags: 0
@@ -765,7 +764,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6680292650503350826}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: 
         m_MethodName: StartInteractiveRebind
         m_Mode: 1

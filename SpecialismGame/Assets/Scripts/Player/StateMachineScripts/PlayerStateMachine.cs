@@ -104,7 +104,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     private void OnEnable()
     {
-        PlayerInput = new ISInputSystem();
+        PlayerInput = InputManager.PlayerInput;
         PlayerInput.Enable();
         PlayerInput.Main.Movement.performed += OnMove;
         PlayerInput.Main.Movement.canceled += OnMove;

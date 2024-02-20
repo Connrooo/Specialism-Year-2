@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
 {
     [Header("Don't Destroy On Loads")]
     [SerializeField] private GameObject SettingsManager;
+    [SerializeField] private GameObject InputManager;
     [Header("UI Canvases")]
     public GameObject PlayerUI;
     [SerializeField] private GameObject MainMenuCanvas;
@@ -29,6 +30,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject FS_LoadGame;
     [SerializeField] private GameObject FS_Credits;
     [Header("Game State")]
+    public bool gamePaused;
     public bool inGame;
 
     private PlayerStateMachine playerStateMachine;
@@ -41,6 +43,7 @@ public class MenuManager : MonoBehaviour
         DontDestroyOnLoad(SettingsManager);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
+        gamePaused = true;
     }
 
     private void Start()
@@ -144,6 +147,7 @@ public class MenuManager : MonoBehaviour
             inGame = false;
             Time.timeScale = 0f;
             //save progress to correct save, change camera to cinemachine camera.
+            gamePaused = true;
             PauseCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
             EventSystem.current.SetSelectedGameObject(FS_Menu);
@@ -195,6 +199,7 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         inGame = true;
+        gamePaused = false;
         PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
     }
@@ -204,6 +209,7 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         inGame = true;
+        gamePaused = false;
         PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
     }
@@ -244,6 +250,7 @@ public class MenuManager : MonoBehaviour
 
     public void P_PauseGame()
     {
+        gamePaused = true;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         PlayerUI.SetActive(false);
@@ -254,6 +261,7 @@ public class MenuManager : MonoBehaviour
 
     public void P_Resume()
     {
+        gamePaused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerUI.SetActive(true);
