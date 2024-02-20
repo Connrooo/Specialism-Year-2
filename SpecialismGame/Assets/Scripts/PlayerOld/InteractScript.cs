@@ -56,7 +56,7 @@ public class InteractScript : MonoBehaviour
     private void InputChecker()
     {
         InteractRaycast();
-
+        ContinuousRaycast();
     }
 
     private void ContinuousRaycast()

@@ -8,12 +8,12 @@ public class CinemachinePOVExtension : CinemachineExtension
     [SerializeField] private float clampAngleUp = 40f;
     [SerializeField] private float clampAngleDown = 60f;
 
-    PInputManager pInputManager;
+    PlayerStateMachine playerStateMachine;
     Vector3 startingRotation;
 
     protected override void Awake()
     {
-        pInputManager = FindAnyObjectByType<PInputManager>();
+        playerStateMachine = FindAnyObjectByType<PlayerStateMachine>();
         base.Awake();
         startingRotation = transform.localRotation.eulerAngles;
     }
@@ -24,7 +24,7 @@ public class CinemachinePOVExtension : CinemachineExtension
         {
             if(stage == CinemachineCore.Stage.Aim)
             {
-                Vector2 deltaInput = new Vector2(pInputManager.cameraInputX, pInputManager.cameraInputY);
+                Vector2 deltaInput = new Vector2(playerStateMachine.cameraInputX, playerStateMachine.cameraInputY);
                 startingRotation.x += deltaInput.x * verticalSpeed * Time.deltaTime;
                 startingRotation.y += deltaInput.y * horizontalSpeed * Time.deltaTime;
                 startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngleDown, clampAngleUp);
