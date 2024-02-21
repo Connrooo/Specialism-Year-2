@@ -19,8 +19,6 @@ public class RebindUI : MonoBehaviour
     [SerializeField] private InputBinding inputBinding;
     private int bindingIndex;
 
-    public TMP_Text text;
-
     private string actionName;
 
     [Header("UI Fields")]
@@ -116,7 +114,6 @@ public class RebindUI : MonoBehaviour
 
     private void DoRebind()
     {
-        text.text = "STARTED REBIND";
         InputManager.StartRebind(actionName, bindingIndex, rebindText, excludeMouse);
     }
 

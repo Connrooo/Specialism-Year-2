@@ -69,13 +69,11 @@ public class MenuManager : MonoBehaviour
             {
                 SettingsCanvas.SetActive(false);
                 PauseCanvas.SetActive(true);
-                Debug.Log("Yippee");
             }
             else if (!inGame&& SettingsCanvas.activeSelf)//if in main menu, and settings menu, go to main menu
             {
                 SettingsCanvas.SetActive(false);
                 MainMenuCanvas.SetActive(true);
-                Debug.Log("This is not yippee");
             }
             else if (KeyboardCanvas.activeSelf)
             {

@@ -13,7 +13,6 @@ public class InputManager : MonoBehaviour
     public static event Action rebindComplete;
     public static event Action rebindCancelled;
     public static event Action<InputAction, int> rebindStarted;
-    public TMP_Text text;
 
     private void Awake()
     {
@@ -25,9 +24,8 @@ public class InputManager : MonoBehaviour
 
     public static void StartRebind(string actionName, int bindingIndex, TMP_Text statusText, bool excludeMouse)
     {
-        statusText.text = ("HELLO");
         InputAction action = PlayerInput.asset.FindAction(actionName);
-        statusText.text = ("HELP ME");
+
         if (action == null || action.bindings.Count <= bindingIndex)
         {
             Debug.Log("Couldn't find action or binding");
@@ -35,7 +33,7 @@ public class InputManager : MonoBehaviour
         }
         if (action.bindings[bindingIndex].isComposite)
         {
-            statusText.text = ("is composite");
+
             var firstPartIndex = bindingIndex + 1;
             if(firstPartIndex<action.bindings.Count && action.bindings[firstPartIndex].isComposite)
             {
@@ -44,7 +42,6 @@ public class InputManager : MonoBehaviour
         }
         else
         {
-            statusText.text = ("else");
             DoRebind(action, bindingIndex, statusText, false, excludeMouse);
         }
     }
