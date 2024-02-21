@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using TMPro;
+using UnityEditor;
 
 public class RebindUI : MonoBehaviour
 {
@@ -11,7 +12,7 @@ public class RebindUI : MonoBehaviour
     [SerializeField] private InputActionReference inputActionReference;
 
     [SerializeField] private bool excludeMouse = true;
-    [Range(0, 10)]
+    [Range(0, 15)]
     [SerializeField] private int selectedBinding;
     [SerializeField] private InputBinding.DisplayStringOptions displayStringOptions;
     [Header("Binding Info - DO NOT EDIT")]
@@ -21,10 +22,28 @@ public class RebindUI : MonoBehaviour
     private string actionName;
 
     [Header("UI Fields")]
+    
+    public bool overrideAction;
+    public string customActionText;
     [SerializeField] private TMP_Text actionText;
     [SerializeField] private Button rebindButton;
     [SerializeField] private TMP_Text rebindText;
     [SerializeField] private Button resetButton;
+
+    private void UpdateActionLabel()
+    {
+        if (actionText!=null)
+        {
+            if (overrideAction)
+            {
+                actionText.text = customActionText;
+            }
+            else
+            {
+                actionText.text = actionName;
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -33,9 +52,19 @@ public class RebindUI : MonoBehaviour
 
         if (inputActionReference != null) 
         {
+            InputManager.LoadBindingOverride(actionName);
             GetBindingInfo();
             UpdateUI();
         }
+
+        InputManager.rebindComplete += UpdateUI;
+        InputManager.rebindCancelled+= UpdateUI;
+    }
+
+    private void OnDisable()
+    {
+        InputManager.rebindComplete -= UpdateUI;
+        InputManager.rebindCancelled-= UpdateUI;
     }
 
 
@@ -45,6 +74,7 @@ public class RebindUI : MonoBehaviour
             return;
         GetBindingInfo();
         UpdateUI();
+        UpdateActionLabel();
     }
 
     private void GetBindingInfo()
@@ -61,15 +91,12 @@ public class RebindUI : MonoBehaviour
     }
     private void UpdateUI()
     {
-        if(actionText!=null)
-        {
-            actionText.text = actionName;
-        }
-        if(rebindText!=null)
+        UpdateActionLabel();
+        if (rebindText!=null)
         {
             if (Application.isPlaying)
             {
-
+                rebindText.text = InputManager.GetBindingName(actionName, bindingIndex);
             }
             else
                 rebindText.text = inputActionReference.action.GetBindingDisplayString(bindingIndex);
@@ -78,11 +105,12 @@ public class RebindUI : MonoBehaviour
 
     private void DoRebind()
     {
-        InputManager.StartRebind(actionName, bindingIndex, rebindText);
+        InputManager.StartRebind(actionName, bindingIndex, rebindText, excludeMouse);
     }
 
     private void ResetBinding()
     {
-
+        InputManager.ResetBinding(actionName, bindingIndex);
+        UpdateUI();
     }
 }

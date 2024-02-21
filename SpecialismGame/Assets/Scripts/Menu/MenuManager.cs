@@ -10,6 +10,7 @@ public class MenuManager : MonoBehaviour
     [Header("Don't Destroy On Loads")]
     [SerializeField] private GameObject SettingsManager;
     [SerializeField] private GameObject InputManager;
+    [SerializeField] private GameObject AudioManager;
     [Header("UI Canvases")]
     public GameObject PlayerUI;
     [SerializeField] private GameObject MainMenuCanvas;
@@ -41,6 +42,8 @@ public class MenuManager : MonoBehaviour
         SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(SettingsManager);
+        DontDestroyOnLoad(InputManager);
+        DontDestroyOnLoad(AudioManager);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         gamePaused = true;

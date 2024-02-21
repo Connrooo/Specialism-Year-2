@@ -1,17 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerStateMachine : MonoBehaviour
 {
-    
     public Transform cameraObject;
     public MenuManager menuManager;
-
+    public RebindUI rebindUI;
     //[Header("Inputs")]
     public CharacterController characterController;
+    public SettingsMenu settingsMenu;
     //public Vector2 MoveInput { get; private set; }
     //public Vector2 TurnInput { get; private set; }
     //public bool InteractPressed { get; private set; }
@@ -29,6 +30,9 @@ public class PlayerStateMachine : MonoBehaviour
     public int controlScheme;
 
 
+    [Header("Interact Text Change")]
+    public InputActionReference inputActionReference;
+
     [Header("Player Walk Variables")]
     public Vector3 moveDirection;
     public float movementSpeed = 5;
@@ -36,7 +40,8 @@ public class PlayerStateMachine : MonoBehaviour
 
     [Header("Player Interact Variables")]
     public GameObject loadBar;
-    public Animator InteractPromptText;
+    public TMP_Text InteractPromptText;
+    public Animator InteractPromptTextAnim;
     public float rayLength = 2;
     public LayerMask layerMaskInteract;
     public GameObject loadingCurrent;
@@ -48,7 +53,7 @@ public class PlayerStateMachine : MonoBehaviour
 
 
     [Header("Input Start Up")]
-    ISInputSystem PlayerInput;
+    public ISInputSystem PlayerInput;
 
     [Header("Movement Controls")]
     Vector2 movementInput;
@@ -77,9 +82,11 @@ public class PlayerStateMachine : MonoBehaviour
     {
         //playerInput = GetComponent<PlayerInput>();
         menuManager= FindObjectOfType<MenuManager>();
+        settingsMenu = FindObjectOfType<SettingsMenu>();
         characterController = GetComponent<CharacterController>();
         menuManager.PlayerUI.SetActive(true);
-        InteractPromptText = GameObject.FindWithTag("InteractPromptText").GetComponent<Animator>();
+        InteractPromptText = GameObject.FindWithTag("InteractPromptText").GetComponent<TMP_Text>();
+        InteractPromptTextAnim = GameObject.FindWithTag("InteractPromptText").GetComponent<Animator>();
         menuManager.PlayerUI.SetActive(false);
         cameraObject = Camera.main.transform;
         states = new PlayerStateFactory(this);
@@ -152,8 +159,8 @@ public class PlayerStateMachine : MonoBehaviour
     {
         vertInput = movementInput.y;
         horInput = movementInput.x;
-        cameraInputY = cameraInput.y;
-        cameraInputX = cameraInput.x;
+        cameraInputY = cameraInput.y * settingsMenu.sensitivityMultiplier;
+        cameraInputX = cameraInput.x * settingsMenu.sensitivityMultiplier;
     }
 
     public bool CanInteract()
@@ -161,7 +168,7 @@ public class PlayerStateMachine : MonoBehaviour
         switch (controlScheme)
         {
             case 0:
-                InteractPromptText.enabled = true;
+                InteractPromptTextAnim.enabled = true;
                 if (IsInteractPressed)
                 {
                     Debug.Log("Pressed");
@@ -169,10 +176,10 @@ public class PlayerStateMachine : MonoBehaviour
                 }
                 return false;
             case 1:
-                InteractPromptText.enabled = false;
+                InteractPromptTextAnim.enabled = false;
                 return true;
             case 2:
-                InteractPromptText.enabled = false;
+                InteractPromptTextAnim.enabled = false;
                 return true;
         }
         return false;

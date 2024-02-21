@@ -12,7 +12,8 @@ public class PlayerInteractState : PlayerBaseState
         if (Ctx.menuManager.inGame&&!Ctx.menuManager.gamePaused)
         {
             InteractRaycast();
-        }    
+        }
+        Ctx.InteractPromptText.text = ("Press "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 0)+ " or "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 1)+" to gather evidence");
     }
     public override void ExitState() { }
     public override void CheckSwitchStates() 
@@ -30,7 +31,7 @@ public class PlayerInteractState : PlayerBaseState
         {
             if (hit.collider.tag == "Interact")
             {
-                Ctx.InteractPromptText.SetBool("OnObject", true);
+                Ctx.InteractPromptTextAnim.SetBool("OnObject", true);
                 if (Ctx.CanInteract())
                 {
                     Ctx.pointOfInterest = hit.point;
@@ -44,13 +45,13 @@ public class PlayerInteractState : PlayerBaseState
             }
             else
             {
-                Ctx.InteractPromptText.SetBool("OnObject", false);
+                Ctx.InteractPromptTextAnim.SetBool("OnObject", false);
                 NotInteractingWithObject();
             }
         }
         else
         {
-            Ctx.InteractPromptText.SetBool("OnObject", false);
+            Ctx.InteractPromptTextAnim.SetBool("OnObject", false);
             NotInteractingWithObject();
         }
     }
