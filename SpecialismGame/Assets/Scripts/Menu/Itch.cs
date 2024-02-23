@@ -10,7 +10,7 @@ public class Itch : MonoBehaviour
     }
     public void Yannick()
     {
-
+        Application.OpenURL("https://yonikvinegar.itch.io/");
     }
     public void Kamran()
     {
