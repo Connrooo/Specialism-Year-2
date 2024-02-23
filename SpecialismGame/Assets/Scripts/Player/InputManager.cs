@@ -35,9 +35,9 @@ public class InputManager : MonoBehaviour
         {
 
             var firstPartIndex = bindingIndex + 1;
-            if(firstPartIndex<action.bindings.Count && action.bindings[firstPartIndex].isComposite)
+            if(firstPartIndex<action.bindings.Count && action.bindings[firstPartIndex].isPartOfComposite)
             {
-                DoRebind(action, bindingIndex, statusText, true, excludeMouse);
+                DoRebind(action, firstPartIndex, statusText, true, excludeMouse);
             }
         }
         else
@@ -51,7 +51,7 @@ public class InputManager : MonoBehaviour
         if (actionToRebind ==null|| bindingIndex < 0)
             return;
 
-        statusText.text = $"Press a {actionToRebind.expectedControlType}";
+        statusText.text = $"Enter your desired binding...";
 
         actionToRebind.Disable();
 
@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour
             if (allCompositeParts)
             {
                 var nextBindingIndex = bindingIndex + 1;
-                if (nextBindingIndex<actionToRebind.bindings.Count && actionToRebind.bindings[nextBindingIndex].isComposite)
+                if (nextBindingIndex<actionToRebind.bindings.Count && actionToRebind.bindings[nextBindingIndex].isPartOfComposite)
                 {
                     DoRebind(actionToRebind, nextBindingIndex, statusText, allCompositeParts, excludeMouse);
                 }
@@ -140,7 +140,7 @@ public class InputManager : MonoBehaviour
 
         if (action.bindings[bindingIndex].isComposite)
         {
-            for (int i = bindingIndex; i < action.bindings.Count && action.bindings[i].isComposite; i++)
+            for (int i = bindingIndex+1; i < action.bindings.Count && action.bindings[i].isPartOfComposite; i++)
             {
                 action.RemoveBindingOverride(i);
             }

@@ -27,7 +27,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     [Header("Accessibility Settings")]
     [Range(0, 2)]
-    public int controlScheme;
+    public static int controlScheme;
 
 
     [Header("Interact Text Change")]
@@ -176,9 +176,6 @@ public class PlayerStateMachine : MonoBehaviour
                 }
                 return false;
             case 1:
-                InteractPromptTextAnim.enabled = false;
-                return true;
-            case 2:
                 InteractPromptTextAnim.enabled = false;
                 return true;
         }

@@ -15,7 +15,7 @@ public class PlayerWalkState : PlayerBaseState
     public override void UpdateState() 
     {
         CheckSwitchStates();
-        switch (Ctx.controlScheme)
+        switch (PlayerStateMachine.controlScheme)
         {
             case 0:
                 DefaultControls();

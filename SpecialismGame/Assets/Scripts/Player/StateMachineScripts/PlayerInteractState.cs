@@ -58,7 +58,7 @@ public class PlayerInteractState : PlayerBaseState
 
     private void PlayerInteractingWithObject()
     {
-        if (Ctx.controlScheme!=0)
+        if (PlayerStateMachine.controlScheme!=0)
         {
             if (!Ctx.loading)
             {

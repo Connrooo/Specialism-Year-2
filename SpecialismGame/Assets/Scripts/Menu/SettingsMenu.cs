@@ -3,10 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
 
 public class SettingsMenu : MonoBehaviour
 {
 
+    PlayerStateMachine playerStateMachine;
 
 
     [Header("Font")]
@@ -32,6 +35,20 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] Sprite blackCrosshair;
     [SerializeField] GameObject invertCrosshair;
     [SerializeField] Image exampleCrosshair;
+    [Header("Interact Toggle")]
+    [SerializeField] TMP_Text[] interactToggleText;
+    [Header("Post-Processing")]
+    [SerializeField] private Volume postProcessingVolume;
+    [Header("Post Processing Effects")]
+    private ColorAdjustments colorAdjustments;
+    private Vignette vignette;
+    private FilmGrain filmGrain;
+
+
+    private void Awake()
+    {
+        playerStateMachine = FindObjectOfType<PlayerStateMachine>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +56,15 @@ public class SettingsMenu : MonoBehaviour
         FontStart();
         ResolutionStart();
         SensitivityStart();
+        PostProcessingStart();
+    }
+
+    private void PostProcessingStart()
+    {
+        postProcessingVolume = GameObject.FindGameObjectWithTag("VolumeMain").GetComponent<Volume>();
+        postProcessingVolume.profile.TryGet(out colorAdjustments);
+        postProcessingVolume.profile.TryGet(out vignette);
+        postProcessingVolume.profile.TryGet(out filmGrain);
     }
 
     private void FontStart()
@@ -177,4 +203,64 @@ public class SettingsMenu : MonoBehaviour
         }
         exampleCrosshair.sprite = crosshair.sprite;
     }
+
+    public void ControlSchemeLeft()
+    {
+        PlayerStateMachine.controlScheme--;
+        if (PlayerStateMachine.controlScheme < 0)
+        {
+            PlayerStateMachine.controlScheme = 1;
+        }
+        ControlSchemeText();
+    }
+    public void ControlSchemeRight()
+    {
+        PlayerStateMachine.controlScheme++;
+        if (PlayerStateMachine.controlScheme >= 2)
+        {
+            PlayerStateMachine.controlScheme = 0;
+        }
+        ControlSchemeText();
+    }
+    private void ControlSchemeText()
+    {
+        switch (PlayerStateMachine.controlScheme)
+        {
+            case 0:
+                foreach (TMP_Text text in interactToggleText)
+                {
+                    text.text = "Press Interact to Interact";
+                }
+                break;
+            case 1:
+                foreach (TMP_Text text in interactToggleText)
+                {
+                    text.text = "Interacting is Automatic";
+                }
+                break;
+        }
+    }
+
+    public void AdjustBrightness(float value)
+    {
+        colorAdjustments.postExposure.value= value;
+    }
+
+    public void AdjustContrast(float value)
+    {
+        colorAdjustments.contrast.value = value*10;
+    }
+
+    public void ToggleVignette(bool value)
+    {
+        vignette.active = value;
+    }
+
+    public void ToggleFilmGrain(bool value)
+    {
+        filmGrain.active = value;
+    }
+
+    
+
 }
