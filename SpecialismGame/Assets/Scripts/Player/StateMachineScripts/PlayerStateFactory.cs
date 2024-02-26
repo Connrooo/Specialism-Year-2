@@ -23,6 +23,4 @@ public class PlayerStateFactory
     {
         return new PlayerInteractState(context, this);
     }
-
-
 }

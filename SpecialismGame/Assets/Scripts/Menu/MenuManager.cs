@@ -7,6 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
+    GameManagerStateMachine gameManager;
+
+
     [Header("Don't Destroy On Loads")]
     [SerializeField] private GameObject SettingsManager;
     [SerializeField] private GameObject InputManager;
@@ -30,23 +33,22 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject FS_Accessibility;
     [SerializeField] private GameObject FS_LoadGame;
     [SerializeField] private GameObject FS_Credits;
-    [Header("Game State")]
-    public bool gamePaused;
-    public bool inGame;
 
     private PlayerStateMachine playerStateMachine;
+    SubtitleManager subtitleManager;
 
     // Start is called before the first frame update
     private void Awake()
     {
-        SceneManager.LoadSceneAsync(1, LoadSceneMode.Additive);
         DontDestroyOnLoad(gameObject);
         DontDestroyOnLoad(SettingsManager);
         DontDestroyOnLoad(InputManager);
         DontDestroyOnLoad(AudioManager);
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        gamePaused = true;
+        subtitleManager = FindObjectOfType<SubtitleManager>();
+        gameManager = FindObjectOfType<GameManagerStateMachine>();
+        Debug.Log(gameManager.enabled);
     }
 
     private void Start()
@@ -65,12 +67,12 @@ public class MenuManager : MonoBehaviour
             {
                 P_Resume();
             }
-            else if (inGame&&SettingsCanvas.activeSelf)//if in game, and settings menu, go to pause menu
+            else if (gameManager.playingGame&& SettingsCanvas.activeSelf)//if in game, and settings menu, go to pause menu
             {
                 SettingsCanvas.SetActive(false);
                 PauseCanvas.SetActive(true);
             }
-            else if (!inGame&& SettingsCanvas.activeSelf)//if in main menu, and settings menu, go to main menu
+            else if (!gameManager.playingGame && SettingsCanvas.activeSelf)//if in main menu, and settings menu, go to main menu
             {
                 SettingsCanvas.SetActive(false);
                 MainMenuCanvas.SetActive(true);
@@ -97,7 +99,12 @@ public class MenuManager : MonoBehaviour
                 CreditsCanvas.SetActive(false);
                 MainMenuCanvas.SetActive(true);
             }
-            else if (inGame && !PauseCanvas.activeSelf)//if in game, and pause menu isnt active, pause game
+            else if (LoadGameCanvas.activeSelf)
+            {
+                LoadGameCanvas.SetActive(false);
+                MainMenuCanvas.SetActive(true);
+            }
+            else if (gameManager.playingGame && !PauseCanvas.activeSelf)//if in game, and pause menu isnt active, pause game
             {
                 P_PauseGame();
             }
@@ -120,7 +127,7 @@ public class MenuManager : MonoBehaviour
     {
         //if in game, hide the pause menu and pull up settings
         //if in main menu, hide the menu and pull up settings
-        if (inGame)
+        if (gameManager.playingGame)
         {
             PauseCanvas.SetActive(false);
             SettingsCanvas.SetActive(true);
@@ -136,7 +143,7 @@ public class MenuManager : MonoBehaviour
 
     public void Back()
     {
-        if (inGame && SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
+        if (gameManager.playingGame && SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
         {
             SettingsCanvas.SetActive(false);
             PauseCanvas.SetActive(true);
@@ -145,16 +152,16 @@ public class MenuManager : MonoBehaviour
 
         else if (PauseCanvas.activeSelf) //if in game and in pause menu, go to main menu
         {
-            inGame = false;
+            gameManager.playingGame = false;
             Time.timeScale = 0f;
             //save progress to correct save, change camera to cinemachine camera.
-            gamePaused = true;
+            gameManager.paused = true;
             PauseCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
             EventSystem.current.SetSelectedGameObject(FS_Menu);
         }
         
-        else if (!inGame && SettingsCanvas.activeSelf) //if in main menu and in settings menu, go to main menu.
+        else if (!gameManager.playingGame && SettingsCanvas.activeSelf) //if in main menu and in settings menu, go to main menu.
         {
             SettingsCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
@@ -188,6 +195,12 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(FS_Menu);
         }
 
+        else if (LoadGameCanvas.activeSelf)
+        {
+            LoadGameCanvas.SetActive(false);
+            MainMenuCanvas.SetActive(true);
+        }
+
         else
         {
             Debug.Log("You have attempted to go back, there is no further back.");
@@ -199,20 +212,18 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        inGame = true;
-        gamePaused = false;
+        gameManager.playingGame = true;
+        gameManager.paused = false;
+        gameManager.day = 1;
         PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
+        subtitleManager.PlaySubtitle("Beginning");
     }
     public void M_LoadGame()
     {
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        inGame = true;
-        gamePaused = false;
-        PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
+        LoadGameCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(FS_LoadGame);
     }
 
 
@@ -251,7 +262,7 @@ public class MenuManager : MonoBehaviour
 
     public void P_PauseGame()
     {
-        gamePaused = true;
+        gameManager.paused = true;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
         PlayerUI.SetActive(false);
@@ -262,11 +273,12 @@ public class MenuManager : MonoBehaviour
 
     public void P_Resume()
     {
-        gamePaused = false;
+        gameManager.paused = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         PlayerUI.SetActive(true);
         PauseCanvas.SetActive(false);
+        gameManager.canMove = true;
         Time.timeScale = 1f;
     }
 

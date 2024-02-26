@@ -8,6 +8,10 @@ TagManager:
   - InteractPromptText
   - Text
   - VolumeMain
+  - SubtitleText
+  - MenuCamera
+  - GameplayCamera
+  - CinematicCamera
   layers:
   - Default
   - TransparentFX

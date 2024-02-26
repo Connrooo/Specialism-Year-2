@@ -19,7 +19,6 @@ public class Itch : MonoBehaviour
     public void Megan()
     {
         Application.OpenURL("https://sandwichhour.itch.io/");
-
     }
     public void Nour()
     {
@@ -27,7 +26,7 @@ public class Itch : MonoBehaviour
     }
     public void Ryan()
     {
-
+        Application.OpenURL("https://boomblaster4.itch.io/");
     }
     public void Rebecca()
     {
@@ -39,6 +38,6 @@ public class Itch : MonoBehaviour
     }
     public void Rahul()
     {
-
+        Application.OpenURL("https://thegreatkingofevil.itch.io/");
     }
 }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using Cinemachine;
+using Unity.VisualScripting.Antlr3.Runtime;
 
 public class CinemachinePOVExtension : CinemachineExtension
 {
@@ -7,6 +8,7 @@ public class CinemachinePOVExtension : CinemachineExtension
     [SerializeField] private float verticalSpeed = 10f;
     [SerializeField] private float clampAngleUp = 40f;
     [SerializeField] private float clampAngleDown = 60f;
+    [SerializeField] private GameManagerStateMachine gameManager;
 
     PlayerStateMachine playerStateMachine;
     Vector3 startingRotation;
@@ -14,13 +16,14 @@ public class CinemachinePOVExtension : CinemachineExtension
     protected override void Awake()
     {
         playerStateMachine = FindAnyObjectByType<PlayerStateMachine>();
+        gameManager= FindAnyObjectByType<GameManagerStateMachine>();
         base.Awake();
         startingRotation = transform.localRotation.eulerAngles;
     }
 
     protected override void PostPipelineStageCallback(CinemachineVirtualCameraBase vcam, CinemachineCore.Stage stage, ref CameraState state, float deltaTime)
     {
-        if (vcam.Follow)
+        if (vcam.Follow&&gameManager.canMove)
         {
             if(stage == CinemachineCore.Stage.Aim)
             {

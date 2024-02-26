@@ -9,22 +9,12 @@ public class PlayerStateMachine : MonoBehaviour
 {
     public Transform cameraObject;
     public MenuManager menuManager;
+    public GameManagerStateMachine gameManager;
     public RebindUI rebindUI;
+    public SubtitleManager subtitleManager;
     //[Header("Inputs")]
     public CharacterController characterController;
     public SettingsMenu settingsMenu;
-    //public Vector2 MoveInput { get; private set; }
-    //public Vector2 TurnInput { get; private set; }
-    //public bool InteractPressed { get; private set; }
-    //public bool MenuOpenClosePressed { get; private set; }
-    //private PlayerInput playerInput;
-    //private InputAction moveAction;
-    //private InputAction turnAction;
-    //private InputAction interactAction;
-    //private InputAction menuOpenCloseAction;
-
-
-
     [Header("Accessibility Settings")]
     [Range(0, 2)]
     public static int controlScheme;
@@ -81,8 +71,11 @@ public class PlayerStateMachine : MonoBehaviour
     private void Awake()
     {
         //playerInput = GetComponent<PlayerInput>();
-        menuManager= FindObjectOfType<MenuManager>();
+        menuManager = FindObjectOfType<MenuManager>();
         settingsMenu = FindObjectOfType<SettingsMenu>();
+        subtitleManager = FindObjectOfType<SubtitleManager>();
+        gameManager = FindObjectOfType<GameManagerStateMachine>();
+        Debug.Log(gameManager.enabled);
         characterController = GetComponent<CharacterController>();
         menuManager.PlayerUI.SetActive(true);
         InteractPromptText = GameObject.FindWithTag("InteractPromptText").GetComponent<TMP_Text>();
@@ -120,7 +113,6 @@ public class PlayerStateMachine : MonoBehaviour
         PlayerInput.Main.Interact.performed += OnInteract;
         PlayerInput.Main.Interact.canceled += OnInteract;
         PlayerInput.Main.MenuOpenClose.started += OnMenuOpenClose;
-
     }
 
     private void OnDisable()

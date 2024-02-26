@@ -9,7 +9,7 @@ public class PlayerInteractState : PlayerBaseState
     public override void EnterState() { }
     public override void UpdateState() 
     {
-        if (Ctx.menuManager.inGame&&!Ctx.menuManager.gamePaused)
+        if (Ctx.gameManager.canMove && !Ctx.gameManager.paused)
         {
             InteractRaycast();
         }

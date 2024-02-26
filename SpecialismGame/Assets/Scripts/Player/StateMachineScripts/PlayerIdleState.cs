@@ -18,7 +18,7 @@ public class PlayerIdleState : PlayerBaseState
     public override void ExitState() { }
     public override void CheckSwitchStates() 
     {
-        if (Ctx.menuManager.inGame)
+        if (Ctx.gameManager.canMove)
         {
             if (Ctx.vertInput != 0 || Ctx.horInput != 0)
             {
