@@ -12,6 +12,7 @@ TagManager:
   - MenuCamera
   - GameplayCamera
   - CinematicCamera
+  - SummonPoint
   layers:
   - Default
   - TransparentFX

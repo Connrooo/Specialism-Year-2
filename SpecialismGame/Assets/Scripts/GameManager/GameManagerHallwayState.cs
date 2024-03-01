@@ -19,6 +19,7 @@ public class GameManagerHallwayState : GameManagerBaseState
         }
         Ctx.gameplayCamera.Priority = 11;
         Ctx.canMove = true;
+        LoadHallway();
     }
     public override void UpdateState()
     {
@@ -35,5 +36,27 @@ public class GameManagerHallwayState : GameManagerBaseState
     }
     public override void InitializeSubState()
     {
+    }
+
+    private void LoadHallway()
+    {
+        GameObject summonedInaccDoors = Transform.Instantiate(Ctx.inaccessibleDoorsPrefab, Ctx.summonPoint);
+        GameObject summonedAccDoors = Transform.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.summonPoint);
+        var InaccDoorScript = summonedInaccDoors.GetComponent<DoorPrefabScript>();
+        var AccDoorScript = summonedAccDoors.GetComponent<DoorPrefabScript>();
+        foreach (int room in Ctx.rooms)
+        {
+            for (int i = 0; i < InaccDoorScript.doors.Count; i++)
+            {
+                if (room == i + 1)
+                {
+                    Object.Destroy(InaccDoorScript.doors[i]);
+                }
+            }
+        }
+        for (int i = 0; i < AccDoorScript.doors.Count; i++)
+        {
+            //have a bool and turn it true if the value is in array, if it isnt at the end, kill the door.
+        }
     }
 }

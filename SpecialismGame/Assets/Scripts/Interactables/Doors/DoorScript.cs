@@ -9,4 +9,10 @@ public class DoorScript : MonoBehaviour
     [Header("0 = None, 1 = Living Room, 2 = Bathroom, 3 = Kitchen")]
     [Header("4 = Bedroom, 5 = Study Room, 6 = Dining Room")]
     public int roomNumber;
+
+    public void DoorPressed()
+    {
+        Debug.Log(roomNumber);
+        Debug.Log("Door Pressed");
+    }
 }

@@ -48,6 +48,7 @@ public class SettingsMenu : MonoBehaviour
     private ColorAdjustments colorAdjustments;
     private Vignette vignette;
     private FilmGrain filmGrain;
+    private LiftGammaGain liftGammaGain;
 
     [Header("PlayerPref Buttons,Sliders,Etc")]
     [SerializeField] Toggle fullscreenToggle;
@@ -56,6 +57,7 @@ public class SettingsMenu : MonoBehaviour
     [SerializeField] Toggle invertCrosshairToggle;
     [SerializeField] Slider brightnessSlider;
     [SerializeField] Slider contrastSlider;
+    [SerializeField] Slider gammaSlider;
     [SerializeField] Toggle vignetteToggle;
     [SerializeField] Toggle filmGrainToggle;
     [SerializeField] Toggle subtitleToggle;
@@ -91,6 +93,7 @@ public class SettingsMenu : MonoBehaviour
         PlayerStateMachine.controlScheme = PlayerPrefs.GetInt("ControlSchemeValue", 0);
         colorAdjustments.postExposure.value = PlayerPrefs.GetFloat("BrightnessValue", 0f);
         colorAdjustments.contrast.value = PlayerPrefs.GetFloat("ContrastValue", 0f);
+        liftGammaGain.gamma.value = new Vector4(PlayerPrefs.GetFloat("GammaValue", 1f), PlayerPrefs.GetFloat("GammaValue", 1f), PlayerPrefs.GetFloat("GammaValue", 1f), PlayerPrefs.GetFloat("GammaValue", 1f));
         if (PlayerPrefs.HasKey("VignetteActive")) { vignette.active = PlayerPrefs.GetInt("VignetteActive") != 0; }
         else { vignette.active = true; }
         if (PlayerPrefs.HasKey("FilmGrainActive")) { filmGrain.active = PlayerPrefs.GetInt("FilmGrainActive") != 0;}
@@ -118,6 +121,7 @@ public class SettingsMenu : MonoBehaviour
         subtitleToggle.isOn = PlayerPrefs.GetInt("SubtitleToggle") != 0;
         brightnessSlider.value = colorAdjustments.postExposure.value;
         contrastSlider.value = colorAdjustments.contrast.value;
+        gammaSlider.value = PlayerPrefs.GetFloat("GammaValue", 1f);
         vignetteToggle.isOn = vignette.active;
         filmGrainToggle.isOn = filmGrain.active;
     }
@@ -128,6 +132,7 @@ public class SettingsMenu : MonoBehaviour
         postProcessingVolume.profile.TryGet(out colorAdjustments);
         postProcessingVolume.profile.TryGet(out vignette);
         postProcessingVolume.profile.TryGet(out filmGrain);
+        postProcessingVolume.profile.TryGet(out liftGammaGain);
     }
 
     private void FontStart()
@@ -325,6 +330,14 @@ public class SettingsMenu : MonoBehaviour
         colorAdjustments.contrast.value = value*10;
         PlayerPrefs.SetFloat("ContrastValue", colorAdjustments.contrast.value);
     }
+    
+    public void AdjustGamma(float value)
+    {
+        liftGammaGain.gamma.value = new Vector4(value, value, value, value);
+        PlayerPrefs.SetFloat("GammaValue", value);
+    }
+
+
 
     public void ToggleVignette(bool value)
     {

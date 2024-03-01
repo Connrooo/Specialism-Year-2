@@ -11,6 +11,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameManagerBaseState CurrentState { get { return currentState; } set { currentState = value; } }
 
     [Header("Global Values")]
+    public Transform summonPoint;
     public bool paused; //checks if the game is paused
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
@@ -36,6 +37,15 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool finishedInvestigating; //checks if the player has finished investigating or not, if not, they will be investigating.
     public bool hasRoomBeenChosen; //if true, the player will go to the room, if not, they will go to the hallway.
 
+    [Header("Hallway Values")]
+    public GameObject accessibleDoorsPrefab;
+    public GameObject inaccessibleDoorsPrefab;
+
+
+    [Header("Gameplay Values")]
+    [SerializeField] List<CluePickup> pickedUpObjects;
+
+
 
     private void Awake()
     {
@@ -51,6 +61,7 @@ public class GameManagerStateMachine : MonoBehaviour
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();
         animator_CinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent <Animator>();
         gameplayCamera = GameObject.FindGameObjectWithTag("GameplayCamera").GetComponent<CinemachineVirtualCamera>();
+        summonPoint = GameObject.FindGameObjectWithTag("SummonPoint").transform;
         Cameras.Add(menuCamera);
         Cameras.Add(cinematicCamera);
         Cameras.Add(gameplayCamera);
