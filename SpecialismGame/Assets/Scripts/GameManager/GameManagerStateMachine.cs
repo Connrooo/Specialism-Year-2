@@ -16,8 +16,8 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
     public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene)
-    public int[] rooms = {1,2,3,4,5,6}; //List of rooms available to visit
-    public int currentRoom; //Room player is currently investigating
+    public List<int> roomsSearched; //List of rooms available to visit
+    public int currentRoom; //Room player is currently investigating (0 = none selected)
     public Vector3 playerPosition;
     //public GameObject[]??? evidenceCollected;
     //Quip objects
@@ -67,6 +67,9 @@ public class GameManagerStateMachine : MonoBehaviour
         Cameras.Add(gameplayCamera);
         currentState = states.Menu();
         currentState.EnterState();
+        roomsSearched.Add(6);
+        roomsSearched.Add(5);
+        roomsSearched.Add(2);
     }
     private void Update()
     {

@@ -48,7 +48,6 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
         subtitleManager = FindObjectOfType<SubtitleManager>();
         gameManager = FindObjectOfType<GameManagerStateMachine>();
-        Debug.Log(gameManager.enabled);
     }
 
     private void Start()

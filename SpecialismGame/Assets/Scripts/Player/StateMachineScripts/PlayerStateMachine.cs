@@ -75,7 +75,6 @@ public class PlayerStateMachine : MonoBehaviour
         settingsMenu = FindObjectOfType<SettingsMenu>();
         subtitleManager = FindObjectOfType<SubtitleManager>();
         gameManager = FindObjectOfType<GameManagerStateMachine>();
-        Debug.Log(gameManager.enabled);
         characterController = GetComponent<CharacterController>();
         menuManager.PlayerUI.SetActive(true);
         InteractPromptText = GameObject.FindWithTag("InteractPromptText").GetComponent<TMP_Text>();

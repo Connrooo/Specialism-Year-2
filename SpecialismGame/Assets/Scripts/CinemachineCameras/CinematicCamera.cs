@@ -9,7 +9,6 @@ public class CinematicCamera : MonoBehaviour
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManagerStateMachine>();
-        Debug.Log(gameManager.enabled);
     }
 
     private void animationOver()

@@ -23035,7 +23035,7 @@ MonoBehaviour:
   playingGame: 0
   canMove: 0
   day: 0
-  rooms: 010000000200000003000000040000000500000006000000
+  roomsSearched: 
   currentRoom: 0
   playerPosition: {x: 0, y: 0, z: 0}
   menuCamera: {fileID: 0}

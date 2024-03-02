@@ -44,19 +44,31 @@ public class GameManagerHallwayState : GameManagerBaseState
         GameObject summonedAccDoors = Transform.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.summonPoint);
         var InaccDoorScript = summonedInaccDoors.GetComponent<DoorPrefabScript>();
         var AccDoorScript = summonedAccDoors.GetComponent<DoorPrefabScript>();
-        foreach (int room in Ctx.rooms)
+        List<int> blockedDoors = new List<int>();
+        for (int i = 0; i < InaccDoorScript.doors.Count; i++) //for every possible door place
         {
-            for (int i = 0; i < InaccDoorScript.doors.Count; i++)
+            if (Ctx.roomsSearched.Count == 0) //if no rooms have been searched
             {
-                if (room == i + 1)
+                Object.Destroy(InaccDoorScript.doors[i]); //destroy door (will repeat 6 times)
+            }
+            else
+            {
+                foreach (int room in Ctx.roomsSearched) //for every room
                 {
-                    Object.Destroy(InaccDoorScript.doors[i]);
+                    if (i + 1 == room) //check to see if it has been searched
+                    {
+                        Object.Destroy(AccDoorScript.doors[i]); //if it has, it gets blocked
+                        blockedDoors.Add(i);
+                    }
+                    else
+                    {
+                        if (blockedDoors.Contains(i+1)) //if not, it sees if it's already been checked
+                        {
+                            Object.Destroy(InaccDoorScript.doors[i]); //if it hasn't, it destroys it
+                        }
+                    }
                 }
             }
-        }
-        for (int i = 0; i < AccDoorScript.doors.Count; i++)
-        {
-            //have a bool and turn it true if the value is in array, if it isnt at the end, kill the door.
         }
     }
 }
