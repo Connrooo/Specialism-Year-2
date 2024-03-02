@@ -41,9 +41,8 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameObject accessibleDoorsPrefab;
     public GameObject inaccessibleDoorsPrefab;
 
-
     [Header("Gameplay Values")]
-    [SerializeField] List<CluePickup> pickedUpObjects;
+    public List<CluePickup> pickedUpObjects;
 
 
 

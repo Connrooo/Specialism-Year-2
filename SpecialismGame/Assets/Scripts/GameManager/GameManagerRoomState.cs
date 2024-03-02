@@ -10,14 +10,25 @@ public class GameManagerRoomState : GameManagerBaseState
         IsRootState = true;
         InitializeSubState();
     }
-    public override void EnterState() { }
+    public override void EnterState() 
+    {
+
+    }
     public override void UpdateState()
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+        Ctx.hasRoomBeenChosen = false;
+    }
     public override void CheckSwitchStates()
     {
+        if (!Ctx.playingGame)
+        {
+            Ctx.canMove = false;
+            SwitchState(Factory.Menu());
+        }
     }
     public override void InitializeSubState()
     {

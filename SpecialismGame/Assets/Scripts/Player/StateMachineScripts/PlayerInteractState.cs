@@ -69,7 +69,25 @@ public class PlayerInteractState : PlayerBaseState
         }
         else
         {
-            Transform.Destroy(Ctx.currentObject);
+
+            
+            var objectScript = Ctx.currentObject.GetComponent<Interactable>();
+            switch (objectScript.interactType)
+            {
+                case "Clue":
+                    var clueScript = Ctx.currentObject.GetComponent<ClueScript>();
+                    Ctx.gameManager.pickedUpObjects.Add(clueScript.pickup);
+                    break;
+                case "Door":
+                    var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
+                    Ctx.gameManager.currentRoom = doorScript.roomNumber;
+                    doorScript.doorAnimator.SetTrigger("Interacted");
+                    if(Ctx.gameManager.currentRoom != 0)
+                    {
+                        Ctx.gameManager.hasRoomBeenChosen= true;
+                    }
+                    break;
+            }
         }
     }
 

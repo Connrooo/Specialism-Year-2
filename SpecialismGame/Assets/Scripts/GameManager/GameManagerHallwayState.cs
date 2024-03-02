@@ -25,13 +25,20 @@ public class GameManagerHallwayState : GameManagerBaseState
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+        Debug.Log("Exited Hallway State");
+    }
     public override void CheckSwitchStates()
     {
         if (!Ctx.playingGame)
         {
             Ctx.canMove = false;
             SwitchState(Factory.Menu());
+        }
+        else if(Ctx.hasRoomBeenChosen)
+        {
+            SwitchState(Factory.Room());
         }
     }
     public override void InitializeSubState()
@@ -40,8 +47,8 @@ public class GameManagerHallwayState : GameManagerBaseState
 
     private void LoadHallway()
     {
-        GameObject summonedInaccDoors = Transform.Instantiate(Ctx.inaccessibleDoorsPrefab, Ctx.summonPoint);
-        GameObject summonedAccDoors = Transform.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.summonPoint);
+        GameObject summonedInaccDoors = Object.Instantiate(Ctx.inaccessibleDoorsPrefab, Ctx.summonPoint);
+        GameObject summonedAccDoors = Object.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.summonPoint);
         var InaccDoorScript = summonedInaccDoors.GetComponent<DoorPrefabScript>();
         var AccDoorScript = summonedAccDoors.GetComponent<DoorPrefabScript>();
         List<int> blockedDoors = new List<int>();
@@ -62,7 +69,7 @@ public class GameManagerHallwayState : GameManagerBaseState
                     }
                     else
                     {
-                        if (blockedDoors.Contains(i+1)) //if not, it sees if it's already been checked
+                        if (blockedDoors.Contains(i + 1)) //if not, it sees if it's already been checked
                         {
                             Object.Destroy(InaccDoorScript.doors[i]); //if it hasn't, it destroys it
                         }
