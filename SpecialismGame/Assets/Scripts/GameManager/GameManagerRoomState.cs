@@ -12,7 +12,9 @@ public class GameManagerRoomState : GameManagerBaseState
     }
     public override void EnterState() 
     {
-
+        Ctx.inRoom= true;
+        Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
+        Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
     }
     public override void UpdateState()
     {
@@ -28,6 +30,11 @@ public class GameManagerRoomState : GameManagerBaseState
         {
             Ctx.canMove = false;
             SwitchState(Factory.Menu());
+        }
+        else if (Ctx.finishedInvestigating)
+        {
+            Object.Destroy(Ctx.currentRoomSummoned);
+            SwitchState(Factory.Cutscene());
         }
     }
     public override void InitializeSubState()

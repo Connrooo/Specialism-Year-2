@@ -13,6 +13,7 @@ public class GameManagerMenuState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        Ctx.inMenu= true;
         foreach(CinemachineVirtualCamera camera in Ctx.Cameras)
         {
             camera.Priority = 10;
@@ -23,7 +24,10 @@ public class GameManagerMenuState : GameManagerBaseState
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+        Ctx.inMenu = false;
+    }
     public override void CheckSwitchStates()
     {
         if (Ctx.playingGame)

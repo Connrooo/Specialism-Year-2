@@ -13,6 +13,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        Ctx.inCutscene= true;
         foreach (CinemachineVirtualCamera camera in Ctx.Cameras)
         {
             camera.Priority = 10;
@@ -24,13 +25,23 @@ public class GameManagerCutsceneState : GameManagerBaseState
     {
         CheckSwitchStates();
     }
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+        Ctx.inCutscene= false;
+    }
     public override void CheckSwitchStates()
     {
         if (Ctx.stopAnimation)
         {
             Ctx.stopAnimation = false;
-            SwitchState(Factory.Hallway());
+            if (Ctx.finishedInvestigating)
+            {
+                SwitchState(Factory.Deliberate());
+            }
+            else
+            {
+                SwitchState(Factory.Hallway());
+            }
         }
     }
     public override void InitializeSubState()
@@ -42,7 +53,14 @@ public class GameManagerCutsceneState : GameManagerBaseState
         switch(Ctx.day)
         {
             case 1:
-                Ctx.animator_CinematicCamera.SetTrigger("day1Opening");
+                if(Ctx.finishedInvestigating)
+                {
+                    Ctx.animator_CinematicCamera.SetTrigger("day1Opening");
+                }
+                else
+                {
+                    Ctx.animator_CinematicCamera.SetTrigger("day1Opening");
+                }
                 break;
             case 2:
                 break;

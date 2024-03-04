@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 466631629234086279}
   - component: {fileID: 2334473484360543908}
   - component: {fileID: 4370392662023812978}
+  - component: {fileID: 222028179366830841}
   - component: {fileID: 8149601776972790113}
   m_Layer: 0
   m_Name: Room 5
@@ -107,6 +108,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &222028179366830841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 96917611494363350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &8149601776972790113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,6 +147,7 @@ GameObject:
   - component: {fileID: 7977869248215932069}
   - component: {fileID: 4160879137475633264}
   - component: {fileID: 7520514291191630653}
+  - component: {fileID: 8430012023251300744}
   - component: {fileID: 8102884134383755624}
   m_Layer: 0
   m_Name: Room 6
@@ -228,6 +243,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8430012023251300744
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 699560987435666782}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &8102884134383755624
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -439,6 +467,7 @@ GameObject:
   - component: {fileID: 8915761097786926264}
   - component: {fileID: 3524898522018831330}
   - component: {fileID: 1155490117016892798}
+  - component: {fileID: 2014294655878416310}
   - component: {fileID: 9092211686050253601}
   m_Layer: 0
   m_Name: Room 1
@@ -534,6 +563,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2014294655878416310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2596425014519795619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &9092211686050253601
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,6 +972,7 @@ GameObject:
   - component: {fileID: 5430472068579203707}
   - component: {fileID: 2684758026193401855}
   - component: {fileID: 7430551780289141283}
+  - component: {fileID: 5457752204515873798}
   - component: {fileID: 471802089649005194}
   m_Layer: 0
   m_Name: Room 4
@@ -1025,6 +1068,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5457752204515873798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4294382496967071668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &471802089649005194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1293,6 +1349,7 @@ GameObject:
   - component: {fileID: 6020956180768468970}
   - component: {fileID: 265362907064578227}
   - component: {fileID: 5968156545955813773}
+  - component: {fileID: 8623101690458702791}
   - component: {fileID: 4299497267455076371}
   m_Layer: 0
   m_Name: Room 2
@@ -1388,6 +1445,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &8623101690458702791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5327093142319596649}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &4299497267455076371
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1784,6 +1854,7 @@ GameObject:
   - component: {fileID: 6492640213767192912}
   - component: {fileID: 7431969194303340767}
   - component: {fileID: 2982989916432345595}
+  - component: {fileID: 1640669339267999497}
   - component: {fileID: 1247970202192527241}
   m_Layer: 0
   m_Name: Room 3
@@ -1879,6 +1950,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1640669339267999497
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8094205018010444165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactType: 
 --- !u!114 &1247970202192527241
 MonoBehaviour:
   m_ObjectHideFlags: 0

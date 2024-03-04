@@ -13,6 +13,7 @@ public class GameManagerHallwayState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        Ctx.inHallway= true;
         foreach (CinemachineVirtualCamera camera in Ctx.Cameras)
         {
             camera.Priority = 10;
@@ -27,7 +28,8 @@ public class GameManagerHallwayState : GameManagerBaseState
     }
     public override void ExitState() 
     {
-        Debug.Log("Exited Hallway State");
+        Ctx.inHallway = false;
+        Object.Destroy(Ctx.currentRoomSummoned);
     }
     public override void CheckSwitchStates()
     {
@@ -47,8 +49,9 @@ public class GameManagerHallwayState : GameManagerBaseState
 
     private void LoadHallway()
     {
-        GameObject summonedInaccDoors = Object.Instantiate(Ctx.inaccessibleDoorsPrefab, Ctx.summonPoint);
-        GameObject summonedAccDoors = Object.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.summonPoint);
+        Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
+        GameObject summonedInaccDoors = Object.Instantiate(Ctx.inaccessibleDoorsPrefab, Ctx.currentRoomSummoned.transform);
+        GameObject summonedAccDoors = Object.Instantiate(Ctx.accessibleDoorsPrefab, Ctx.currentRoomSummoned.transform);
         var InaccDoorScript = summonedInaccDoors.GetComponent<DoorPrefabScript>();
         var AccDoorScript = summonedAccDoors.GetComponent<DoorPrefabScript>();
         List<int> blockedDoors = new List<int>();

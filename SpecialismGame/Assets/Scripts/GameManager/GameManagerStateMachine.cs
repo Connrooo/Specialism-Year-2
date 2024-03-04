@@ -11,17 +11,25 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameManagerBaseState CurrentState { get { return currentState; } set { currentState = value; } }
 
     [Header("Global Values")]
-    public Transform summonPoint;
+    public GameObject currentRoomSummoned;
+    public GameObject summonPointPrefab;
     public bool paused; //checks if the game is paused
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
     public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene)
     public List<int> roomsSearched; //List of rooms available to visit
-    public int currentRoom; //Room player is currently investigating (0 = none selected)
+    public int currentRoomNumber; //Room number that player is currently investigating (0 = none selected)
     public Vector3 playerPosition;
-    //public GameObject[]??? evidenceCollected;
     //Quip objects
     //Power-ups
+
+
+    [Header("State Values")]
+    public bool inCutscene;
+    public bool inHallway;
+    public bool inRoom;
+    public bool inDeliberation;
+    public bool inMenu;
 
     [Header("Cinemachine")]
     public CinemachineVirtualCamera menuCamera;
@@ -40,6 +48,15 @@ public class GameManagerStateMachine : MonoBehaviour
     [Header("Hallway Values")]
     public GameObject accessibleDoorsPrefab;
     public GameObject inaccessibleDoorsPrefab;
+
+    [Header("Room Values")]
+    public GameObject[] rooms;
+    public GameObject instantiatedRoom;
+
+    [Header("Deliberate Values")]
+    public List<CluePickup> evidence0;
+    public List<CluePickup> evidence1;
+    public List<CluePickup> evidence2;
 
     [Header("Gameplay Values")]
     public List<CluePickup> pickedUpObjects;
@@ -60,15 +77,11 @@ public class GameManagerStateMachine : MonoBehaviour
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();
         animator_CinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent <Animator>();
         gameplayCamera = GameObject.FindGameObjectWithTag("GameplayCamera").GetComponent<CinemachineVirtualCamera>();
-        summonPoint = GameObject.FindGameObjectWithTag("SummonPoint").transform;
         Cameras.Add(menuCamera);
         Cameras.Add(cinematicCamera);
         Cameras.Add(gameplayCamera);
         currentState = states.Menu();
         currentState.EnterState();
-        roomsSearched.Add(6);
-        roomsSearched.Add(5);
-        roomsSearched.Add(2);
     }
     private void Update()
     {
