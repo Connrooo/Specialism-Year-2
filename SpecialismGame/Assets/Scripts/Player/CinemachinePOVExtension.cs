@@ -9,9 +9,9 @@ public class CinemachinePOVExtension : CinemachineExtension
     [SerializeField] private float clampAngleUp = 40f;
     [SerializeField] private float clampAngleDown = 60f;
     [SerializeField] private GameManagerStateMachine gameManager;
-
     PlayerStateMachine playerStateMachine;
     Vector3 startingRotation;
+    Quaternion currentRot;
 
     protected override void Awake()
     {
@@ -32,9 +32,12 @@ public class CinemachinePOVExtension : CinemachineExtension
                 startingRotation.y += deltaInput.y * horizontalSpeed * Time.deltaTime;
                 startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngleDown, clampAngleUp);
                 state.RawOrientation = Quaternion.Euler(-startingRotation.y, startingRotation.x,0f);
+                currentRot = Quaternion.Euler(-startingRotation.y, startingRotation.x, 0f);
 
             }
         }
+        else
+        { state.RawOrientation = currentRot; }
     }
 }
 

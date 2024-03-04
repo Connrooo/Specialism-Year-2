@@ -22,7 +22,10 @@ public class PlayerIdleState : PlayerBaseState
         {
             if (Ctx.vertInput != 0 || Ctx.horInput != 0)
             {
-                SwitchState(Factory.Walk());
+                if(!Ctx.gameManager.inDeliberation)
+                {
+                    SwitchState(Factory.Walk());
+                }
             }
         }
         SetSubState(Factory.Interact());

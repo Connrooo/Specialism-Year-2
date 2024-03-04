@@ -22,6 +22,7 @@ public class GameManagerRoomState : GameManagerBaseState
     }
     public override void ExitState() 
     {
+        Ctx.inRoom= false;
         Ctx.hasRoomBeenChosen = false;
     }
     public override void CheckSwitchStates()

@@ -33,7 +33,15 @@ public class PlayerWalkState : PlayerBaseState
     public override void ExitState() { }
     public override void CheckSwitchStates() 
     {
-        if (Ctx.horInput==0&&Ctx.vertInput==0 || !Ctx.gameManager.canMove)
+        if (Ctx.horInput==0&&Ctx.vertInput==0)
+        {
+            SwitchState(Factory.Idle());
+        }
+        else if(!Ctx.gameManager.canMove)
+        {
+            SwitchState(Factory.Idle());
+        }
+        else if(Ctx.gameManager.inDeliberation)
         {
             SwitchState(Factory.Idle());
         }

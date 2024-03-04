@@ -277,9 +277,12 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = false;
         PlayerUI.SetActive(true);
         PauseCanvas.SetActive(false);
-        gameManager.canMove = true;
+        bool inCaseFile = false;
+        foreach(GameObject caseImage in gameManager.caseFileImages)
+        {
+            if (caseImage.activeSelf) { inCaseFile = true; }
+        }
+        if (!inCaseFile) { gameManager.canMove = true; }
         Time.timeScale = 1f;
     }
-
-
 }

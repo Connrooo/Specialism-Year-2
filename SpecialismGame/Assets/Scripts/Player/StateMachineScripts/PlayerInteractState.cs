@@ -99,7 +99,10 @@ public class PlayerInteractState : PlayerBaseState
                         Debug.Log("Not in room, haven't written this yet bozo");
                     }
                     break;
-                case "Papers":
+                case "CaseFile":
+                    var caseNumber = Ctx.currentObject.GetComponent<CaseFile>().suspectRelated;
+                    Ctx.gameManager.caseFileImages[caseNumber].SetActive(true);
+                    Ctx.gameManager.canMove = false;
                     break;
             }
         }

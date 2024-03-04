@@ -11,6 +11,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameManagerBaseState CurrentState { get { return currentState; } set { currentState = value; } }
 
     [Header("Global Values")]
+    public GameObject Player;
     public GameObject currentRoomSummoned;
     public GameObject summonPointPrefab;
     public bool paused; //checks if the game is paused
@@ -40,6 +41,8 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool stopAnimation;
     //[Header("Menu Values")]
 
+    public GameObject instantiatedRoom;
+
 
     [Header("Cutscene Values")]
     public bool finishedInvestigating; //checks if the player has finished investigating or not, if not, they will be investigating.
@@ -51,15 +54,20 @@ public class GameManagerStateMachine : MonoBehaviour
 
     [Header("Room Values")]
     public GameObject[] rooms;
-    public GameObject instantiatedRoom;
+    
 
     [Header("Deliberate Values")]
+    public GameObject deliberationPrefab;
+
     public List<CluePickup> evidence0;
     public List<CluePickup> evidence1;
     public List<CluePickup> evidence2;
 
     public List<GameObject> caseFileImages;
 
+    public List<GameObject> evidenceInstances;
+
+    public GameObject ItemsOfEvidencePrefab;
     public GameObject evidenceUIPrefab;
 
     [Header("Gameplay Values")]
@@ -81,6 +89,7 @@ public class GameManagerStateMachine : MonoBehaviour
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();
         animator_CinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent <Animator>();
         gameplayCamera = GameObject.FindGameObjectWithTag("GameplayCamera").GetComponent<CinemachineVirtualCamera>();
+        Player = GameObject.FindGameObjectWithTag("Player");
         Cameras.Add(menuCamera);
         Cameras.Add(cinematicCamera);
         Cameras.Add(gameplayCamera);
@@ -94,5 +103,6 @@ public class GameManagerStateMachine : MonoBehaviour
         {
             canMove = false;
         }
+        if (!canMove ) { }
     }
 }

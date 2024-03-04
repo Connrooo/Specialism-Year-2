@@ -19,6 +19,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
             camera.Priority = 10;
         }
         Ctx.cinematicCamera.Priority = 11;
+        Ctx.canMove = false;
         DayChecker();
     }
     public override void UpdateState()
