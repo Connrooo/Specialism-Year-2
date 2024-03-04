@@ -58,6 +58,10 @@ public class GameManagerStateMachine : MonoBehaviour
     public List<CluePickup> evidence1;
     public List<CluePickup> evidence2;
 
+    public List<GameObject> caseFileImages;
+
+    public GameObject evidenceUIPrefab;
+
     [Header("Gameplay Values")]
     public List<CluePickup> pickedUpObjects;
 

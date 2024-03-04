@@ -12,6 +12,9 @@ TagManager:
   - MenuCamera
   - GameplayCamera
   - CinematicCamera
+  - ItemsOfEvidence
+  - EvidenceName
+  - EvidenceDescription
   layers:
   - Default
   - TransparentFX
