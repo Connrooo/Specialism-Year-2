@@ -60,7 +60,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
                 }
                 else
                 {
-                    Ctx.animator_CinematicCamera.SetTrigger("day1Opening");
+                    Ctx.animator_CinematicCamera.SetTrigger("day1Closing");
                 }
                 break;
             case 2:
