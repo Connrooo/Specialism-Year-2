@@ -24,6 +24,7 @@ public class GameManagerRoomState : GameManagerBaseState
     {
         Ctx.inRoom= false;
         Ctx.hasRoomBeenChosen = false;
+        Object.Destroy(Ctx.currentRoomSummoned);
     }
     public override void CheckSwitchStates()
     {
@@ -34,7 +35,6 @@ public class GameManagerRoomState : GameManagerBaseState
         }
         else if (Ctx.finishedInvestigating)
         {
-            Object.Destroy(Ctx.currentRoomSummoned);
             SwitchState(Factory.Cutscene());
         }
     }

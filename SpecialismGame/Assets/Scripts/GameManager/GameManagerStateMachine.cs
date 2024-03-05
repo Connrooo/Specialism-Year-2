@@ -19,8 +19,10 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool canMove;
     public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene)
     public List<int> roomsSearched; //List of rooms available to visit
+    public int suspectAccused;
     public int currentRoomNumber; //Room number that player is currently investigating (0 = none selected)
     public Vector3 playerPosition;
+    public bool gameFinished;
     //Quip objects
     //Power-ups
 

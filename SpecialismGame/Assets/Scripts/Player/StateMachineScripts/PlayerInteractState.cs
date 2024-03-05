@@ -112,6 +112,12 @@ public class PlayerInteractState : PlayerBaseState
                     Cursor.visible = true;
                     EventSystem.current.SetSelectedGameObject(Ctx.gameManager.caseFileExits[caseNumber]);
                     break;
+                case "AccuseButton":
+                    Ctx.currentObject.GetComponent<AccuseButton>().ActivateButton();
+                    break;
+                case "Accuse":
+                    Ctx.currentObject.GetComponent<AccuseSuspectScript>().AccuseSuspect();
+                    break;
             }
         }
     }

@@ -34,14 +34,21 @@ public class GameManagerCutsceneState : GameManagerBaseState
     {
         if (Ctx.stopAnimation)
         {
-            Ctx.stopAnimation = false;
-            if (Ctx.finishedInvestigating)
+            if(Ctx.day>=4)
             {
-                SwitchState(Factory.Deliberate());
+                Ctx.gameFinished= true;
             }
             else
             {
-                SwitchState(Factory.Hallway());
+                Ctx.stopAnimation = false;
+                if (Ctx.finishedInvestigating)
+                {
+                    SwitchState(Factory.Deliberate());
+                }
+                else
+                {
+                    SwitchState(Factory.Hallway());
+                }
             }
         }
     }
@@ -51,26 +58,17 @@ public class GameManagerCutsceneState : GameManagerBaseState
 
     private void DayChecker()
     {
-        switch(Ctx.day)
+        Ctx.animator_CinematicCamera.SetInteger("day", Ctx.day);
+        Ctx.animator_CinematicCamera.SetInteger("suspect", Ctx.suspectAccused);
+        if (Ctx.finishedInvestigating)
         {
-            case 1:
-                if(Ctx.finishedInvestigating)
-                {
-                    Ctx.animator_CinematicCamera.SetTrigger("day1Opening");
-                }
-                else
-                {
-                    Ctx.animator_CinematicCamera.SetTrigger("day1Closing");
-                }
-                break;
-            case 2:
-                Debug.Log("Day 2!");
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
+            Ctx.animator_CinematicCamera.SetBool("opening", true);
         }
+        else
+        {
+            Ctx.animator_CinematicCamera.SetBool("opening", false);
+        }
+        Ctx.animator_CinematicCamera.SetTrigger("activate");
     }
 
 }

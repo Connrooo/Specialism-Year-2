@@ -24,6 +24,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject AccessibilityCanvas;
     [SerializeField] private GameObject LoadGameCanvas;
     [SerializeField] private GameObject CreditsCanvas;
+    [SerializeField] private GameObject EndCanvas;
     [Header("First Selected Menu Objects")]
     [SerializeField] private GameObject FS_Menu;
     [SerializeField] private GameObject FS_Settings;
@@ -60,114 +61,26 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log(gameManager.playingGame);
         if (playerStateMachine.IsMenuOpenClosePressed)//pause button is pressed
         {
+            DefaultCheckers();
+            PlayingGame();
             if (PauseCanvas.activeSelf)//if in pause menu, resume game
             {
                 P_Resume();
-            }
-            else if (gameManager.playingGame&& SettingsCanvas.activeSelf)//if in game, and settings menu, go to pause menu
-            {
-                SettingsCanvas.SetActive(false);
-                PauseCanvas.SetActive(true);
-            }
-            else if (!gameManager.playingGame && SettingsCanvas.activeSelf)//if in main menu, and settings menu, go to main menu
-            {
-                SettingsCanvas.SetActive(false);
-                MainMenuCanvas.SetActive(true);
-            }
-            else if (KeyboardCanvas.activeSelf)
-            {
-                KeyboardCanvas.SetActive(false);
-                SettingsCanvas.SetActive(true);
-            }
-            else if (GamepadCanvas.activeSelf)
-            {
-                GamepadCanvas.SetActive(false);
-                SettingsCanvas.SetActive(true);
-            }
-
-            else if (AccessibilityCanvas.activeSelf)
-            {
-                AccessibilityCanvas.SetActive(false);
-                SettingsCanvas.SetActive(true);
-            }
-
-            else if (CreditsCanvas.activeSelf)
-            {
-                CreditsCanvas.SetActive(false);
-                MainMenuCanvas.SetActive(true);
-            }
-            else if (LoadGameCanvas.activeSelf)
-            {
-                LoadGameCanvas.SetActive(false);
-                MainMenuCanvas.SetActive(true);
             }
             else if (gameManager.playingGame && !PauseCanvas.activeSelf)//if in game, and pause menu isnt active, pause game
             {
                 P_PauseGame();
             }
-            else
-            {
-                Debug.Log("You have attempted to go back, there is no further back.");
-            }
             playerStateMachine.IsMenuOpenClosePressed = false;
         }
-        
-        
-        
-        
-        
-        //if in keyboard controls, go to settings menu
-        //if in gamepad controls, go to settings menu
     }
 
-    public void Settings()
+    private void DefaultCheckers()
     {
-        //if in game, hide the pause menu and pull up settings
-        //if in main menu, hide the menu and pull up settings
-        if (gameManager.playingGame)
-        {
-            PauseCanvas.SetActive(false);
-            SettingsCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Settings);
-        }
-        else
-        {
-            MainMenuCanvas.SetActive(false);
-            SettingsCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Settings);
-        }
-    }
-
-    public void Back()
-    {
-        if (gameManager.playingGame && SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
-        {
-            SettingsCanvas.SetActive(false);
-            PauseCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Pause);
-        }
-
-        else if (PauseCanvas.activeSelf) //if in game and in pause menu, go to main menu
-        {
-            gameManager.playingGame = false;
-            Time.timeScale = 0f;
-            //save progress to correct save, change camera to cinemachine camera.
-            gameManager.paused = true;
-            PauseCanvas.SetActive(false);
-            MainMenuCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Menu);
-        }
-        
-        else if (!gameManager.playingGame && SettingsCanvas.activeSelf) //if in main menu and in settings menu, go to main menu.
-        {
-            SettingsCanvas.SetActive(false);
-            MainMenuCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Menu);
-        }
-
-        else if (GamepadCanvas.activeSelf) //if the player is in the gamepad rebinding canvas, go to the settings canvas
+        if (GamepadCanvas.activeSelf) //if the player is in the gamepad rebinding canvas, go to the settings canvas
         {
             GamepadCanvas.SetActive(false);
             SettingsCanvas.SetActive(true);
@@ -180,30 +93,98 @@ public class MenuManager : MonoBehaviour
             EventSystem.current.SetSelectedGameObject(FS_Settings);
         }
 
-        else if (AccessibilityCanvas.activeSelf)
+        else if (AccessibilityCanvas.activeSelf) //if accessibility canvas is active, go to settings canvas
         {
             AccessibilityCanvas.SetActive(false);
             SettingsCanvas.SetActive(true);
             EventSystem.current.SetSelectedGameObject(FS_Settings);
         }
 
-        else if (CreditsCanvas.activeSelf)
+        else if (CreditsCanvas.activeSelf) //if credits canvas is active, go to main menu
         {
             CreditsCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
             EventSystem.current.SetSelectedGameObject(FS_Menu);
         }
 
-        else if (LoadGameCanvas.activeSelf)
+        else if (LoadGameCanvas.activeSelf) //if load game canvas is active, go to main menu
         {
             LoadGameCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
         }
+    }
 
+    private void PlayingGame()
+    {
+        if(gameManager.playingGame)
+        {
+            if(!gameManager.gameFinished)
+            {
+                if (SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
+                {
+                    SettingsCanvas.SetActive(false);
+                    PauseCanvas.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(FS_Pause);
+                }
+            }
+            else
+            {
+                if (SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
+                {
+                    SettingsCanvas.SetActive(false);
+                    EndCanvas.SetActive(true);
+                    EventSystem.current.SetSelectedGameObject(FS_Pause);
+                }
+            }
+        }
         else
         {
-            Debug.Log("You have attempted to go back, there is no further back.");
+            if (SettingsCanvas.activeSelf)
+            {
+                SettingsCanvas.SetActive(false);
+                MainMenuCanvas.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(FS_Menu);
+            }
         }
+    }
+
+    public void Settings()
+    {
+        //if in game, hide the pause menu and pull up settings
+        //if in main menu, hide the menu and pull up settings
+        if (PauseCanvas.activeSelf)
+        {
+            PauseCanvas.SetActive(false);
+            SettingsCanvas.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(FS_Settings);
+        }
+        else if(MainMenuCanvas.activeSelf)
+        {
+            MainMenuCanvas.SetActive(false);
+            SettingsCanvas.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(FS_Settings);
+        }
+    }
+
+    public void Back()
+    {
+        if (PauseCanvas.activeSelf) //if in game and in pause menu, go to main menu
+        {
+            gameManager.playingGame = false;
+            Time.timeScale = 0f;
+            //save progress to correct save, change camera to cinemachine camera.
+            gameManager.paused = true;
+            PauseCanvas.SetActive(false);
+            MainMenuCanvas.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(FS_Menu);
+        }
+        DefaultCheckers();
+        PlayingGame();
+        
+        //else
+        //{
+        //    Debug.Log("You have attempted to go back, there is no further back.");
+        //}
     }
 
     public void M_NewGame()

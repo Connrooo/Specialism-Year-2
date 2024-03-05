@@ -35,16 +35,20 @@ public class GameManagerDeliberateState : GameManagerBaseState
     public override void ExitState() 
     {
         Ctx.inDeliberation = false;
-        Ctx.day++;
         foreach (GameObject itemsOfEvidenceInstance in Ctx.evidenceInstances)
         {
             Object.Destroy(itemsOfEvidenceInstance);
         }
+        Ctx.evidence0 = new List<CluePickup>();
+        Ctx.evidence1 = new List<CluePickup>();
+        Ctx.evidence2 = new List<CluePickup>();
+        Object.Destroy(Ctx.currentRoomSummoned);
     }
     public override void CheckSwitchStates()
     {
         if (!Ctx.finishedInvestigating)
         {
+            Ctx.day++;
             SwitchState(Factory.Cutscene());
         }
     }
