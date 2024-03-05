@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerInteractState : PlayerBaseState
 {
@@ -94,6 +95,10 @@ public class PlayerInteractState : PlayerBaseState
                         Ctx.gameManager.roomsSearched.Add(Ctx.gameManager.currentRoomNumber);
                         Ctx.gameManager.finishedInvestigating = true;
                     }
+                    else if(Ctx.gameManager.inDeliberation)
+                    {
+                        Ctx.gameManager.finishedInvestigating = false;
+                    }
                     else
                     {
                         Debug.Log("Not in room, haven't written this yet bozo");
@@ -103,6 +108,9 @@ public class PlayerInteractState : PlayerBaseState
                     var caseNumber = Ctx.currentObject.GetComponent<CaseFile>().suspectRelated;
                     Ctx.gameManager.caseFileImages[caseNumber].SetActive(true);
                     Ctx.gameManager.canMove = false;
+                    Cursor.lockState = CursorLockMode.Confined;
+                    Cursor.visible = true;
+                    EventSystem.current.SetSelectedGameObject(Ctx.gameManager.caseFileExits[caseNumber]);
                     break;
             }
         }

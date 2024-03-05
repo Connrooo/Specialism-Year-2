@@ -273,8 +273,6 @@ public class MenuManager : MonoBehaviour
     public void P_Resume()
     {
         gameManager.paused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
         PlayerUI.SetActive(true);
         PauseCanvas.SetActive(false);
         bool inCaseFile = false;
@@ -282,7 +280,12 @@ public class MenuManager : MonoBehaviour
         {
             if (caseImage.activeSelf) { inCaseFile = true; }
         }
-        if (!inCaseFile) { gameManager.canMove = true; }
+        if (!inCaseFile) 
+        {
+            gameManager.canMove = true;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
         Time.timeScale = 1f;
     }
 }

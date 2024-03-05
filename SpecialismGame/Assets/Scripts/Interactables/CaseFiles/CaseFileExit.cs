@@ -7,7 +7,7 @@ public class CaseFileExit : MonoBehaviour
     GameManagerStateMachine gameManager;
     PlayerStateMachine playerManager;
 
-    private void Awake()
+    private void Start()
     {
         gameManager = FindObjectOfType<GameManagerStateMachine>();
         playerManager = FindObjectOfType<PlayerStateMachine>();
@@ -16,7 +16,9 @@ public class CaseFileExit : MonoBehaviour
     public void ExitCaseFile()
     {
         var caseNumber = playerManager.currentObject.GetComponent<CaseFile>().suspectRelated;
-        gameManager.caseFileImages[caseNumber].SetActive(true);
+        gameManager.caseFileImages[caseNumber].SetActive(false);
         gameManager.canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }

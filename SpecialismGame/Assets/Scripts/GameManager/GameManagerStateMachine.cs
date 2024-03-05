@@ -54,9 +54,10 @@ public class GameManagerStateMachine : MonoBehaviour
 
     [Header("Room Values")]
     public GameObject[] rooms;
-    
+
 
     [Header("Deliberate Values")]
+
     public GameObject deliberationPrefab;
 
     public List<CluePickup> evidence0;
@@ -64,6 +65,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public List<CluePickup> evidence2;
 
     public List<GameObject> caseFileImages;
+    public List<GameObject> caseFileExits;
 
     public List<GameObject> evidenceInstances;
 
@@ -98,6 +100,7 @@ public class GameManagerStateMachine : MonoBehaviour
     }
     private void Update()
     {
+        Debug.Log(day);
         currentState.UpdateStates();
         if (paused || !playingGame)
         {

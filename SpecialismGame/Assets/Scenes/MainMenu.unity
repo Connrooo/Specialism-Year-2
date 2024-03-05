@@ -24385,6 +24385,10 @@ MonoBehaviour:
   - {fileID: 1708726020}
   - {fileID: 809195268}
   - {fileID: 170620508}
+  caseFileExits:
+  - {fileID: 718619135}
+  - {fileID: 1567964575}
+  - {fileID: 1743330080}
   evidenceInstances: []
   ItemsOfEvidencePrefab: {fileID: 0}
   evidenceUIPrefab: {fileID: 157863068390689730, guid: 4a95cc878b6c983489b531a23b950b98,

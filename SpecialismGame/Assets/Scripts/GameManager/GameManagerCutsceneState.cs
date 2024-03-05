@@ -64,6 +64,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
                 }
                 break;
             case 2:
+                Debug.Log("Day 2!");
                 break;
             case 3:
                 break;
