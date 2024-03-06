@@ -19,6 +19,7 @@ public class GameManagerMenuState : GameManagerBaseState
             camera.Priority = 10;
         }
         Ctx.menuCamera.Priority = 11;
+        Ctx.menuManager.GoToMenu();
     }
     public override void UpdateState()
     {

@@ -46,7 +46,12 @@ public class GameManagerDeliberateState : GameManagerBaseState
     }
     public override void CheckSwitchStates()
     {
-        if (!Ctx.finishedInvestigating)
+        if (!Ctx.playingGame)
+        {
+            Ctx.canMove = false;
+            SwitchState(Factory.Menu());
+        }
+        else if (!Ctx.finishedInvestigating)
         {
             Ctx.day++;
             SwitchState(Factory.Cutscene());

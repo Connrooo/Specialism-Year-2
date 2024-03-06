@@ -166,17 +166,22 @@ public class MenuManager : MonoBehaviour
         }
     }
 
+    public void GoToMenu()
+    {
+        Time.timeScale = 0f;
+        gameManager.playingGame = false;
+        //save progress to correct save
+        gameManager.paused = true;
+        PauseCanvas.SetActive(false);
+        MainMenuCanvas.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(FS_Menu);
+    }
+
     public void Back()
     {
         if (PauseCanvas.activeSelf) //if in game and in pause menu, go to main menu
         {
             gameManager.playingGame = false;
-            Time.timeScale = 0f;
-            //save progress to correct save, change camera to cinemachine camera.
-            gameManager.paused = true;
-            PauseCanvas.SetActive(false);
-            MainMenuCanvas.SetActive(true);
-            EventSystem.current.SetSelectedGameObject(FS_Menu);
         }
         DefaultCheckers();
         PlayingGame();

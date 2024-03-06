@@ -18,6 +18,7 @@ public class AccuseSuspectScript : MonoBehaviour
     public void AccuseSuspect()
     {
         gameManager.suspectAccused = caseFile.suspectRelated;
+        gameManager.day = 3;
         gameManager.finishedInvestigating= false;
     }
 }

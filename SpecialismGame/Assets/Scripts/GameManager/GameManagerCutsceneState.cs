@@ -32,11 +32,17 @@ public class GameManagerCutsceneState : GameManagerBaseState
     }
     public override void CheckSwitchStates()
     {
-        if (Ctx.stopAnimation)
+        if (!Ctx.playingGame)
+        {
+            Ctx.canMove = false;
+            SwitchState(Factory.Menu());
+        }
+        else if (Ctx.stopAnimation)
         {
             if(Ctx.day>=4)
             {
-                Ctx.gameFinished= true;
+                Ctx.canMove = false;
+                SwitchState(Factory.Menu());
             }
             else
             {
