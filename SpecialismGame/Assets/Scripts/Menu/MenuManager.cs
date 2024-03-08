@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour
 {
     GameManagerStateMachine gameManager;
-
+    SaveLoadScript saveLoadScript;
 
     [Header("Don't Destroy On Loads")]
     [SerializeField] private GameObject SettingsManager;
@@ -49,6 +49,7 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
         subtitleManager = FindObjectOfType<SubtitleManager>();
         gameManager = FindObjectOfType<GameManagerStateMachine>();
+        saveLoadScript = FindObjectOfType<SaveLoadScript>();
     }
 
     private void Start()
@@ -118,23 +119,11 @@ public class MenuManager : MonoBehaviour
     {
         if(gameManager.playingGame)
         {
-            if(!gameManager.gameFinished)
+            if (SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
             {
-                if (SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
-                {
-                    SettingsCanvas.SetActive(false);
-                    PauseCanvas.SetActive(true);
-                    EventSystem.current.SetSelectedGameObject(FS_Pause);
-                }
-            }
-            else
-            {
-                if (SettingsCanvas.activeSelf) //if in game and in settings, go to pause menu
-                {
-                    SettingsCanvas.SetActive(false);
-                    EndCanvas.SetActive(true);
-                    EventSystem.current.SetSelectedGameObject(FS_Pause);
-                }
+                SettingsCanvas.SetActive(false);
+                PauseCanvas.SetActive(true);
+                EventSystem.current.SetSelectedGameObject(FS_Pause);
             }
         }
         else
@@ -199,7 +188,7 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = false;
         gameManager.playingGame = true;
         gameManager.paused = false;
-        gameManager.day = 1;
+        saveLoadScript.NewGame();
         PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
         subtitleManager.PlaySubtitle("Beginning");

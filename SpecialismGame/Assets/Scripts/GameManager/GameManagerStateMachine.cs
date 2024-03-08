@@ -18,12 +18,12 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool paused; //checks if the game is paused
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
-    public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene)
-    public List<int> roomsSearched; //List of rooms available to visit
-    public int suspectAccused;
-    public int currentRoomNumber; //Room number that player is currently investigating (0 = none selected)
-    public Vector3 playerPosition;
-    public bool gameFinished;
+    public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene) //*
+    public List<int> roomsSearched; //List of rooms available to visit //*
+    public int suspectAccused; //*
+    public int currentRoomNumber; //Room number that player is currently investigating (0 = none selected) //*
+    public Vector3 playerPosition; //*
+    public int saveNumber;
     //Quip objects
     //Power-ups
 
@@ -48,8 +48,8 @@ public class GameManagerStateMachine : MonoBehaviour
 
 
     [Header("Cutscene Values")]
-    public bool finishedInvestigating; //checks if the player has finished investigating or not, if not, they will be investigating.
-    public bool hasRoomBeenChosen; //if true, the player will go to the room, if not, they will go to the hallway.
+    public bool finishedInvestigating; //checks if the player has finished investigating or not, if not, they will be investigating. //*
+    public bool hasRoomBeenChosen; //if true, the player will go to the room, if not, they will go to the hallway. //*
 
     [Header("Hallway Values")]
     public GameObject accessibleDoorsPrefab;
@@ -76,7 +76,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameObject evidenceUIPrefab;
 
     [Header("Gameplay Values")]
-    public List<CluePickup> pickedUpObjects;
+    public List<CluePickup> pickedUpObjects; //*
 
 
 
