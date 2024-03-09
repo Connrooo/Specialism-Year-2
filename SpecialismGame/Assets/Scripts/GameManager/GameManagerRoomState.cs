@@ -15,6 +15,8 @@ public class GameManagerRoomState : GameManagerBaseState
         Ctx.inRoom= true;
         Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
+        Ctx.roomDisplayValue = 1;
+        DestroyCollectedEvidence();
     }
     public override void UpdateState()
     {
@@ -41,4 +43,23 @@ public class GameManagerRoomState : GameManagerBaseState
     public override void InitializeSubState()
     {
     }
+
+    private void DestroyCollectedEvidence()
+    {
+        List<GameObject> objectsInWorld = new();
+        foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Interact"))
+        {
+            if ((obj.GetComponent("ClueScript") as ClueScript) != null)
+            {
+                foreach (CluePickup collectedClue in Ctx.pickedUpObjects)
+                {
+                    if (obj.GetComponent<ClueScript>().pickup.itemName == collectedClue.itemName)
+                    {
+                        Object.Destroy(obj);
+                    }
+                }
+            }
+        }
+    }
+
 }

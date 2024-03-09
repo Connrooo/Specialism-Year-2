@@ -20,6 +20,7 @@ public class GameManagerHallwayState : GameManagerBaseState
         }
         Ctx.gameplayCamera.Priority = 11;
         Ctx.canMove = true;
+        Ctx.roomDisplayValue = 0;
         LoadHallway();
     }
     public override void UpdateState()

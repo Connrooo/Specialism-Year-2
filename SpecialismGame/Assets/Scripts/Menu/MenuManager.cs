@@ -35,6 +35,12 @@ public class MenuManager : MonoBehaviour
     [SerializeField] private GameObject FS_LoadGame;
     [SerializeField] private GameObject FS_Credits;
 
+    [Header("Load/New Save Buttons")]
+    [SerializeField] private GameObject[] loadSaveButtons;
+    [SerializeField] private GameObject[] newSaveButtons;
+    [SerializeField] private GameObject loadSaveText;
+    [SerializeField] private GameObject newSaveText;
+
     private PlayerStateMachine playerStateMachine;
     SubtitleManager subtitleManager;
 
@@ -62,7 +68,7 @@ public class MenuManager : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log(gameManager.playingGame);
+        //Debug.Log(gameManager.playingGame);
         if (playerStateMachine.IsMenuOpenClosePressed)//pause button is pressed
         {
             DefaultCheckers();
@@ -171,6 +177,7 @@ public class MenuManager : MonoBehaviour
         if (PauseCanvas.activeSelf) //if in game and in pause menu, go to main menu
         {
             gameManager.playingGame = false;
+            saveLoadScript.Save();
         }
         DefaultCheckers();
         PlayingGame();
@@ -183,23 +190,75 @@ public class MenuManager : MonoBehaviour
 
     public void M_NewGame()
     {
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-        gameManager.playingGame = true;
-        gameManager.paused = false;
-        saveLoadScript.NewGame(0);
-        PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
-        subtitleManager.PlaySubtitle("Beginning");
+        LoadGameCanvas.SetActive(true);
+        loadSaveText.SetActive(false);
+        newSaveText.SetActive(true);
+        foreach (GameObject button in loadSaveButtons)
+        {
+            button.SetActive(false);
+        }
+        foreach (GameObject button in newSaveButtons)
+        {
+            button.SetActive(true);
+        }
+        EventSystem.current.SetSelectedGameObject(FS_LoadGame);
     }
     public void M_LoadGame()
     {
         MainMenuCanvas.SetActive(false);
         LoadGameCanvas.SetActive(true);
+        loadSaveText.SetActive(true);
+        newSaveText.SetActive(false);
+        int index = 0;
+        foreach (GameObject button in newSaveButtons)
+        {
+            button.SetActive(false);
+        }
+        foreach (GameObject button in loadSaveButtons)
+        {
+            button.SetActive(true);
+            switch(index)
+            {
+                case 0:
+                    if (PlayerPrefs.GetString("S1Room") == "")
+                    {
+                        button.SetActive(false);
+                        newSaveButtons[index].SetActive(true);
+                    }
+                    break;
+                case 1:
+                    if (PlayerPrefs.GetString("S2Room") == "")
+                    {
+                        button.SetActive(false);
+                        newSaveButtons[index].SetActive(true);
+                    }
+                    break;
+                case 2:
+                    if (PlayerPrefs.GetString("S3Room") == "")
+                    {
+                        button.SetActive(false);
+                        newSaveButtons[index].SetActive(true);
+                    }
+                    break;
+            }
+            index++;
+        }
+        
         EventSystem.current.SetSelectedGameObject(FS_LoadGame);
     }
 
+    public void StartGame()
+    {
+        Time.timeScale = 1f;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        gameManager.playingGame = true;
+        gameManager.paused = false;
+        PlayerUI.SetActive(true);
+        LoadGameCanvas.SetActive(false);
+        subtitleManager.PlaySubtitle("Beginning");
+    }
 
     public void M_Quit()
     {

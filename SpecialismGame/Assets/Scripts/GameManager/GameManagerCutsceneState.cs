@@ -69,11 +69,15 @@ public class GameManagerCutsceneState : GameManagerBaseState
         if (Ctx.finishedInvestigating)
         {
             Ctx.animator_CinematicCamera.SetBool("opening", true);
-            Ctx.roomDisplayValue = 0;
+            Ctx.roomDisplayValue = 2;
         }
         else
         {
             Ctx.animator_CinematicCamera.SetBool("opening", false);
+        }
+        if (Ctx.day == 4)
+        {
+            Ctx.roomDisplayValue = 4;
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
     }

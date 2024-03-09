@@ -5,13 +5,27 @@ using TMPro;
 public class SaveLoadScript : MonoBehaviour
 {
     GameManagerStateMachine gameManager;
-    TMP_Text[] saveButtonDayText;
-    TMP_Text[] saveButtonRoomText;
-
+    MenuManager menuManager;
+    [SerializeField] TMP_Text[] saveButtonDayText;
+    [SerializeField] TMP_Text[] saveButtonRoomText;
 
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManagerStateMachine>();
+        menuManager = FindObjectOfType<MenuManager>();
+    }
+
+    private void OnApplicationQuit()
+    {
+        if (gameManager.playingGame)
+        {
+            SaveGameplay();
+        }
+    }
+
+    private void Start()
+    {
+        UpdateLevelDetails();
     }
 
     public void SaveGameplay()
@@ -22,24 +36,63 @@ public class SaveLoadScript : MonoBehaviour
 
     private void ChangeSaveButtonValues()
     {
-        switch (gameManager.saveNumber)
+        switch(gameManager.saveNumber)
         {
-            case 0:
-                PlayerPrefs.SetInt("S1Day", gameManager.day);
-                if(gameManager.in)
-                {
-                    PlayerPrefs.SetInt("S1Room", 7);
-                }
-                else
-                {
-                    PlayerPrefs.SetInt("S1Room", gameManager.currentRoomNumber);
-                }
-                break;
             case 1:
+                PlayerPrefs.SetString("S1Day", "Day " + gameManager.day);
+                PlayerPrefs.SetString("S1Room", FindRoom());
                 break;
             case 2:
+                PlayerPrefs.SetString("S2Day", "Day " + gameManager.day);
+                PlayerPrefs.SetString("S2Room", FindRoom());
+                break;
+            case 3:
+                PlayerPrefs.SetString("S3Day", "Day " + gameManager.day);
+                PlayerPrefs.SetString("S3Room", FindRoom());
                 break;
         }
+        UpdateLevelDetails();
+    }
+
+    private string FindRoom()
+    {
+        switch(gameManager.roomDisplayValue)
+        {
+            case 0:
+                return "Hallway";
+            case 1:
+                switch(gameManager.currentRoomNumber)
+                {
+                    case 1:
+                        return "Living Room";
+                    case 2:
+                        return "Bathroom";
+                    case 3:
+                        return "Kitchen";
+                    case 4:
+                        return "Bedroom";
+                    case 5:
+                        return "Study Room";
+                    case 6:
+                        return "Dining Room";
+                }
+                break;
+            case 2:
+                return "Deliberation";
+            case 3:
+                return "Closing";
+        }
+        return "";
+    }
+
+    private void UpdateLevelDetails()
+    {
+        saveButtonDayText[0].text = PlayerPrefs.GetString("S1Day", "New Save");
+        saveButtonDayText[1].text = PlayerPrefs.GetString("S2Day", "New Save");
+        saveButtonDayText[2].text = PlayerPrefs.GetString("S3Day", "New Save");
+        saveButtonRoomText[0].text = PlayerPrefs.GetString("S1Room", "");
+        saveButtonRoomText[1].text = PlayerPrefs.GetString("S2Room", "");
+        saveButtonRoomText[2].text = PlayerPrefs.GetString("S3Room", "");
     }
 
 
@@ -51,15 +104,15 @@ public class SaveLoadScript : MonoBehaviour
         gameManager.day = data.day;
         gameManager.hasRoomBeenChosen = data.hasRoomBeenChosen;
         gameManager.finishedInvestigating = data.finishedInvestigating;
-        Vector3 playerPosition = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[3]);
+        Vector3 playerPosition = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[2]);
         gameManager.Player.transform.position = playerPosition;
         gameManager.roomsSearched = data.roomsSearched;
-        foreach (PickupObjects clueObject in data.pickupObjects)
+        for(int i = 0; i < data.pickedUpObjectsName.Count; i++)
         {
-            CluePickup clue = new CluePickup();
-            clue.itemName = clueObject.pickedUpObjectsName;
-            clue.itemDescription = clueObject.pickedUpObjectsDescription;
-            clue.suspectRelated = clueObject.pickedUpObjectsSuspect;
+            CluePickup clue = new();
+            clue.itemName = data.pickedUpObjectsName[i];
+            clue.itemDescription = data.pickedUpObjectsDescription[i];
+            clue.suspectRelated = data.pickedUpObjectsSuspect[i];
             gameManager.pickedUpObjects.Add(clue);
         }
     }
@@ -70,6 +123,7 @@ public class SaveLoadScript : MonoBehaviour
 
     public void NewGame(int saveNumber)
     {
+        gameManager.pickedUpObjects = new();
         gameManager.currentRoomNumber = 0;
         gameManager.suspectAccused = 0;
         gameManager.day = 1;
@@ -78,11 +132,14 @@ public class SaveLoadScript : MonoBehaviour
         gameManager.Player.transform.position = new Vector3(0, 1, 0);
         gameManager.roomsSearched = new List<int> { };
         gameManager.saveNumber = saveNumber;
+        menuManager.StartGame();
     }
 
     public void LoadGame(int saveNumber)
     {
+        gameManager.pickedUpObjects = new();
         gameManager.saveNumber = saveNumber;
         LoadGameplay();
+        menuManager.StartGame();
     }
 }

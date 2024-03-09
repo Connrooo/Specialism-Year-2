@@ -105,7 +105,7 @@ public class GameManagerStateMachine : MonoBehaviour
     }
     private void Update()
     {
-        Debug.Log(day);
+        //Debug.Log(day);
         currentState.UpdateStates();
         if (paused || !playingGame)
         {

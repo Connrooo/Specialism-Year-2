@@ -12,10 +12,10 @@ public class GameplayData
     public bool finishedInvestigating;
     public float[] playerPosition;
     public List<int> roomsSearched;
-    //public List<string> pickedUpObjectsName;
-    //public List<string> pickedUpObjectsDescription;
-    //public List<int> pickedUpObjectsSuspect;
-    public List<PickupObjects> pickupObjects;
+    public List<string> pickedUpObjectsName = new();
+    public List<string> pickedUpObjectsDescription = new();
+    public List<int> pickedUpObjectsSuspect = new();
+    //public List<PickupObjects> pickupObjects;
 
     public GameplayData(GameManagerStateMachine gameManager) 
     {
@@ -31,21 +31,21 @@ public class GameplayData
         roomsSearched = gameManager.roomsSearched;
         foreach (CluePickup clue in gameManager.pickedUpObjects)
         {
-            PickupObjects objectPickup = new PickupObjects();
-            objectPickup.pickedUpObjectsName = clue.itemName;
-            objectPickup.pickedUpObjectsDescription = clue.itemDescription;
-            objectPickup.pickedUpObjectsSuspect = clue.suspectRelated;
-            //pickupObjects.pickedUpObjectsName.Add(clue.itemName);
-            //pickedUpObjectsDescription.Add(clue.itemDescription);
-            //pickedUpObjectsSuspect.Add(clue.suspectRelated);
+            //PickupObjects objectPickup = new PickupObjects();
+            //objectPickup.pickedUpObjectsName = clue.itemName;
+            //objectPickup.pickedUpObjectsDescription = clue.itemDescription;
+            //objectPickup.pickedUpObjectsSuspect = clue.suspectRelated;
+            pickedUpObjectsName.Add(clue.itemName);
+            pickedUpObjectsDescription.Add(clue.itemDescription);
+            pickedUpObjectsSuspect.Add(clue.suspectRelated);
 
         }
     }
 }
 
-public class PickupObjects
-{
-    public string pickedUpObjectsName;
-    public string pickedUpObjectsDescription;
-    public int pickedUpObjectsSuspect;
-}
+//public class PickupObjects
+//{
+//    public string pickedUpObjectsName;
+//    public string pickedUpObjectsDescription;
+//    public int pickedUpObjectsSuspect;
+//}
