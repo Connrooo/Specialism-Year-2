@@ -14,6 +14,5 @@ public class CinematicCamera : MonoBehaviour
     private void animationOver()
     {
         gameManager.stopAnimation = true;
-        Debug.Log("Sent");
     }
 }

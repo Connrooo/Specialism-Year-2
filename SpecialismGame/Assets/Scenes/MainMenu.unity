@@ -25678,12 +25678,12 @@ MonoBehaviour:
   inaccessibleDoorsPrefab: {fileID: 7401770424789401909, guid: 0731ccd004cfac64faffae91f8c02bda,
     type: 3}
   rooms:
-  - {fileID: 1554383101779056392, guid: 40aea0375db711443bee7e0bbc588eaa, type: 3}
-  - {fileID: 7308823656107091905, guid: fd2756b5b65d27d42b0003e7f2c099cc, type: 3}
-  - {fileID: 5559358603258103364, guid: 4f9fc5b377edbd74580e5b882926b361, type: 3}
-  - {fileID: 4190517109336087891, guid: 1a94d22091f15a543b84e4cee4de9cd4, type: 3}
-  - {fileID: 1328244626444794567, guid: be90dd4bfc4f6e446b713a9ee393bf15, type: 3}
-  - {fileID: 2646778470274318716, guid: dba948b2270762744ac69b3b2aaec059, type: 3}
+  - {fileID: 2618232774532979585, guid: 40aea0375db711443bee7e0bbc588eaa, type: 3}
+  - {fileID: 615398981135766495, guid: fd2756b5b65d27d42b0003e7f2c099cc, type: 3}
+  - {fileID: 986371603832740012, guid: 4f9fc5b377edbd74580e5b882926b361, type: 3}
+  - {fileID: 7959838991936992169, guid: 1a94d22091f15a543b84e4cee4de9cd4, type: 3}
+  - {fileID: 6277079742530902592, guid: be90dd4bfc4f6e446b713a9ee393bf15, type: 3}
+  - {fileID: 6570782877124963178, guid: dba948b2270762744ac69b3b2aaec059, type: 3}
   deliberationPrefab: {fileID: 4448036342886092049, guid: fbeb51b901dc4c4458cc9f9e2b87d5b5,
     type: 3}
   evidence0: []

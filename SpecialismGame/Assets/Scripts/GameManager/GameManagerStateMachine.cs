@@ -12,6 +12,7 @@ public class GameManagerStateMachine : MonoBehaviour
 
     [Header("Global Values")]
     public MenuManager menuManager;
+    public SaveLoadScript saveLoadScript;
     public GameObject Player;
     public GameObject currentRoomSummoned;
     public GameObject summonPointPrefab;
@@ -92,6 +93,7 @@ public class GameManagerStateMachine : MonoBehaviour
     private void Start()
     {
         menuManager = GameObject.FindObjectOfType<MenuManager>();
+        saveLoadScript = GameObject.FindObjectOfType<SaveLoadScript>();
         menuCamera = GameObject.FindGameObjectWithTag("MenuCamera").GetComponent<CinemachineVirtualCamera>();
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();
         animator_CinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent <Animator>();

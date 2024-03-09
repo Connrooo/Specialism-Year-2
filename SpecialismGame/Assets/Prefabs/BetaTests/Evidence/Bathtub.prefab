@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &2723501172434567447
+--- !u!1 &1366449177709334578
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,49 +8,49 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4051439467959580989}
-  - component: {fileID: 8612568627733041239}
-  - component: {fileID: 8046593157955568257}
-  - component: {fileID: 7509216632732912836}
-  - component: {fileID: 6445681383643708276}
-  - component: {fileID: 1100411940436224468}
+  - component: {fileID: 5871181622274612155}
+  - component: {fileID: 4141111325092648210}
+  - component: {fileID: 5153494463735816097}
+  - component: {fileID: 8510684977539435313}
+  - component: {fileID: 2379857033824151434}
+  - component: {fileID: 7741896564737296372}
   m_Layer: 0
-  m_Name: Knife
+  m_Name: Bathtub
   m_TagString: Interact
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4051439467959580989
+--- !u!4 &5871181622274612155
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.25, y: 1.75, z: -2.7399998}
-  m_LocalScale: {x: 0.75, y: 0.2, z: 0.2}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -4, y: 0.45999998, z: -0.45}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8612568627733041239
+--- !u!33 &4141111325092648210
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8046593157955568257
+--- !u!23 &5153494463735816097
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -86,13 +86,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7509216632732912836
+--- !u!65 &8510684977539435313
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -107,32 +107,32 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6445681383643708276
+--- !u!114 &2379857033824151434
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6dd58ef946291694cb9410f6a8774012, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   interactType: 
---- !u!114 &1100411940436224468
+--- !u!114 &7741896564737296372
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2723501172434567447}
+  m_GameObject: {fileID: 1366449177709334578}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 57ed9571f702f9e45adc5ef538bded4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pickup:
-    itemName: Knife
-    itemDescription: A standard cooking knife. Sharp, durable, and used...
-    suspectRelated: 0
+    itemName: Bathtub
+    itemDescription: "A very expensive bathtub, slightly damaged\u2026"
+    suspectRelated: 2

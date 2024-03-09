@@ -162,7 +162,6 @@ public class PlayerStateMachine : MonoBehaviour
                 InteractPromptTextAnim.enabled = true;
                 if (IsInteractPressed)
                 {
-                    Debug.Log("Pressed");
                     return true;
                 }
                 return false;

@@ -41,8 +41,8 @@ public class GameManagerCutsceneState : GameManagerBaseState
         {
             if(Ctx.day>=4)
             {
-                Ctx.canMove = false;
-                SwitchState(Factory.Menu());
+                Ctx.playingGame = false;
+                Ctx.saveLoadScript.Save();
             }
             else
             {

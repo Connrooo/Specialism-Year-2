@@ -163,6 +163,9 @@ public class MenuManager : MonoBehaviour
 
     public void GoToMenu()
     {
+        PlayerUI.SetActive(false);
+        Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = true;
         Time.timeScale = 0f;
         gameManager.playingGame = false;
         //save progress to correct save
