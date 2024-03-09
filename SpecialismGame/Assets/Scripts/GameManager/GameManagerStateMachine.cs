@@ -24,6 +24,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public int currentRoomNumber; //Room number that player is currently investigating (0 = none selected) //*
     public Vector3 playerPosition; //*
     public int saveNumber;
+    public int roomDisplayValue;
     //Quip objects
     //Power-ups
 

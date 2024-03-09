@@ -188,7 +188,7 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = false;
         gameManager.playingGame = true;
         gameManager.paused = false;
-        saveLoadScript.NewGame();
+        saveLoadScript.NewGame(0);
         PlayerUI.SetActive(true);
         MainMenuCanvas.SetActive(false);
         subtitleManager.PlaySubtitle("Beginning");

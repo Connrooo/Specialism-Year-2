@@ -17,7 +17,32 @@ public class SaveLoadScript : MonoBehaviour
     public void SaveGameplay()
     {
         SaveSystem.SaveGameplay(gameManager);
+        ChangeSaveButtonValues();
     }
+
+    private void ChangeSaveButtonValues()
+    {
+        switch (gameManager.saveNumber)
+        {
+            case 0:
+                PlayerPrefs.SetInt("S1Day", gameManager.day);
+                if(gameManager.in)
+                {
+                    PlayerPrefs.SetInt("S1Room", 7);
+                }
+                else
+                {
+                    PlayerPrefs.SetInt("S1Room", gameManager.currentRoomNumber);
+                }
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+        }
+    }
+
+
     public void LoadGameplay()
     {
         GameplayData data = SaveSystem.LoadGameplay(gameManager);
@@ -43,7 +68,7 @@ public class SaveLoadScript : MonoBehaviour
         SaveGameplay();
     }
 
-    public void NewGame()
+    public void NewGame(int saveNumber)
     {
         gameManager.currentRoomNumber = 0;
         gameManager.suspectAccused = 0;
@@ -52,9 +77,10 @@ public class SaveLoadScript : MonoBehaviour
         gameManager.finishedInvestigating = false;
         gameManager.Player.transform.position = new Vector3(0, 1, 0);
         gameManager.roomsSearched = new List<int> { };
+        gameManager.saveNumber = saveNumber;
     }
 
-    public void Load(int saveNumber)
+    public void LoadGame(int saveNumber)
     {
         gameManager.saveNumber = saveNumber;
         LoadGameplay();
