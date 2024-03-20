@@ -119,7 +119,7 @@ PrefabInstance:
     - target: {fileID: 49932577166603187, guid: 799105d88b651ef4d91350a18711b227,
         type: 3}
       propertyPath: m_Name
-      value: Cloth
+      value: Stained Cloth
       objectReference: {fileID: 0}
     - target: {fileID: 6796731645250465253, guid: 799105d88b651ef4d91350a18711b227,
         type: 3}
