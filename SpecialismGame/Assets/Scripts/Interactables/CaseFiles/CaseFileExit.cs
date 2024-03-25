@@ -18,6 +18,7 @@ public class CaseFileExit : MonoBehaviour
         var caseNumber = playerManager.currentObject.GetComponent<CaseFile>().suspectRelated;
         gameManager.caseFileImages[caseNumber].SetActive(false);
         gameManager.canMove = true;
+        gameManager.stopInteract = false;
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }

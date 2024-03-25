@@ -20,6 +20,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         }
         Ctx.cinematicCamera.Priority = 11;
         Ctx.canMove = false;
+        Ctx.stopInteract = true;
         DayChecker();
     }
     public override void UpdateState()
@@ -29,6 +30,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
     public override void ExitState() 
     {
         Ctx.inCutscene= false;
+        Ctx.stopInteract = false;
     }
     public override void CheckSwitchStates()
     {

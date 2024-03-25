@@ -54,6 +54,7 @@ public class PlayerStateMachine : MonoBehaviour
     public float cameraInputY;
     [Header("Interact Button")]
     public bool IsInteractPressed;
+    public bool interactedCS1;
     [Header("Menu Open Close Button")]
     public bool IsMenuOpenClosePressed;
     [Header("Backwards Button")]

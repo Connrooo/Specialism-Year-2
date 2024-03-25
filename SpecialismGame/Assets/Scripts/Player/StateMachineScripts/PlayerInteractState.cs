@@ -59,66 +59,82 @@ public class PlayerInteractState : PlayerBaseState
 
     private void PlayerInteractingWithObject()
     {
-        if (PlayerStateMachine.controlScheme!=0)
+        if (!Ctx.gameManager.stopInteract)
         {
-            if (!Ctx.loading)
+            if (PlayerStateMachine.controlScheme != 0 && !Ctx.gameManager.paused)
             {
-                Ctx.loading = true;
-                Ctx.loadingCurrent = Transform.Instantiate(Ctx.loadBar, new Vector3(Ctx.pointOfInterest.x, Ctx.pointOfInterest.y, Ctx.pointOfInterest.z), Quaternion.identity);
+                if (Ctx.interactedCS1)
+                {
+                    FinishInteraction();
+                }
+                if (!Ctx.loading&&!Ctx.interactedCS1)
+                {
+                    Ctx.loading = true;
+                    Ctx.loadingCurrent = Transform.Instantiate(Ctx.loadBar, new Vector3(Ctx.pointOfInterest.x, Ctx.pointOfInterest.y, Ctx.pointOfInterest.z), Quaternion.identity);
+                }
+                if(Ctx.loadingCurrent!=null)
+                {
+                    Ctx.loadingCurrent.transform.position = Vector3.SmoothDamp(Ctx.loadingCurrent.transform.position, Ctx.pointOfInterest, ref Ctx.loadingReference, Ctx.BarTransitionTime * Time.deltaTime);
+                }
+                Ctx.interactedCS1 = false;
             }
-            Ctx.loadingCurrent.transform.position = Vector3.SmoothDamp(Ctx.loadingCurrent.transform.position, Ctx.pointOfInterest, ref Ctx.loadingReference, Ctx.BarTransitionTime * Time.deltaTime);
+            else
+            {
+                FinishInteraction();
+            }
         }
-        else
-        {
+    }
 
-            
-            var objectScript = Ctx.currentObject.GetComponent<Interactable>();
-            switch (objectScript.interactType)
-            {
-                case "Clue":
-                    var clueScript = Ctx.currentObject.GetComponent<ClueScript>();
-                    Ctx.gameManager.pickedUpObjects.Add(clueScript.pickup);
-                    Object.Destroy(Ctx.currentObject);
-                    break;
-                case "Door":
-                    var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
-                    Ctx.gameManager.currentRoomNumber = doorScript.roomNumber;
-                    //doorScript.doorAnimator.SetTrigger("Interacted");
-                    if(Ctx.gameManager.currentRoomNumber != 0)
-                    {
-                        Ctx.gameManager.hasRoomBeenChosen= true;
-                    }
-                    break;
-                case "Chief":
-                    if (Ctx.gameManager.inRoom)
-                    {
-                        Ctx.gameManager.roomsSearched.Add(Ctx.gameManager.currentRoomNumber);
-                        Ctx.gameManager.finishedInvestigating = true;
-                    }
-                    else if(Ctx.gameManager.inDeliberation)
-                    {
-                        Ctx.gameManager.finishedInvestigating = false;
-                    }
-                    else
-                    {
-                        Debug.Log("Not in room, haven't written this yet bozo");
-                    }
-                    break;
-                case "CaseFile":
-                    var caseNumber = Ctx.currentObject.GetComponent<CaseFile>().suspectRelated;
-                    Ctx.gameManager.caseFileImages[caseNumber].SetActive(true);
-                    Ctx.gameManager.canMove = false;
-                    Cursor.lockState = CursorLockMode.Confined;
-                    Cursor.visible = true;
-                    EventSystem.current.SetSelectedGameObject(Ctx.gameManager.caseFileExits[caseNumber]);
-                    break;
-                case "AccuseButton":
-                    Ctx.currentObject.GetComponent<AccuseButton>().ActivateButton();
-                    break;
-                case "Accuse":
-                    Ctx.currentObject.GetComponent<AccuseSuspectScript>().AccuseSuspect();
-                    break;
-            }
+    public void FinishInteraction()
+    {
+        var objectScript = Ctx.currentObject.GetComponent<Interactable>();
+        switch (objectScript.interactType)
+        {
+            case "Clue":
+                var clueScript = Ctx.currentObject.GetComponent<ClueScript>();
+                Ctx.gameManager.pickedUpObjects.Add(clueScript.pickup);
+                Object.Destroy(Ctx.currentObject);
+                break;
+            case "Door":
+                var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
+                Ctx.gameManager.currentRoomNumber = doorScript.roomNumber;
+                //doorScript.doorAnimator.SetTrigger("Interacted");
+                if (Ctx.gameManager.currentRoomNumber != 0)
+                {
+                    Ctx.gameManager.hasRoomBeenChosen = true;
+                }
+                break;
+            case "Chief":
+                if (Ctx.gameManager.inRoom)
+                {
+                    Ctx.gameManager.roomsSearched.Add(Ctx.gameManager.currentRoomNumber);
+                    Ctx.gameManager.finishedInvestigating = true;
+                }
+                else if (Ctx.gameManager.inDeliberation)
+                {
+                    Ctx.gameManager.finishedInvestigating = false;
+                    Ctx.gameManager.stopInteract = true;
+                }
+                else
+                {
+                    Debug.Log("Not in room, haven't written this yet bozo");
+                }
+                break;
+            case "CaseFile":
+                var caseNumber = Ctx.currentObject.GetComponent<CaseFile>().suspectRelated;
+                Ctx.gameManager.caseFileImages[caseNumber].SetActive(true);
+                Ctx.gameManager.canMove = false;
+                Ctx.gameManager.stopInteract = true;
+                Cursor.lockState = CursorLockMode.Confined;
+                Cursor.visible = true;
+                EventSystem.current.SetSelectedGameObject(Ctx.gameManager.caseFileExits[caseNumber]);
+                break;
+            case "AccuseButton":
+                Ctx.currentObject.GetComponent<AccuseButton>().ActivateButton();
+                break;
+            case "Accuse":
+                Ctx.currentObject.GetComponent<AccuseSuspectScript>().AccuseSuspect();
+                break;
         }
     }
 

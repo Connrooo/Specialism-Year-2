@@ -71,8 +71,8 @@ public class MenuManager : MonoBehaviour
         //Debug.Log(gameManager.playingGame);
         if (playerStateMachine.IsMenuOpenClosePressed)//pause button is pressed
         {
-            DefaultCheckers();
             PlayingGame();
+            DefaultCheckers();
             if (PauseCanvas.activeSelf)//if in pause menu, resume game
             {
                 P_Resume();
@@ -82,6 +82,7 @@ public class MenuManager : MonoBehaviour
                 P_PauseGame();
             }
             playerStateMachine.IsMenuOpenClosePressed = false;
+            Debug.Log("wow");
         }
     }
 
@@ -104,6 +105,7 @@ public class MenuManager : MonoBehaviour
         {
             AccessibilityCanvas.SetActive(false);
             SettingsCanvas.SetActive(true);
+            Debug.Log("Hi!");
             EventSystem.current.SetSelectedGameObject(FS_Settings);
         }
 
@@ -182,8 +184,9 @@ public class MenuManager : MonoBehaviour
             gameManager.playingGame = false;
             saveLoadScript.Save();
         }
-        DefaultCheckers();
         PlayingGame();
+        DefaultCheckers();
+        
         
         //else
         //{

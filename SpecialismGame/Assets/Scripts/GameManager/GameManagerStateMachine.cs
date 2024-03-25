@@ -19,6 +19,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public bool paused; //checks if the game is paused
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
+    public bool stopInteract;
     public int day; //check the day that the player is on 1,2,3 or day 4 (the end cutscene, only used in cutscene) //*
     public List<int> roomsSearched; //List of rooms available to visit //*
     public int suspectAccused; //*
