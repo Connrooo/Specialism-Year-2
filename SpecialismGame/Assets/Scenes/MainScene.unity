@@ -191,6 +191,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: DougModel
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: f3c726534ed3ee6469ab6fea52649586,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 69200643b8f428b45870eef94ca1a3a1, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
