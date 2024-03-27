@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InteractDougManager : MonoBehaviour
 {
-    ClueScript itemScript; 
+    public ClueScript itemScript; 
     // Start is called before the first frame update
     void Start()
     {
