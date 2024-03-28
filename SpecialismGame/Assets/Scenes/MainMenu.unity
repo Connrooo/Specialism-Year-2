@@ -25645,6 +25645,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 0}
+  saveLoadScript: {fileID: 0}
   Player: {fileID: 0}
   currentRoomSummoned: {fileID: 0}
   summonPointPrefab: {fileID: 2391806495177070566, guid: 2959bc6b41e86d74d9c403533c076c70,
@@ -25652,6 +25653,7 @@ MonoBehaviour:
   paused: 0
   playingGame: 0
   canMove: 0
+  stopInteract: 0
   day: 0
   roomsSearched: 
   suspectAccused: 0

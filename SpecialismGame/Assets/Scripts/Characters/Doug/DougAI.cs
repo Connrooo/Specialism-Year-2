@@ -8,6 +8,8 @@ using UnityEngine.AI;
 public class DougAI : MonoBehaviour
 {
     float objectFindTimer;
+    float rotationTimer;
+    float rotationTimerValue;
     public float dougWaitTimer = 180;
     GameManagerStateMachine gameManager;
     GameObject currentObject;
@@ -41,7 +43,7 @@ public class DougAI : MonoBehaviour
     {
         for (int i = 0; i < interactDougManagers.Count; i++)
         {
-            if (interactDougManagers[i].transform == null)
+            if (interactDougManagers[i]==null)
             {
                 interactDougManagers.Remove(interactDougManagers[i]);
             }
@@ -55,7 +57,6 @@ public class DougAI : MonoBehaviour
     {
         if(objectFindTimer>=dougWaitTimer)
         {
-            Debug.Log("StartedLooking");
             LookForObject();
         }    
         else
@@ -76,11 +77,12 @@ public class DougAI : MonoBehaviour
         if (resetRotation)
         {
             transform.rotation = Quaternion.Euler(Vector3.SmoothDamp(transform.rotation.eulerAngles, targetRotation.eulerAngles, ref rotSmoothDampReference, 50 * Time.deltaTime));
-            if (transform.rotation == defaultRotation)
+            rotationTimer += Time.deltaTime;
+            if (rotationTimer >= rotationTimerValue)
             {
+                rotationTimer = 0;
                 resetRotation = false;
             }
-
         }
     }
 
@@ -88,7 +90,7 @@ public class DougAI : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(5,30));
         dougAnimationScript.dougAnimator.SetInteger("InteruptAnimation", Random.Range(1, 7));
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2f);
         dougAnimationScript.dougAnimator.SetInteger("InteruptAnimation", 0);
         StartCoroutine(TriggerIdle());
     }
@@ -97,7 +99,7 @@ public class DougAI : MonoBehaviour
 
     private void LookForObject()
     {
-        if (interactDougManagers[0]!=null)
+        if (interactDougManagers.Count != 0)
         {
             int i = Random.Range(0, interactDougManagers.Count);
             objectSelected = interactDougManagers[i].gameObject;
@@ -114,26 +116,32 @@ public class DougAI : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        if (objectSelected!=null)
+        if (objectSelected != null)
         {
-            dougAnimationScript.dougPickup = true;
-            currentObject = objectSelected.GetComponent<InteractDougManager>().itemScript.gameObject;
-            targetRotation = Quaternion.LookRotation(currentObject.transform.position);
-            resetRotation = true;
+            if (col.transform == objectSelected.transform)
+            {
+                dougAnimationScript.dougPickup = true;
+                currentObject = objectSelected.GetComponent<InteractDougManager>().itemScript.gameObject;
+                targetRotation = Quaternion.LookRotation(currentObject.transform.position);
+                rotationTimerValue = .5f;
+                resetRotation = true;
+            }
+            else if (col.transform.CompareTag("SquatObject"))
+            {
+                dougAnimationScript.dougWalking = false;
+                objectFindTimer = 0;
+                targetRotation = defaultRotation;
+                rotationTimerValue = 1f;
+                resetRotation = true;
+            }
         }
         else if (col.transform.CompareTag("SquatObject"))
         {
-            Debug.Log("Hehehe");
             dougAnimationScript.dougWalking = false;
             objectFindTimer = 0;
             targetRotation = defaultRotation;
+            rotationTimerValue = 1f;
             resetRotation = true;
-        }
-        else if (objectSelected==null)
-        {
-            Debug.Log("Oh");
-            dougGoTo = squatCollider.transform.position;
-            dougAnimationScript.dougPickup = false;
         }
     }
 
@@ -151,7 +159,11 @@ public class DougAI : MonoBehaviour
     {
         if (dougAnimationScript.dougWalking)
         {
-            Debug.Log("What");
+            if (objectSelected == null)
+            {
+                dougGoTo = squatCollider.transform.position;
+                dougAnimationScript.dougPickup = false;
+            }
             dougNavMesh.destination = dougGoTo;
         }
     }

@@ -22,6 +22,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     [Header("Interact Text Change")]
     public InputActionReference inputActionReference;
+    public string inputActionDisplayed;
 
     [Header("Player Walk Variables")]
     public Vector3 moveDirection;

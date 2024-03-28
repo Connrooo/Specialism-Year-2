@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AccuseSuspectScript : MonoBehaviour
 {
-    CaseFile caseFile;
+    public CaseFile caseFile;
     AccuseButton accuseButtonScript;
     GameManagerStateMachine gameManager;
 

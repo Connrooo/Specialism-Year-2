@@ -7,6 +7,9 @@ public class PlayerInteractState : PlayerBaseState
 {
     public PlayerInteractState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
     : base(currentContext, playerStateFactory) { }
+
+    
+    GameObject objectHighlighted;
     public override void EnterState() { }
     public override void UpdateState() 
     {
@@ -14,7 +17,8 @@ public class PlayerInteractState : PlayerBaseState
         {
             InteractRaycast();
         }
-        Ctx.InteractPromptText.text = ("Press "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 0)+ " or "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 1)+" to gather evidence");
+        DisplayInteractionText();
+        Ctx.InteractPromptText.text = ("Press "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 0)+ " or "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 1)+ Ctx.inputActionDisplayed);
     }
     public override void ExitState() { }
     public override void CheckSwitchStates() 
@@ -32,6 +36,7 @@ public class PlayerInteractState : PlayerBaseState
         {
             if (hit.collider.tag == "Interact")
             {
+                objectHighlighted = hit.transform.gameObject;
                 Ctx.InteractPromptTextAnim.SetBool("OnObject", true);
                 if (Ctx.CanInteract())
                 {
@@ -137,6 +142,68 @@ public class PlayerInteractState : PlayerBaseState
                 break;
         }
     }
+    public void DisplayInteractionText()
+    {
+        if (objectHighlighted!= null)
+        {
+            var objectScript = objectHighlighted.GetComponent<Interactable>();
+            switch (objectScript.interactType)
+            {
+                case "Clue":
+                    Ctx.inputActionDisplayed = " to gather evidence";
+                    break;
+                case "Door":
+                    Ctx.inputActionDisplayed = " to open the door";
+                    break;
+                case "Chief":
+                    if (Ctx.gameManager.inRoom)
+                    {
+                        Ctx.inputActionDisplayed = " to go to deliberation";
+                    }
+                    else if (Ctx.gameManager.inDeliberation)
+                    {
+                        if (Ctx.gameManager.day == 2)
+                        {
+                            Ctx.inputActionDisplayed = " to go to the final day";
+                        }
+                        else
+                        {
+                            Ctx.inputActionDisplayed = " to go to the next day";
+                        }
+                    }
+                    break;
+                case "CaseFile":
+                    Ctx.inputActionDisplayed = " to open the case file";
+                    break;
+                case "AccuseButton":
+                    Ctx.inputActionDisplayed = " to start accusing (THIS ACTION CANNOT BE STOPPED)";
+                    break;
+                case "Accuse":
+                    var suspectNumber = objectHighlighted.GetComponent<AccuseSuspectScript>().caseFile.suspectRelated;
+                    string suspectName;
+                    switch (suspectNumber)
+                    {
+                        case 0:
+                            suspectName = "Chef, Paddington Jenkins";
+                            Ctx.inputActionDisplayed = " to accuse the " + suspectName;
+                            break;
+                        case 1:
+                            suspectName = "Wife, Dianne Monclair";
+                            Ctx.inputActionDisplayed = " to accuse the " + suspectName;
+                            break;
+                        case 2:
+                            suspectName = "Butler, Jamie Doe";
+                            Ctx.inputActionDisplayed = " to accuse the " + suspectName;
+                            break;
+                    }
+                    break;
+            }
+        }
+    }
+
+
+
+    
 
     private void NotInteractingWithObject()
     {
