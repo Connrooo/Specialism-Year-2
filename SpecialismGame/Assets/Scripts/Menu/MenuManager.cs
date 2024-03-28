@@ -82,7 +82,6 @@ public class MenuManager : MonoBehaviour
                 P_PauseGame();
             }
             playerStateMachine.IsMenuOpenClosePressed = false;
-            Debug.Log("wow");
         }
     }
 

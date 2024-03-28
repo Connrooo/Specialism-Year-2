@@ -6,6 +6,7 @@ using UnityEngine;
 public class DougAnimationScript : MonoBehaviour
 {
     public Animator dougAnimator;
+    private DougAI dougAI;
     GameManagerStateMachine gameManager;
     public bool dougWalking;
     public bool dougPickup;
@@ -15,6 +16,7 @@ public class DougAnimationScript : MonoBehaviour
     {
         dougAnimator = GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManagerStateMachine>();
+        dougAI = FindObjectOfType<DougAI>();
         if (gameManager.inHallway)
         {
             RoomAnimation(0);
@@ -110,5 +112,10 @@ public class DougAnimationScript : MonoBehaviour
         dougAnimator.SetTrigger("SwitchRoom");
         dougAnimator.SetBool("Pickup", false);
         dougAnimator.SetBool("Walking", false);
+    }
+
+    public void AnimTrigger()
+    {
+        dougAI.FoundObject();
     }
 }
