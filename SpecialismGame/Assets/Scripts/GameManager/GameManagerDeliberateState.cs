@@ -27,6 +27,17 @@ public class GameManagerDeliberateState : GameManagerBaseState
         Ctx.Player.transform.position = new Vector3(0f, 1f, 0f);
         Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.deliberationPrefab, Ctx.currentRoomSummoned.transform);
+        if (Ctx.accusingSuspect)
+        {
+            foreach(GameObject obj in GameObject.FindGameObjectsWithTag("Interact"))
+            {
+                if (obj.GetComponent<Interactable>().interactType == "CaseFile")
+                {
+                    obj.GetComponent<Interactable>().interactType = "Accuse";
+                }
+            }
+            //change lights
+        }
     }
     public override void UpdateState()
     {

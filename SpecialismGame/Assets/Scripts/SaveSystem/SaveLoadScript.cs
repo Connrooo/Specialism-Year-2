@@ -107,6 +107,7 @@ public class SaveLoadScript : MonoBehaviour
         Vector3 playerPosition = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[2]);
         gameManager.Player.transform.position = playerPosition;
         gameManager.roomsSearched = data.roomsSearched;
+        gameManager.accusingSuspect = data.accusingSuspect;
         for(int i = 0; i < data.pickedUpObjectsName.Count; i++)
         {
             CluePickup clue = new();

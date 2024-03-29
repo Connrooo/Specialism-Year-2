@@ -191,6 +191,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 0}
   inputActionReference: {fileID: 3864089553077384529, guid: 2e27a215307f4b245b67c3aca6e886ca,
     type: 3}
+  inputActionDisplayed: 
   moveDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 5
   loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
@@ -1453,7 +1454,7 @@ PrefabInstance:
     - target: {fileID: 4523133706584344062, guid: 1a827617a89b25f458d47fc3dd9d9d66,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.22623585
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4523133706584344062, guid: 1a827617a89b25f458d47fc3dd9d9d66,
         type: 3}
@@ -1463,7 +1464,7 @@ PrefabInstance:
     - target: {fileID: 4523133706584344062, guid: 1a827617a89b25f458d47fc3dd9d9d66,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1.3763013
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4523133706584344062, guid: 1a827617a89b25f458d47fc3dd9d9d66,
         type: 3}

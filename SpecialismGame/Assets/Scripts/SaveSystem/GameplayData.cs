@@ -15,6 +15,7 @@ public class GameplayData
     public List<string> pickedUpObjectsName = new();
     public List<string> pickedUpObjectsDescription = new();
     public List<int> pickedUpObjectsSuspect = new();
+    public bool accusingSuspect;
     //public List<PickupObjects> pickupObjects;
 
     public GameplayData(GameManagerStateMachine gameManager) 
@@ -29,6 +30,8 @@ public class GameplayData
         playerPosition[1] = gameManager.Player.transform.position.y;
         playerPosition[2] = gameManager.Player.transform.position.z;
         roomsSearched = gameManager.roomsSearched;
+        accusingSuspect = gameManager.accusingSuspect;
+        gameManager.accusingSuspect = false;
         foreach (CluePickup clue in gameManager.pickedUpObjects)
         {
             //PickupObjects objectPickup = new PickupObjects();

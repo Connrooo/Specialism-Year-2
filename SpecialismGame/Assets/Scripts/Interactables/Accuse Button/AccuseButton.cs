@@ -6,10 +6,11 @@ public class AccuseButton : MonoBehaviour
 {
 
     public List<Interactable> caseFiles;
-
+    GameManagerStateMachine gameManager;
     Interactable interactable;
     private void Awake()
     {
+        gameManager = FindObjectOfType<GameManagerStateMachine>();
         interactable = GetComponent<Interactable>();
         interactable.interactType = "AccuseButton";
     }
@@ -19,6 +20,7 @@ public class AccuseButton : MonoBehaviour
         foreach(Interactable caseFile in caseFiles)
         {
             caseFile.interactType = "Accuse";
+            gameManager.accusingSuspect = true;
         }
         //change lights to be down on the papers
     }

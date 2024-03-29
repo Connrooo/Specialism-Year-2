@@ -64,6 +64,8 @@ public class GameManagerStateMachine : MonoBehaviour
 
     [Header("Deliberate Values")]
 
+    public bool accusingSuspect;
+
     public GameObject deliberationPrefab;
 
     public List<CluePickup> evidence0;
