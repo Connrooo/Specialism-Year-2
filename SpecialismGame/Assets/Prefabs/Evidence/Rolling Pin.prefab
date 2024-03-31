@@ -154,6 +154,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RollingPinModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 12d37c79a57fb1745b20409a5a3e2903,
+        type: 3}
+      propertyPath: m_TagString
+      value: Model
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

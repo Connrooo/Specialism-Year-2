@@ -16,6 +16,7 @@ TagManager:
   - EvidenceName
   - EvidenceDescription
   - SquatObject
+  - Model
   layers:
   - Default
   - TransparentFX

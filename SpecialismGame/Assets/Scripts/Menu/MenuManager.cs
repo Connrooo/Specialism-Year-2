@@ -119,6 +119,7 @@ public class MenuManager : MonoBehaviour
         {
             LoadGameCanvas.SetActive(false);
             MainMenuCanvas.SetActive(true);
+            EventSystem.current.SetSelectedGameObject(FS_Menu);
         }
     }
 
