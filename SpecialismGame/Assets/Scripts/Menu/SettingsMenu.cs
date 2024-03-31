@@ -14,7 +14,7 @@ public class SettingsMenu : MonoBehaviour
     [Header("Font")]
     public List<TMP_FontAsset> fonts;
     [SerializeField] TMP_Dropdown fontDropdown;
-
+    MenuManager menuManager;
     [Header("Font size")]
     [SerializeField] private float FZ_actualValue;
     [SerializeField] private Slider fontSizeSlider;
@@ -67,6 +67,7 @@ public class SettingsMenu : MonoBehaviour
     private void Awake()
     {
         playerStateMachine = FindObjectOfType<PlayerStateMachine>();
+        menuManager = FindObjectOfType<MenuManager>();
         Screen.fullScreen = true;
     }
 
