@@ -27,7 +27,7 @@ public class RebindUI : MonoBehaviour
     public string customActionText;
     [SerializeField] private TMP_Text actionText;
     [SerializeField] private Button rebindButton;
-    [SerializeField] private TMP_Text rebindText;
+    public TMP_Text rebindText;
     [SerializeField] private Button resetButton;
 
 
@@ -98,17 +98,35 @@ public class RebindUI : MonoBehaviour
             bindingIndex = selectedBinding;
         }
     }
-    private void UpdateUI()
+    public void UpdateUI()
     {
+        
         UpdateActionLabel();
         if (rebindText!=null)
         {
             if (Application.isPlaying)
             {
                 rebindText.text = InputManager.GetBindingName(actionName, bindingIndex);
+                ReplaceButtons replaceButtons = FindObjectOfType<ReplaceButtons>();
+                ISInputSystem PlayerInput = new ISInputSystem();
+                InputAction action = PlayerInput.asset.FindAction(actionName);
+                //Debug.Log(action);
+                if (replaceButtons != null)
+                {
+                    replaceButtons.OnUpdateBindingDisplay(this, InputManager.GetBindingName(actionName, bindingIndex));
+                }
             }
             else
+            {
                 rebindText.text = inputActionReference.action.GetBindingDisplayString(bindingIndex);
+                ReplaceButtons replaceButtons = FindObjectOfType<ReplaceButtons>();
+                ISInputSystem PlayerInput = new ISInputSystem();
+                InputAction action = PlayerInput.asset.FindAction(actionName);
+                if (replaceButtons != null)
+                {
+                    replaceButtons.OnUpdateBindingDisplay(this, action.bindings[bindingIndex].path);
+                }
+            }
         }
     }
 
