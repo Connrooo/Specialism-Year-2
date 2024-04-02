@@ -98,6 +98,7 @@ public struct GamepadIcons
             case "LB": return leftShoulder;
             case "RB": return rightShoulder;
             case "D-Pad Up/D-Pad Left/D-Pad Down/D-Pad Right": return dpad;
+            case "D-Pad/Up/D-Pad/Left/D-Pad/Down/D-Pad/Right": return dpad;
             case "D-Pad Up": return dpadUp;
             case "D-Pad Down": return dpadDown;
             case "D-Pad Left": return dpadLeft;
