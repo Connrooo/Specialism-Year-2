@@ -11,6 +11,7 @@ public class GameplayData
     public bool hasRoomBeenChosen;
     public bool finishedInvestigating;
     public float[] playerPosition;
+    public float[] playerRotation;
     public List<int> roomsSearched;
     public List<string> pickedUpObjectsName = new();
     public List<string> pickedUpObjectsDescription = new();
@@ -29,6 +30,10 @@ public class GameplayData
         playerPosition[0] = gameManager.Player.transform.position.x;
         playerPosition[1] = gameManager.Player.transform.position.y;
         playerPosition[2] = gameManager.Player.transform.position.z;
+        playerRotation = new float[3];
+        playerRotation[0] = Camera.main.transform.rotation.eulerAngles.x;
+        playerRotation[1] = Camera.main.transform.rotation.eulerAngles.y;
+        playerRotation[2] = Camera.main.transform.rotation.eulerAngles.z;
         roomsSearched = gameManager.roomsSearched;
         accusingSuspect = gameManager.accusingSuspect;
         gameManager.accusingSuspect = false;

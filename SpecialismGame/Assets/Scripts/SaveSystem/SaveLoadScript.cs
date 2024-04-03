@@ -108,6 +108,7 @@ public class SaveLoadScript : MonoBehaviour
         gameManager.Player.transform.position = playerPosition;
         gameManager.roomsSearched = data.roomsSearched;
         gameManager.accusingSuspect = data.accusingSuspect;
+        Camera.main.transform.rotation = Quaternion.Euler(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2]);
         for(int i = 0; i < data.pickedUpObjectsName.Count; i++)
         {
             CluePickup clue = new();

@@ -9,16 +9,6 @@ using UnityEngine.UI;
 public class ReplaceButtons : MonoBehaviour
 {
     public GamepadIcons icons;
-    protected void OnEnable()
-    {
-        // Hook into all updateBindingUIEvents on all RebindActionUI components in our hierarchy.
-        //var rebindUIComponents = transform.GetComponentsInChildren<RebindUI>();
-        //foreach (var component in rebindUIComponents)
-        //{
-        //    component.UpdateUI().AddListener(OnUpdateBindingDisplay);
-        //}
-    }
-
     public void OnUpdateBindingDisplay(RebindUI component,  string controlPath)
     {
         if (string.IsNullOrEmpty(controlPath))
@@ -26,7 +16,6 @@ public class ReplaceButtons : MonoBehaviour
 
         var icon = default(Sprite);
         icon = icons.GetSprite(controlPath);
-        Debug.Log(controlPath);
 
         var textComponent = component.rebindText;
 

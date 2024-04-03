@@ -598,7 +598,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628806, y: 1.1364307, z: 0.69626796}
+  m_Size: {x: 0.6628806, y: 1.1364307, z: -0.696268}
   m_Center: {x: 0, y: 0.56827295, z: 0.04623331}
 --- !u!1001 &349557307308059799
 PrefabInstance:
@@ -812,7 +812,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628803, y: 1.1364307, z: 0.69626766}
+  m_Size: {x: 0.6628803, y: 1.1364307, z: -0.6962677}
   m_Center: {x: 0, y: 0.56827295, z: 0.04623377}
 --- !u!1001 &689400037955838702
 PrefabInstance:
@@ -1896,7 +1896,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628803, y: 1.1364307, z: 0.69626766}
+  m_Size: {x: 0.6628803, y: 1.1364307, z: -0.6962677}
   m_Center: {x: -0.00000011920929, y: 0.56827295, z: 0.04623353}
 --- !u!1001 &2545174504522339719
 PrefabInstance:
@@ -2263,7 +2263,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66288036, y: 1.1364307, z: 0.6962677}
+  m_Size: {x: 0.66288036, y: 1.1364307, z: -0.6962677}
   m_Center: {x: 0, y: 0.56827295, z: 0.046233535}
 --- !u!1001 &2876800328318345959
 PrefabInstance:
@@ -3000,7 +3000,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628806, y: 1.1364307, z: 0.69626796}
+  m_Size: {x: 0.6628806, y: 1.1364307, z: -0.696268}
   m_Center: {x: 0, y: 0.56827295, z: 0.04623355}
 --- !u!1001 &3646884606060801814
 PrefabInstance:
@@ -3209,7 +3209,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628808, y: 1.1364307, z: 0.69626814}
+  m_Size: {x: 0.6628808, y: 1.1364307, z: -0.6962681}
   m_Center: {x: -0.00000023841858, y: 0.56827295, z: 0.04623356}
 --- !u!1001 &3841301373944075829
 PrefabInstance:
@@ -3329,7 +3329,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628806, y: 1.1364307, z: 0.69626796}
+  m_Size: {x: -0.6628806, y: 1.1364307, z: 0.69626796}
   m_Center: {x: -0.00000023841858, y: 0.56827295, z: 0.04623352}
 --- !u!1001 &4271036201788278771
 PrefabInstance:
@@ -3734,7 +3734,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628803, y: 1.1364307, z: 0.69626766}
+  m_Size: {x: 0.6628803, y: 1.1364307, z: -0.6962677}
   m_Center: {x: -0.00000014901161, y: 0.56827295, z: 0.04623377}
 --- !u!4 &4071790458066541722 stripped
 Transform:
@@ -4274,7 +4274,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628803, y: 1.1364307, z: 0.69626766}
+  m_Size: {x: 0.6628803, y: 1.1364307, z: -0.6962677}
   m_Center: {x: -0.00000017881393, y: 0.56827295, z: 0.04623377}
 --- !u!1001 &5097768599794273078
 PrefabInstance:
@@ -4483,7 +4483,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66288054, y: 1.1364307, z: 0.6962679}
+  m_Size: {x: 0.66288054, y: 1.1364307, z: -0.6962679}
   m_Center: {x: 0, y: 0.56827295, z: 0.046233546}
 --- !u!1001 &5264760411838646390
 PrefabInstance:
@@ -4990,7 +4990,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6628806, y: 1.1364307, z: 0.6962679}
+  m_Size: {x: 0.6628806, y: 1.1364307, z: -0.6962679}
   m_Center: {x: 0, y: 0.56827295, z: 0.046233308}
 --- !u!4 &6794412411770132274 stripped
 Transform:
@@ -5539,7 +5539,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3175261, y: 1.1362612, z: 0.69616413}
+  m_Size: {x: 1.3175261, y: 1.1362612, z: -0.6961641}
   m_Center: {x: -0.000043094173, y: 0.5684608, z: 0.034063783}
 --- !u!1001 &8569780694052080619
 PrefabInstance:
@@ -5654,7 +5654,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.66288054, y: 1.1364307, z: 0.6962679}
+  m_Size: {x: 0.66288054, y: 1.1364307, z: -0.6962679}
   m_Center: {x: 0.00000023841858, y: 0.56827295, z: 0.046233546}
 --- !u!1001 &8947759833959948706
 PrefabInstance:

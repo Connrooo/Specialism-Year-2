@@ -1,3 +1,4 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,11 @@ public class GameManagerRoomState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        foreach (CinemachineVirtualCamera camera in Ctx.Cameras)
+        {
+            camera.Priority = 10;
+        }
+        Ctx.gameplayCamera.Priority = 11;
         Ctx.inRoom= true;
         Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
@@ -20,11 +26,14 @@ public class GameManagerRoomState : GameManagerBaseState
     }
     public override void UpdateState()
     {
+        if (!Ctx.canMove)
+        {
+            Ctx.canMove = true;
+        }
         CheckSwitchStates();
     }
     public override void ExitState() 
     {
-        Ctx.inRoom= false;
         Ctx.hasRoomBeenChosen = false;
         Object.Destroy(Ctx.currentRoomSummoned);
     }

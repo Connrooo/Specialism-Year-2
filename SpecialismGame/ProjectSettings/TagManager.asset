@@ -17,6 +17,7 @@ TagManager:
   - EvidenceDescription
   - SquatObject
   - Model
+  - camResetObj
   layers:
   - Default
   - TransparentFX

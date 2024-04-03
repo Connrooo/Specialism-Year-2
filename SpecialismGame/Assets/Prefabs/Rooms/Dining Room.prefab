@@ -161,7 +161,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 1
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -4092,7 +4092,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.3254986, y: 1.1362334, z: 0.71570194}
+  m_Size: {x: -1.325499, y: 1.1362334, z: 0.71570194}
   m_Center: {x: -0.0045590997, y: 0.5681791, z: 0.039146066}
 --- !u!1001 &6622664727739490651
 PrefabInstance:

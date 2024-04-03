@@ -22,6 +22,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.canMove = false;
         Ctx.stopInteract = true;
         Ctx.animator_CinematicCamera.SetBool("playing", true);
+        Ctx.interactPromptText.SetBool("TurnOff", true);
         DayChecker();
     }
     public override void UpdateState()
@@ -33,6 +34,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.inCutscene= false;
         Ctx.stopInteract = false;
         Ctx.animator_CinematicCamera.SetBool("playing", false);
+        Ctx.interactPromptText.SetBool("TurnOff", false);
     }
     public override void CheckSwitchStates()
     {
