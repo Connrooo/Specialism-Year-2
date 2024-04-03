@@ -22,6 +22,7 @@ public class GameManagerRoomState : GameManagerBaseState
         Ctx.currentRoomSummoned = Object.Instantiate(Ctx.summonPointPrefab);
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
         Ctx.roomDisplayValue = 1;
+        Ctx.resetRotation = true;
         DestroyCollectedEvidence();
     }
     public override void UpdateState()
@@ -35,6 +36,7 @@ public class GameManagerRoomState : GameManagerBaseState
     public override void ExitState() 
     {
         Ctx.hasRoomBeenChosen = false;
+        Ctx.inRoom = false;
         Object.Destroy(Ctx.currentRoomSummoned);
     }
     public override void CheckSwitchStates()

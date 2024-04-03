@@ -38,6 +38,7 @@ public class GameManagerDeliberateState : GameManagerBaseState
             }
             //change lights
         }
+        Ctx.resetRotation = true;
     }
     public override void UpdateState()
     {

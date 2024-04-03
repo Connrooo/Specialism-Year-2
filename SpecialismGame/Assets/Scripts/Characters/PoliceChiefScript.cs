@@ -29,11 +29,11 @@ public class PoliceChiefScript : MonoBehaviour
         {
             if (gameManager.accusingSuspect || gameManager.day == 3)
             {
-                transform.position = new Vector3(0, 0.325f, 2f);
+                transform.position = new Vector3(0, 0.325f, -2f);
             }
             else
             {
-                transform.position = new Vector3(0.5f, 0.025f, -1.5f);
+                transform.position = new Vector3(-0.5f, 0.025f, 1.5f);
             }
         }
         else

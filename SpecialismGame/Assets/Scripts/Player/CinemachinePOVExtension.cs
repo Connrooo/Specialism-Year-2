@@ -31,7 +31,13 @@ public class CinemachinePOVExtension : CinemachineExtension
                 startingRotation.x += deltaInput.x * verticalSpeed * Time.deltaTime;
                 startingRotation.y += deltaInput.y * horizontalSpeed * Time.deltaTime;
                 startingRotation.y = Mathf.Clamp(startingRotation.y, -clampAngleDown, clampAngleUp);
-                state.RawOrientation = Quaternion.Euler(-startingRotation.y, startingRotation.x, 0f);
+                if (gameManager.resetRotation)
+                {
+                    gameManager.resetRotation = false;
+                    deltaInput = new Vector2();
+                    startingRotation = new Vector3(180,0,0);
+                }
+                state.RawOrientation = Quaternion.Euler(-startingRotation.y , startingRotation.x , 0f);
                 currentRot = state.RawOrientation;
             }
         }

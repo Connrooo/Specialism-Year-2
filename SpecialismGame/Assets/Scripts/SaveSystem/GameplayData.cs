@@ -12,6 +12,7 @@ public class GameplayData
     public bool finishedInvestigating;
     public float[] playerPosition;
     public float[] playerRotation;
+    public float[] cameraOffset;
     public List<int> roomsSearched;
     public List<string> pickedUpObjectsName = new();
     public List<string> pickedUpObjectsDescription = new();

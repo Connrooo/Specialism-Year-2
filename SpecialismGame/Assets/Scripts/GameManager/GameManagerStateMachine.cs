@@ -17,6 +17,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameObject currentRoomSummoned;
     public GameObject summonPointPrefab;
     public Animator interactPromptText;
+    public bool resetRotation;
     public bool paused; //checks if the game is paused
     public bool playingGame; //checks if the game is being played or not (will be in menu if not being played)
     public bool canMove;
