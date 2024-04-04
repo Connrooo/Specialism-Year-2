@@ -117,6 +117,7 @@ public class SaveLoadScript : MonoBehaviour
             clue.suspectRelated = data.pickedUpObjectsSuspect[i];
             gameManager.pickedUpObjects.Add(clue);
         }
+        gameManager.loadGame = true;
     }
     public void Save()
     {

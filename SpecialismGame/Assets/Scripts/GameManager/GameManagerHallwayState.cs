@@ -21,6 +21,11 @@ public class GameManagerHallwayState : GameManagerBaseState
         Ctx.gameplayCamera.Priority = 11;
         Ctx.canMove = true;
         Ctx.roomDisplayValue = 0;
+        if (!Ctx.loadGame)
+        {
+            Ctx.Player.transform.position = new Vector3(0f,1f,0f);
+        }
+        Ctx.loadGame = false;
         LoadHallway();
     }
     public override void UpdateState()
@@ -31,6 +36,10 @@ public class GameManagerHallwayState : GameManagerBaseState
     {
         Ctx.inHallway = false;
         Object.Destroy(Ctx.currentRoomSummoned);
+        if(Ctx.currentRoomNumber!=0)
+        {
+            Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
+        }
     }
     public override void CheckSwitchStates()
     {

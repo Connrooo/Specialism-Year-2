@@ -36,9 +36,13 @@ public class GameManagerDeliberateState : GameManagerBaseState
                     obj.GetComponent<Interactable>().interactType = "Accuse";
                 }
             }
-            //change lights
         }
         Ctx.resetRotation = true;
+        if(!Ctx.loadGame)
+        {
+            Ctx.Player.transform.position = new Vector3(0f,1f,0f);
+        }
+        Ctx.loadGame = false;
     }
     public override void UpdateState()
     {

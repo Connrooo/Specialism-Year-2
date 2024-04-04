@@ -85,7 +85,7 @@ MonoBehaviour:
   pickup:
     itemName: Photo
     itemDescription: A photo of the chef and the victim in a very close relationship.
-    suspectRelated: 2
+    suspectRelated: 0
 --- !u!1001 &702772497765866205
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class GameManagerRoomState : GameManagerBaseState
 {
@@ -23,6 +24,11 @@ public class GameManagerRoomState : GameManagerBaseState
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
         Ctx.roomDisplayValue = 1;
         Ctx.resetRotation = true;
+        if (!Ctx.loadGame)
+        {
+            Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
+        }
+        Ctx.loadGame = false;
         DestroyCollectedEvidence();
     }
     public override void UpdateState()

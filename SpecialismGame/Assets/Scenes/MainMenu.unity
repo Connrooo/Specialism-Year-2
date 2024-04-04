@@ -28919,6 +28919,15 @@ MonoBehaviour:
   summonPointPrefab: {fileID: 2391806495177070566, guid: 2959bc6b41e86d74d9c403533c076c70,
     type: 3}
   interactPromptText: {fileID: 106598905}
+  roomPositions:
+  - {x: 1.5, y: 1, z: 2.25}
+  - {x: -1, y: 1, z: 1.5}
+  - {x: 0, y: 1, z: 2.5}
+  - {x: 1.5, y: 1, z: 2}
+  - {x: 0, y: 1, z: 2.75}
+  - {x: 0, y: 1, z: 2.75}
+  loadGame: 0
+  resetRotation: 0
   paused: 0
   playingGame: 0
   canMove: 0
