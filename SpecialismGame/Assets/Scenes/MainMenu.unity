@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1342,6 +1342,107 @@ MonoBehaviour:
   - name: Camera Flash
     clip: {fileID: 8300000, guid: 966c51cce4dd635439bbef0238e00903, type: 3}
     volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  walkSounds:
+  - name: Wood Walk #1
+    clip: {fileID: 8300000, guid: cd9b003209f25774ca875db098f02933, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #2
+    clip: {fileID: 8300000, guid: a8bd1d0dc7eed054091cefe5a93dac53, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #3
+    clip: {fileID: 8300000, guid: 65ce9a0156ff34140a5942bd61f75a99, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #4
+    clip: {fileID: 8300000, guid: 1ced870a9955f3744a0d6385148ef0e4, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #5
+    clip: {fileID: 8300000, guid: a8309bc39cb4ce54891dec67d27ee627, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #6
+    clip: {fileID: 8300000, guid: d73148945745c714aa28554b3dd31e91, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #7
+    clip: {fileID: 8300000, guid: 82df5e6603d82ce4fbf4b9463a202fac, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #8
+    clip: {fileID: 8300000, guid: f36d49c8ba8fe8b41ac6d626bf5638f2, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #9
+    clip: {fileID: 8300000, guid: 5e084b799adc6a143a0ee8b26b44925c, type: 3}
+    volume: 0.2
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wood Walk #10
+    clip: {fileID: 8300000, guid: c85515b7655d336418b978a7890f0fb6, type: 3}
+    volume: 0.2
     pitch: 1
     loop: 0
     playOnAwake: 0

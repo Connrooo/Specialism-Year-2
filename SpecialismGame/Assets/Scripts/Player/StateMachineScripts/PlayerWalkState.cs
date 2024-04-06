@@ -11,6 +11,9 @@ public class PlayerWalkState : PlayerBaseState
         IsRootState = true;
         InitializeSubState();
     }
+
+    float moveSoundTimer = 0.5f;
+
     public override void EnterState() { }
     public override void UpdateState() 
     {
@@ -29,6 +32,18 @@ public class PlayerWalkState : PlayerBaseState
         }
         Ctx.moveDirection.y = 0;
         Ctx.characterController.Move(Ctx.moveDirection * Ctx.movementSpeed * Time.deltaTime);
+        if (Ctx.moveDirection.x * Ctx.movementSpeed * Time.deltaTime != 0||Ctx.moveDirection.z * Ctx.movementSpeed * Time.deltaTime != 0)
+        {
+            if(moveSoundTimer<=0)
+            {
+                moveSoundTimer = 0.5f;
+                AudioManager.Instance.PlayWalk();
+            }
+            else
+            {
+                moveSoundTimer -= Time.deltaTime;
+            }
+        }
     }
     public override void ExitState() { }
     public override void CheckSwitchStates() 
