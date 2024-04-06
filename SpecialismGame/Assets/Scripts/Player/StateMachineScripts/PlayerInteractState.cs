@@ -98,6 +98,7 @@ public class PlayerInteractState : PlayerBaseState
             case "Clue":
                 var clueScript = Ctx.currentObject.GetComponent<ClueScript>();
                 Ctx.gameManager.pickedUpObjects.Add(clueScript.pickup);
+                AudioManager.Instance.Play("Camera Flash");
                 Object.Destroy(Ctx.currentObject);
                 break;
             case "Door":
