@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.1210787, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1275,6 +1275,7 @@ GameObject:
   m_Component:
   - component: {fileID: 62481955}
   - component: {fileID: 62481954}
+  - component: {fileID: 62481956}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -1314,6 +1315,40 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &62481956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62481953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a554270c5bdb4c544a8494cc729644b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 0}
+  sounds:
+  - name: Vinyl
+    clip: {fileID: 8300000, guid: c84752e2d447e564eadecb9923920f4e, type: 3}
+    volume: 1
+    pitch: 0.2
+    loop: 1
+    playOnAwake: 1
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Camera Flash
+    clip: {fileID: 8300000, guid: 966c51cce4dd635439bbef0238e00903, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
 --- !u!114 &63792769 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4125576805834752509, guid: f25dcd618d3acd64795bf8bb32edb6c9,
