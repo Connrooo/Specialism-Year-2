@@ -18,6 +18,7 @@ TagManager:
   - SquatObject
   - Model
   - camResetObj
+  - PointerPos
   layers:
   - Default
   - TransparentFX
@@ -30,7 +31,7 @@ TagManager:
   - Outline
   - Wall
   - Chandelier
-  - 
+  - OutlinedObjects
   - 
   - 
   - 

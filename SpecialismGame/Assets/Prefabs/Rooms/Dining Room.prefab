@@ -1494,6 +1494,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#3Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fce28e5de39c55d4fa5c80076aa4ec10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1692,6 +1697,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookcaseModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2545,6 +2555,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#2Model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c75f32b2c59e0e4592836cf8f3dac7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2754,6 +2769,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#4Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd692313fa6456b4bb068b00832328a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2808,6 +2828,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vase
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303809146213460919, guid: 91c2e51878f18ab4588bc823f47fb344,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.98
       objectReference: {fileID: 0}
     - target: {fileID: 2003115687053477100, guid: 91c2e51878f18ab4588bc823f47fb344,
         type: 3}
@@ -3760,6 +3785,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trophy
       objectReference: {fileID: 0}
+    - target: {fileID: 7765628272855280597, guid: 5f5ef826a3e1e704d96cac33bf5d9be7,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765628272855280597, guid: 5f5ef826a3e1e704d96cac33bf5d9be7,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.191
+      objectReference: {fileID: 0}
+    - target: {fileID: 7765628272855280597, guid: 5f5ef826a3e1e704d96cac33bf5d9be7,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.202
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3843,6 +3883,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cupboard#2Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c75f32b2c59e0e4592836cf8f3dac7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4757,6 +4802,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#2Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c75f32b2c59e0e4592836cf8f3dac7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5080,6 +5130,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: PianoModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: db17424da552fc24c81cd567f6a3ac08,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5209,6 +5264,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: DiningRoomTableModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a08e0e92934a6644d9995fb04e6b48ab,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

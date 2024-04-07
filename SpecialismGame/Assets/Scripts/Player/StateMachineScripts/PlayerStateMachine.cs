@@ -31,11 +31,13 @@ public class PlayerStateMachine : MonoBehaviour
 
     [Header("Player Interact Variables")]
     public GameObject loadBar;
+    public GameObject pointer;
     public TMP_Text InteractPromptText;
     public Animator InteractPromptTextAnim;
     public float rayLength = 2;
     public LayerMask layerMaskInteract;
     public GameObject loadingCurrent;
+    public GameObject pointerCurrent;
     public GameObject currentObject;
     public bool loading;
     public Vector3 pointOfInterest;

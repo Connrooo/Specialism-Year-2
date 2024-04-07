@@ -306,6 +306,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#4Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd692313fa6456b4bb068b00832328a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -510,6 +515,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#3Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fce28e5de39c55d4fa5c80076aa4ec10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -713,6 +723,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: FireplaceModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b35d86499e6fb9b4398ffcfd43c81d29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1314,6 +1329,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#3Model (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fce28e5de39c55d4fa5c80076aa4ec10,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1468,6 +1488,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 30.637
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149447464627094959, guid: a7dd368cbf35cd5429626b8ee1fe1871,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.169
+      objectReference: {fileID: 0}
+    - target: {fileID: 8149447464627094959, guid: a7dd368cbf35cd5429626b8ee1fe1871,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.379
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1627,6 +1657,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#2Model
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 7c75f32b2c59e0e4592836cf8f3dac7a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1736,6 +1771,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookcaseModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2039,6 +2079,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookcaseModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2167,6 +2212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SideTableModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3925fffbfeceaa74685eb3c7c6e54e3d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2356,6 +2406,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cupboard#4Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd692313fa6456b4bb068b00832328a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2576,6 +2631,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cupboard#4Model (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd692313fa6456b4bb068b00832328a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2700,6 +2760,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SideTableModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3925fffbfeceaa74685eb3c7c6e54e3d,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2941,6 +3006,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CouchModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 585091a1777609b4fb75aacef8a80441,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2991,6 +3061,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4674448773619226398}
     m_Modifications:
+    - target: {fileID: 978121893873253283, guid: c2ae47209a1ad6341bc53e09ea61db57,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 978121893873253283, guid: c2ae47209a1ad6341bc53e09ea61db57,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.011
+      objectReference: {fileID: 0}
+    - target: {fileID: 978121893873253283, guid: c2ae47209a1ad6341bc53e09ea61db57,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.25
+      objectReference: {fileID: 0}
     - target: {fileID: 1094072737734925877, guid: c2ae47209a1ad6341bc53e09ea61db57,
         type: 3}
       propertyPath: m_Name

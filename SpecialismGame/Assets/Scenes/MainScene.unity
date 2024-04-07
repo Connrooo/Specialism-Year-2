@@ -195,6 +195,7 @@ MonoBehaviour:
   moveDirection: {x: 0, y: 0, z: 0}
   movementSpeed: 5
   loadBar: {fileID: 6908838726172901730, guid: 34038e38a05b12347887e83f5f568dad, type: 3}
+  pointer: {fileID: 2508923447670182066, guid: 3d9e689bbe0bc6144b9bb41963c71d56, type: 3}
   InteractPromptText: {fileID: 0}
   InteractPromptTextAnim: {fileID: 0}
   rayLength: 2
@@ -202,6 +203,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 191
   loadingCurrent: {fileID: 0}
+  pointerCurrent: {fileID: 0}
   currentObject: {fileID: 0}
   loading: 0
   pointOfInterest: {x: 0, y: 0, z: 0}

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,8 +9,8 @@ public class PlayerInteractState : PlayerBaseState
     public PlayerInteractState(PlayerStateMachine currentContext, PlayerStateFactory playerStateFactory)
     : base(currentContext, playerStateFactory) { }
 
-    
     GameObject objectHighlighted;
+
     public override void EnterState() { }
     public override void UpdateState() 
     {
@@ -152,6 +153,18 @@ public class PlayerInteractState : PlayerBaseState
             {
                 case "Clue":
                     Ctx.inputActionDisplayed = " to gather evidence";
+                    if (Ctx.pointerCurrent==null)
+                    {
+                        Transform[] children = objectHighlighted.GetComponentsInChildren<Transform>();
+                        foreach(Transform child in children)
+                        {
+                            if (child.CompareTag("PointerPos"))
+                            {
+                                Ctx.pointerCurrent = Object.Instantiate(Ctx.pointer, child.transform.position, Ctx.pointer.transform.rotation);
+                            }
+                        }
+                        
+                    }
                     break;
                 case "Door":
                     Ctx.inputActionDisplayed = " to open the door";
@@ -198,6 +211,14 @@ public class PlayerInteractState : PlayerBaseState
                             break;
                     }
                     break;
+            }
+        }
+        else
+        {
+            if (Ctx.pointerCurrent!=null)
+            {
+                Debug.Log("Destroyed");
+                Object.Destroy(Ctx.pointerCurrent);
             }
         }
     }

@@ -322,6 +322,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookcaseModel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -1251,6 +1256,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8756974411538119009}
     m_Modifications:
+    - target: {fileID: 2748207808326655948, guid: 704cb4ff6a1e032449a63d42e718c62c,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.008
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748207808326655948, guid: 704cb4ff6a1e032449a63d42e718c62c,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.251
+      objectReference: {fileID: 0}
+    - target: {fileID: 2748207808326655948, guid: 704cb4ff6a1e032449a63d42e718c62c,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.454
+      objectReference: {fileID: 0}
     - target: {fileID: 6086825056698248322, guid: 704cb4ff6a1e032449a63d42e718c62c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1742,6 +1762,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BooksModel (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 2e609da5a2951134588d761ea3562c4a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1899,6 +1924,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BedsideCabinetModel (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd154103f76e75b4c9c3ce15b64adbaf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2381,6 +2411,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: FireplaceModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b35d86499e6fb9b4398ffcfd43c81d29,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2569,6 +2604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Chair#1Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 5acc06846b3d210488d4581ba70f3dc6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2764,6 +2804,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookcaseModel (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2883,6 +2928,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BookcaseModel (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -2996,6 +3046,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BedsideCabinetModel (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd154103f76e75b4c9c3ce15b64adbaf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3357,7 +3412,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: cbefd1ea085abb34ba0b94e80a208961,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.718
+      value: -0.218
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cbefd1ea085abb34ba0b94e80a208961,
         type: 3}
@@ -3409,10 +3464,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArmchairModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cbefd1ea085abb34ba0b94e80a208961,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cbefd1ea085abb34ba0b94e80a208961,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7325329318330979250}
   m_SourcePrefab: {fileID: 100100000, guid: cbefd1ea085abb34ba0b94e80a208961, type: 3}
 --- !u!4 &5994062510244077673 stripped
 Transform:
@@ -3420,6 +3484,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6099432337801004930}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &6369462840031836883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: cbefd1ea085abb34ba0b94e80a208961,
+    type: 3}
+  m_PrefabInstance: {fileID: 6099432337801004930}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7325329318330979250
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6369462840031836883}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.6016, y: 1.6989048, z: 1.4523168}
+  m_Center: {x: 0, y: 0.7601348, z: 0.004389733}
 --- !u!1001 &6320767583617545674
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3722,6 +3813,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: StudyDeskModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 15c9f741f737fc7498b8d77f83ecdce8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3985,6 +4081,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BedsideCabinetModel
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fd154103f76e75b4c9c3ce15b64adbaf,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -4094,6 +4195,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cupboard#4Model
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cd692313fa6456b4bb068b00832328a6,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4209,6 +4315,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookcaseModel
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4506,6 +4617,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BookcaseModel (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4e89d7380dd1f304384702a298d90120,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
