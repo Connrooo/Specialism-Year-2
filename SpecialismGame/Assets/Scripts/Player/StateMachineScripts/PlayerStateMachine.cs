@@ -27,7 +27,7 @@ public class PlayerStateMachine : MonoBehaviour
     [Header("Player Walk Variables")]
     public Vector3 moveDirection;
     public float movementSpeed = 5;
-    
+
 
     [Header("Player Interact Variables")]
     public GameObject loadBar;
