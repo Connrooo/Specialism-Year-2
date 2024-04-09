@@ -34,6 +34,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.inCutscene= false;
         Ctx.stopInteract = false;
         Ctx.animator_CinematicCamera.SetBool("playing", false);
+        Ctx.animator_CinematicCamera.transform.GetComponent<CinematicCamera>().detectiveAnimator.SetBool("playing", false);
         Ctx.interactPromptText.SetBool("TurnOff", false);
     }
     public override void CheckSwitchStates()
@@ -74,12 +75,12 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.animator_CinematicCamera.SetInteger("suspect", Ctx.suspectAccused);
         if (Ctx.finishedInvestigating)
         {
-            Ctx.animator_CinematicCamera.SetBool("opening", true);
+            Ctx.animator_CinematicCamera.SetBool("opening", false);
             Ctx.roomDisplayValue = 2;
         }
         else
         {
-            Ctx.animator_CinematicCamera.SetBool("opening", false);
+            Ctx.animator_CinematicCamera.SetBool("opening", true);
         }
         if (Ctx.day == 4)
         {

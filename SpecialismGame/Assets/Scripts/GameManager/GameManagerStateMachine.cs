@@ -103,7 +103,7 @@ public class GameManagerStateMachine : MonoBehaviour
         saveLoadScript = GameObject.FindObjectOfType<SaveLoadScript>();
         menuCamera = GameObject.FindGameObjectWithTag("MenuCamera").GetComponent<CinemachineVirtualCamera>();
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();
-        animator_CinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent <Animator>();
+        animator_CinematicCamera = GameObject.FindGameObjectWithTag("CutsceneController").GetComponent <Animator>();
         gameplayCamera = GameObject.FindGameObjectWithTag("GameplayCamera").GetComponent<CinemachineVirtualCamera>();
         Player = GameObject.FindGameObjectWithTag("Player");
         Cameras.Add(menuCamera);

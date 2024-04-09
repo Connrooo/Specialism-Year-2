@@ -19,6 +19,7 @@ TagManager:
   - Model
   - camResetObj
   - PointerPos
+  - CutsceneController
   layers:
   - Default
   - TransparentFX

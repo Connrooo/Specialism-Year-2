@@ -71,16 +71,16 @@ public class MenuManager : MonoBehaviour
         //Debug.Log(gameManager.playingGame);
         if (playerStateMachine.IsMenuOpenClosePressed)//pause button is pressed
         {
-            PlayingGame();
-            DefaultCheckers();
             if (PauseCanvas.activeSelf)//if in pause menu, resume game
             {
                 P_Resume();
             }
-            else if (gameManager.playingGame && !PauseCanvas.activeSelf)//if in game, and pause menu isnt active, pause game
+            else if (gameManager.playingGame && !PauseCanvas.activeSelf && !gameManager.paused)//if in game, and pause menu isnt active, pause game
             {
                 P_PauseGame();
             }
+            PlayingGame();
+            DefaultCheckers();
             playerStateMachine.IsMenuOpenClosePressed = false;
         }
     }
@@ -170,7 +170,6 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
         Time.timeScale = 0f;
         gameManager.playingGame = false;
-        //save progress to correct save
         gameManager.paused = true;
         PauseCanvas.SetActive(false);
         MainMenuCanvas.SetActive(true);
@@ -186,12 +185,6 @@ public class MenuManager : MonoBehaviour
         }
         PlayingGame();
         DefaultCheckers();
-        
-        
-        //else
-        //{
-        //    Debug.Log("You have attempted to go back, there is no further back.");
-        //}
     }
 
     public void M_NewGame()
