@@ -36,7 +36,7 @@ public class GameManagerHallwayState : GameManagerBaseState
     {
         Ctx.inHallway = false;
         Object.Destroy(Ctx.currentRoomSummoned);
-        if(Ctx.currentRoomNumber!=0)
+        if (Ctx.currentRoomNumber != 0)
         {
             Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
         }
@@ -80,14 +80,11 @@ public class GameManagerHallwayState : GameManagerBaseState
                         Object.Destroy(AccDoorScript.doors[i]); //if it has, it gets blocked
                         blockedDoors.Add(i);
                     }
-                    else
-                    {
-                        if (blockedDoors.Contains(i + 1)) //if not, it sees if it's already been checked
-                        {
-                            Object.Destroy(InaccDoorScript.doors[i]); //if it hasn't, it destroys it
-                        }
-                    }
                 }
+            }
+            if (!blockedDoors.Contains(i)) //if not, it sees if it's already been checked
+            {
+                Object.Destroy(InaccDoorScript.doors[i]); //if it hasn't, it destroys it
             }
         }
     }

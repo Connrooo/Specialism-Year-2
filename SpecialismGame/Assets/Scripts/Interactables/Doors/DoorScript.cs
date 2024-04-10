@@ -15,6 +15,7 @@ public class DoorScript : MonoBehaviour
     {
         interactable= GetComponent<Interactable>();
         interactable.interactType = "Door";
+        doorAnimator = GetComponent<Animator>();
     }
 
     public void DoorPressed()

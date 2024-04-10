@@ -105,7 +105,7 @@ public class PlayerInteractState : PlayerBaseState
             case "Door":
                 var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
                 Ctx.gameManager.currentRoomNumber = doorScript.roomNumber;
-                //doorScript.doorAnimator.SetTrigger("Interacted");
+                doorScript.doorAnimator.SetTrigger("open");
                 if (Ctx.gameManager.currentRoomNumber != 0)
                 {
                     Ctx.gameManager.hasRoomBeenChosen = true;

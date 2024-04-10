@@ -24,10 +24,8 @@ public class GameManagerRoomState : GameManagerBaseState
         Ctx.instantiatedRoom = Object.Instantiate(Ctx.rooms[Ctx.currentRoomNumber-1],Ctx.currentRoomSummoned.transform);
         Ctx.roomDisplayValue = 1;
         Ctx.resetRotation = true;
-        if (!Ctx.loadGame)
-        {
-            Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
-        }
+        Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
+        Debug.Log("WHY");
         Ctx.loadGame = false;
         DestroyCollectedEvidence();
     }

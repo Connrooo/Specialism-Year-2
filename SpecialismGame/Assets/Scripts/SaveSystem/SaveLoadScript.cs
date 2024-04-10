@@ -106,6 +106,7 @@ public class SaveLoadScript : MonoBehaviour
         gameManager.finishedInvestigating = data.finishedInvestigating;
         Vector3 playerPosition = new Vector3(data.playerPosition[0], data.playerPosition[1], data.playerPosition[2]);
         gameManager.Player.transform.position = playerPosition;
+        Debug.Log("Not meant to be here");
         gameManager.roomsSearched = data.roomsSearched;
         gameManager.accusingSuspect = data.accusingSuspect;
         Camera.main.transform.rotation = Quaternion.Euler(data.playerRotation[0], data.playerRotation[1], data.playerRotation[2]);
