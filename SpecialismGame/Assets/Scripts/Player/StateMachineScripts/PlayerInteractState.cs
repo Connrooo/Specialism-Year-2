@@ -104,28 +104,11 @@ public class PlayerInteractState : PlayerBaseState
                 break;
             case "Door":
                 var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
-                Ctx.gameManager.currentRoomNumber = doorScript.roomNumber;
                 doorScript.doorAnimator.SetTrigger("open");
-                if (Ctx.gameManager.currentRoomNumber != 0)
-                {
-                    Ctx.gameManager.hasRoomBeenChosen = true;
-                }
-                break;
+                    break;
             case "Chief":
-                if (Ctx.gameManager.inRoom)
-                {
-                    Ctx.gameManager.roomsSearched.Add(Ctx.gameManager.currentRoomNumber);
-                    Ctx.gameManager.finishedInvestigating = true;
-                }
-                else if (Ctx.gameManager.inDeliberation)
-                {
-                    Ctx.gameManager.finishedInvestigating = false;
-                    Ctx.gameManager.stopInteract = true;
-                }
-                else
-                {
-                    Debug.Log("Not in room, haven't written this yet bozo");
-                }
+                var chiefTemp = GameObject.FindGameObjectWithTag("ChiefAlt").GetComponent<DoorScript>();
+                chiefTemp.doorAnimator.SetTrigger("open");
                 break;
             case "CaseFile":
                 var caseNumber = Ctx.currentObject.GetComponent<CaseFile>().suspectRelated;

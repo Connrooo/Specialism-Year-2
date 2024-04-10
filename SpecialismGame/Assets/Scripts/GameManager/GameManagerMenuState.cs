@@ -13,6 +13,8 @@ public class GameManagerMenuState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        Ctx.fadingScript.fading = false;
+        Ctx.fadingScript.overrideFade = true;
         Ctx.inMenu= true;
         foreach(CinemachineVirtualCamera camera in Ctx.Cameras)
         {

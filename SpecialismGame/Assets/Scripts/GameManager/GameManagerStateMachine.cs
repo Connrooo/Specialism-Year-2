@@ -18,6 +18,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameObject summonPointPrefab;
     public Animator interactPromptText;
     public Vector3[] roomPositions;
+    public FadingScript fadingScript;
     public bool loadGame;
     public bool resetRotation;
     public bool paused; //checks if the game is paused
@@ -114,7 +115,6 @@ public class GameManagerStateMachine : MonoBehaviour
     }
     private void Update()
     {
-        //Debug.Log(day);
         currentState.UpdateStates();
         if (paused || !playingGame)
         {

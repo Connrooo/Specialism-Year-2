@@ -46,6 +46,7 @@ public class GameManagerHallwayState : GameManagerBaseState
         {
             Ctx.canMove = false;
             SwitchState(Factory.Menu());
+            Ctx.fadingScript.overrideFade = true;
         }
         else if(Ctx.hasRoomBeenChosen)
         {

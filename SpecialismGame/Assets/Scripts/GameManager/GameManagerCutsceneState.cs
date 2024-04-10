@@ -31,6 +31,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
     }
     public override void ExitState() 
     {
+        Ctx.stopAnimation = false;
         Ctx.inCutscene= false;
         Ctx.stopInteract = false;
         Ctx.animator_CinematicCamera.SetBool("playing", false);
@@ -43,6 +44,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         {
             Ctx.canMove = false;
             SwitchState(Factory.Menu());
+            Ctx.fadingScript.overrideFade = true;
         }
         else if (Ctx.stopAnimation)
         {
@@ -84,7 +86,8 @@ public class GameManagerCutsceneState : GameManagerBaseState
         }
         if (Ctx.day == 4)
         {
-            Ctx.roomDisplayValue = 4;
+            Ctx.roomDisplayValue = 3;
+            Debug.Log("Hi");
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
     }

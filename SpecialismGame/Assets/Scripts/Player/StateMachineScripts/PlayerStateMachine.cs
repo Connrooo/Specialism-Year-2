@@ -98,6 +98,7 @@ public class PlayerStateMachine : MonoBehaviour
     private void Update()
     {
         currentState.UpdateStates();
+        IsInteractPressed = false;
     }
 
     private void FixedUpdate()
@@ -113,8 +114,7 @@ public class PlayerStateMachine : MonoBehaviour
         PlayerInput.Main.Movement.canceled += OnMove;
         PlayerInput.Main.Turn.performed += OnTurn;
         PlayerInput.Main.Turn.canceled += OnTurn;
-        PlayerInput.Main.Interact.performed += OnInteract;
-        PlayerInput.Main.Interact.canceled += OnInteract;
+        PlayerInput.Main.Interact.started += OnInteract;
         PlayerInput.Main.MenuOpenClose.started += OnMenuOpenClose;
     }
 
@@ -125,8 +125,7 @@ public class PlayerStateMachine : MonoBehaviour
         PlayerInput.Main.Movement.canceled -= OnMove;
         PlayerInput.Main.Turn.performed -= OnTurn;
         PlayerInput.Main.Turn.canceled -= OnTurn;
-        PlayerInput.Main.Interact.performed -= OnInteract;
-        PlayerInput.Main.Interact.canceled -= OnInteract;
+        PlayerInput.Main.Interact.started -= OnInteract;
         PlayerInput.Main.MenuOpenClose.started += OnMenuOpenClose;
     }
 

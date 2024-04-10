@@ -118,7 +118,6 @@ public class SaveLoadScript : MonoBehaviour
             gameManager.pickedUpObjects.Add(clue);
         }
         gameManager.loadGame = true;
-        Debug.Log("Indeed");
     }
     public void Save()
     {
