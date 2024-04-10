@@ -25,7 +25,6 @@ public class GameManagerHallwayState : GameManagerBaseState
         {
             Ctx.Player.transform.position = new Vector3(0f,1f,0f);
         }
-        Ctx.loadGame = false;
         LoadHallway();
     }
     public override void UpdateState()
