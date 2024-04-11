@@ -38,6 +38,7 @@ public class PlayerStateMachine : MonoBehaviour
     public LayerMask layerMaskInteract;
     public GameObject loadingCurrent;
     public GameObject pointerCurrent;
+    public Animator wiggleAnimator;
     public GameObject currentObject;
     public bool loading;
     public Vector3 pointOfInterest;

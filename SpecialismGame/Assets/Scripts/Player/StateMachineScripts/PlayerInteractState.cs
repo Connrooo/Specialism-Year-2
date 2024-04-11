@@ -144,6 +144,8 @@ public class PlayerInteractState : PlayerBaseState
                             if (child.CompareTag("PointerPos"))
                             {
                                 Ctx.pointerCurrent = Object.Instantiate(Ctx.pointer, child.transform.position, Ctx.pointer.transform.rotation);
+                                Ctx.wiggleAnimator = child.GetComponentInParent<Animator>();
+                                Ctx.wiggleAnimator.SetBool("wiggle", true);
                             }
                         }
                         
@@ -200,7 +202,7 @@ public class PlayerInteractState : PlayerBaseState
         {
             if (Ctx.pointerCurrent!=null)
             {
-                Debug.Log("Destroyed");
+                Ctx.wiggleAnimator.SetBool("wiggle", false);
                 Object.Destroy(Ctx.pointerCurrent);
             }
         }
