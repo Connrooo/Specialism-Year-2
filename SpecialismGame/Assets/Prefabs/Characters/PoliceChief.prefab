@@ -82,7 +82,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   roomPositions:
-  - {x: 2.5, y: 0.025, z: -2.5}
+  - {x: -1.5, y: 0.025, z: -1.5}
   - {x: -2.5, y: 0.025, z: -2.5}
   - {x: 2.5, y: 0.025, z: -2.5}
   - {x: 1.27, y: 0.025, z: 3.5}

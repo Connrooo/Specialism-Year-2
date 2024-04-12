@@ -32,7 +32,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 356998194642267348}
+  - {fileID: 258489315027764853}
   - {fileID: 2003115687053477100}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -86,6 +86,38 @@ MonoBehaviour:
     itemName: Vase
     itemDescription: 'A vase that has been damaged after hitting something '
     suspectRelated: 1
+--- !u!1 &4697338863720459240
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 258489315027764853}
+  m_Layer: 0
+  m_Name: Rotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &258489315027764853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4697338863720459240}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 356998194642267348}
+  m_Father: {fileID: 5564065629462478772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8970652413012542361
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,12 +155,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5564065629462478772}
+    m_TransformParent: {fileID: 258489315027764853}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
@@ -148,17 +180,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a8e72d2f96b9b68498baee091e5547a9,
         type: 3}
@@ -197,7 +229,11 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1303809146213460919}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a8e72d2f96b9b68498baee091e5547a9,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1788865236773606075}
   m_SourcePrefab: {fileID: 100100000, guid: a8e72d2f96b9b68498baee091e5547a9, type: 3}
 --- !u!4 &356998194642267348 stripped
 Transform:
@@ -205,6 +241,33 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 251909702007835455}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1134800848265410158 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a8e72d2f96b9b68498baee091e5547a9,
+    type: 3}
+  m_PrefabInstance: {fileID: 251909702007835455}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1788865236773606075
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1134800848265410158}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ac302a5afdd017148aeb1abe643d8883, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1001 &5076823303752544947
 PrefabInstance:
   m_ObjectHideFlags: 0

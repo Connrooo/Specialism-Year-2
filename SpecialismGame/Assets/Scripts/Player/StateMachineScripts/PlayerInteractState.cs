@@ -202,8 +202,11 @@ public class PlayerInteractState : PlayerBaseState
         {
             if (Ctx.pointerCurrent!=null)
             {
-                Ctx.wiggleAnimator.SetBool("wiggle", false);
                 Object.Destroy(Ctx.pointerCurrent);
+                if(Ctx.wiggleAnimator!=null)
+                {
+                    Ctx.wiggleAnimator.SetBool("wiggle", false);
+                }
             }
         }
     }
