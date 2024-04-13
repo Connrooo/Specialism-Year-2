@@ -28776,6 +28776,9 @@ MonoBehaviour:
   - {fileID: 7959838991936992169, guid: 1a94d22091f15a543b84e4cee4de9cd4, type: 3}
   - {fileID: 6277079742530902592, guid: be90dd4bfc4f6e446b713a9ee393bf15, type: 3}
   - {fileID: 6570782877124963178, guid: dba948b2270762744ac69b3b2aaec059, type: 3}
+  magGlassActive: 0
+  magGlassTimer: {fileID: 6574598935333468765, guid: 11631dabc47586a43b4daece21ff8fbe,
+    type: 3}
   accusingSuspect: 0
   deliberationPrefab: {fileID: 4448036342886092049, guid: fbeb51b901dc4c4458cc9f9e2b87d5b5,
     type: 3}

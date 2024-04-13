@@ -21,7 +21,9 @@ public class PlayerInteractState : PlayerBaseState
         DisplayInteractionText();
         Ctx.InteractPromptText.text = ("Press "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 0)+ " or "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 1)+ Ctx.inputActionDisplayed);
     }
-    public override void ExitState() { }
+    public override void ExitState() 
+    {
+    }
     public override void CheckSwitchStates() 
     {
     }
@@ -125,6 +127,17 @@ public class PlayerInteractState : PlayerBaseState
             case "Accuse":
                 Ctx.currentObject.GetComponent<AccuseSuspectScript>().AccuseSuspect();
                 break;
+            case "MagGlass":
+                Ctx.gameManager.magGlassActive= true;
+                GameObject[] evidence = GameObject.FindGameObjectsWithTag("PointerPos");
+                GameObject magGlassTimer =  Object.Instantiate(Ctx.gameManager.magGlassTimer,Ctx.gameManager.currentRoomSummoned.transform);
+                for (int i = 0; i < evidence.Length; i++)
+                {
+                    GameObject pointerObject = Object.Instantiate(Ctx.pointer, evidence[i].transform.position, Ctx.pointer.transform.rotation);
+                    magGlassTimer.GetComponent<MagGlassScript>().pointers.Add(pointerObject);
+                }
+                Object.Destroy(Ctx.currentObject);
+                break;
         }
     }
     public void DisplayInteractionText()
@@ -135,7 +148,7 @@ public class PlayerInteractState : PlayerBaseState
             switch (objectScript.interactType)
             {
                 case "Clue":
-                    Ctx.inputActionDisplayed = " to gather evidence";
+                    Ctx.inputActionDisplayed = " to gather the " + objectHighlighted.GetComponent<ClueScript>().pickup.itemName + " as evidence";
                     if (Ctx.pointerCurrent==null)
                     {
                         Transform[] children = objectHighlighted.GetComponentsInChildren<Transform>();
@@ -143,16 +156,42 @@ public class PlayerInteractState : PlayerBaseState
                         {
                             if (child.CompareTag("PointerPos"))
                             {
-                                Ctx.pointerCurrent = Object.Instantiate(Ctx.pointer, child.transform.position, Ctx.pointer.transform.rotation);
+                                if(!Ctx.gameManager.magGlassActive)
+                                {
+                                    Ctx.pointerCurrent = Object.Instantiate(Ctx.pointer, child.transform.position, Ctx.pointer.transform.rotation);
+                                }
                                 Ctx.wiggleAnimator = child.GetComponentInParent<Animator>();
                                 Ctx.wiggleAnimator.SetBool("wiggle", true);
                             }
                         }
-                        
                     }
                     break;
                 case "Door":
-                    Ctx.inputActionDisplayed = " to open the door";
+
+                    switch (objectHighlighted.GetComponent<DoorScript>().roomNumber)
+                    {
+                        case 0:
+                            Ctx.inputActionDisplayed = " to open the door";
+                            break;
+                        case 1:
+                            Ctx.inputActionDisplayed = " to open the door to the living room";
+                            break;
+                        case 2:
+                            Ctx.inputActionDisplayed = " to open the door to the bathroom";
+                            break;
+                        case 3:
+                            Ctx.inputActionDisplayed = " to open the door to the kitchen";
+                            break;
+                        case 4:
+                            Ctx.inputActionDisplayed = " to open the door to the bedroom";
+                            break;
+                        case 5:
+                            Ctx.inputActionDisplayed = " to open the door to the study room";
+                            break;
+                        case 6:
+                            Ctx.inputActionDisplayed = " to open the door to the dining room";
+                            break;
+                    }
                     break;
                 case "Chief":
                     if (Ctx.gameManager.inRoom)
@@ -196,6 +235,9 @@ public class PlayerInteractState : PlayerBaseState
                             break;
                     }
                     break;
+                case "MagGlass":
+                    Ctx.inputActionDisplayed = " to use magnifying glass";
+                    break;
             }
         }
         else
@@ -203,10 +245,11 @@ public class PlayerInteractState : PlayerBaseState
             if (Ctx.pointerCurrent!=null)
             {
                 Object.Destroy(Ctx.pointerCurrent);
-                if(Ctx.wiggleAnimator!=null)
-                {
-                    Ctx.wiggleAnimator.SetBool("wiggle", false);
-                }
+            }
+            if (Ctx.wiggleAnimator != null)
+            {
+                Ctx.wiggleAnimator.SetBool("wiggle", false);
+                Ctx.wiggleAnimator = null;
             }
         }
     }

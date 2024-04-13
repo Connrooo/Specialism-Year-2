@@ -87,7 +87,6 @@ public class GameManagerCutsceneState : GameManagerBaseState
         if (Ctx.day == 4)
         {
             Ctx.roomDisplayValue = 3;
-            Debug.Log("Hi");
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
     }
