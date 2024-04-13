@@ -76,7 +76,7 @@ CapsuleCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c26b21188681547bc0a3f9ce208c41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dougWaitTimer: 180
+  dougWaitTimer: 10
   interactDougManagers: []
   squatColliderPrefab: {fileID: 6459085000360575949, guid: 09dae637d59343a42a0803f841a3b456,
     type: 3}
