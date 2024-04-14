@@ -10,7 +10,9 @@ public class SubtitleManager : MonoBehaviour
     public Subtitle[] subtitles;
     public static SubtitleManager Instance { get; private set; }
     public TMP_Text subtitleDisplay;
+    int amountOfSubsPlaying;
     bool canPlay;
+    float lastSubStarted;
 
     private void Awake()
     {
@@ -28,17 +30,15 @@ public class SubtitleManager : MonoBehaviour
         try
         {
             canPlay= true;
-            int index = 0;
-            float waittime = 1;
-            float totalWaittime = 0;
+            int amountOfSubs=0;
             Subtitle sub = Array.Find(subtitles, subtitleCollection => subtitleCollection.SubtitleName == name);
-            foreach(string subtitle in sub.SubtitleText)
+            amountOfSubsPlaying++;
+            foreach (string subtitle in sub.SubtitleText)
             {
-                waittime = sub.timeBetweenSubs[index];
-                StartCoroutine(TimeBetweenSubs(totalWaittime, waittime, index, subtitle));
-                index++;
-                totalWaittime += waittime;
+                amountOfSubs++;
             }
+            lastSubStarted = Time.time;
+            StartCoroutine(TimeBetweenSubs(amountOfSubs, 0, sub, Time.time));
         }
         catch (Exception e)
         {
@@ -46,26 +46,51 @@ public class SubtitleManager : MonoBehaviour
             throw;
         }
     }
-
     public void StopSubtitle()
     {
         canPlay = false;
     }
-
-    IEnumerator TimeBetweenSubs(float totalWaittime,float waittime, int subNumber, string subtitle)
+    IEnumerator TimeBetweenSubs(int amountOfSubs, int index, Subtitle sub, float timeStarted)
     {
-        if (canPlay)
+        if (allowSubtitle(timeStarted)&& amountOfSubs != index)
         {
-            yield return new WaitForSeconds(totalWaittime);
+            subtitleDisplay.text = sub.SubtitleText[index];
+            Debug.Log(index);
+            Debug.Log(amountOfSubs);
+            yield return new WaitForSeconds(sub.timeBetweenSubs[index]);
             if (canPlay)
             {
-                subtitleDisplay.text = subtitle;
-                yield return new WaitForSeconds(waittime);
-                if (subtitleDisplay.text == subtitle)
-                {
-                    subtitleDisplay.text = "";
-                }
+                index++;
+                StartCoroutine(TimeBetweenSubs(amountOfSubs, index, sub, timeStarted));
             }
         }
+        else
+        {
+            if (amountOfSubsPlaying == 1)
+            {
+                subtitleDisplay.text = "";
+            }
+            amountOfSubsPlaying--;
+        }
     }
+
+    bool allowSubtitle(float timeStarted)
+    {
+        if (amountOfSubsPlaying>=2)
+        {
+            if (timeStarted==lastSubStarted)
+            {
+                return canPlay;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        else
+        {
+            return canPlay;
+        }
+    }
+
 }

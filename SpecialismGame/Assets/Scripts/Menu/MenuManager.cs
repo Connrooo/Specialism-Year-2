@@ -256,7 +256,6 @@ public class MenuManager : MonoBehaviour
         gameManager.paused = false;
         PlayerUI.SetActive(true);
         LoadGameCanvas.SetActive(false);
-        subtitleManager.PlaySubtitle("Beginning");
     }
 
     public void M_Quit()

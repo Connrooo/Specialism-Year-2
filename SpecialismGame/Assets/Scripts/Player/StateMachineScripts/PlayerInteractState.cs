@@ -19,7 +19,7 @@ public class PlayerInteractState : PlayerBaseState
             InteractRaycast();
         }
         DisplayInteractionText();
-        Ctx.InteractPromptText.text = ("Press "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 0)+ " or "+ InputManager.GetBindingName(Ctx.inputActionReference.action.name, 1)+ Ctx.inputActionDisplayed);
+        Ctx.InteractPromptText.text = (Ctx.interactTextState+ Ctx.inputActionDisplayed);
     }
     public override void ExitState() 
     {
@@ -144,6 +144,7 @@ public class PlayerInteractState : PlayerBaseState
     {
         if (objectHighlighted!= null)
         {
+            Debug.Log("Hi");
             var objectScript = objectHighlighted.GetComponent<Interactable>();
             switch (objectScript.interactType)
             {

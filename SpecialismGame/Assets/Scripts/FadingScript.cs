@@ -22,6 +22,7 @@ public class FadingScript : MonoBehaviour
         fadeAnimator.SetBool("overrideFade",overrideFade);
         if (overrideFade)
         {
+            fading = false;
             overrideFade=false;
         }
     }

@@ -44,6 +44,7 @@ public class PlayerStateMachine : MonoBehaviour
     public Vector3 pointOfInterest;
     public Vector3 loadingReference;
     public float BarTransitionTime = 25f;
+    public string interactTextState;
 
 
     [Header("Input Start Up")]
@@ -163,14 +164,14 @@ public class PlayerStateMachine : MonoBehaviour
         switch (controlScheme)
         {
             case 0:
-                InteractPromptTextAnim.enabled = true;
+                interactTextState = "Press " + InputManager.GetBindingName(inputActionReference.action.name, 0) + " or " + InputManager.GetBindingName(inputActionReference.action.name, 1);
                 if (IsInteractPressed)
                 {
                     return true;
                 }
                 return false;
             case 1:
-                InteractPromptTextAnim.enabled = false;
+                interactTextState = "Hover over";
                 return true;
         }
         return false;

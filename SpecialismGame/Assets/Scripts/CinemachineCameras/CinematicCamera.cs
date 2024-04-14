@@ -28,4 +28,12 @@ public class CinematicCamera : MonoBehaviour
     {
         detectiveAnimator.SetBool("second", true);
     }
+    private void startFade()
+    {
+        gameManager.fadingScript.fading = true;
+    }
+    private void stopFade() 
+    {
+        gameManager.fadingScript.fading = false;
+    }
 }
