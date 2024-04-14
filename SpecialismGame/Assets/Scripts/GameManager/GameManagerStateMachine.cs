@@ -12,6 +12,7 @@ public class GameManagerStateMachine : MonoBehaviour
 
     [Header("Global Values")]
     public MenuManager menuManager;
+    public AudioManager audioManager;
     public SaveLoadScript saveLoadScript;
     public GameObject Player;
     public GameObject currentRoomSummoned;
@@ -102,6 +103,7 @@ public class GameManagerStateMachine : MonoBehaviour
     private void Start()
     {
         menuManager = GameObject.FindObjectOfType<MenuManager>();
+        audioManager = GameObject.FindObjectOfType<AudioManager>();
         saveLoadScript = GameObject.FindObjectOfType<SaveLoadScript>();
         menuCamera = GameObject.FindGameObjectWithTag("MenuCamera").GetComponent<CinemachineVirtualCamera>();
         cinematicCamera = GameObject.FindGameObjectWithTag("CinematicCamera").GetComponent<CinemachineVirtualCamera>();

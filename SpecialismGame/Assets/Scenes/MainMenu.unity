@@ -3674,6 +3674,233 @@ MonoBehaviour:
     - 2.5
     - 3
     - 3
+  - SubtitleName: Day 1 Accusation
+    SubtitleText:
+    - The answer was obvious,
+    - nevermind I'm just a genius
+    - these morons could never figure it out
+    - from so little.
+    timeBetweenSubs:
+    - 3
+    - 3
+    - 4
+    - 3
+  - SubtitleName: Day 1 Doug
+    SubtitleText:
+    - The police saddled me with a rookie.
+    - Doug, I believe his name was.
+    - What a naive fool.
+    - He was happy whilst living in this city.
+    - That will change soon enough.
+    timeBetweenSubs:
+    - 5
+    - 4
+    - 4
+    - 5
+    - 4
+  - SubtitleName: Day 2 Opening
+    SubtitleText:
+    - Another day, another room.
+    - "\u201CI hope that the rookie does more than just encourage me\u201D"
+    - Were my thoughts
+    - as I started the second day.
+    timeBetweenSubs:
+    - 4
+    - 6
+    - 4
+    - 4
+  - SubtitleName: Day 2 Room Chosen
+    SubtitleText:
+    - I knew I needed to choose another room.
+    - After that day I only had one day left
+    - to make my decision.
+    timeBetweenSubs:
+    - 5
+    - 5
+    - 4
+  - SubtitleName: Day 2 Deliberation
+    SubtitleText:
+    - I knew that I could choose someone.
+    - "But the police chief thought I didn\u2019t investigate enough."
+    - What does he know?
+    timeBetweenSubs:
+    - 4
+    - 6
+    - 4
+  - SubtitleName: Day 2 Accusation
+    SubtitleText:
+    - With that, my suspicions are proven correct.
+    - However, that police chief questioning me is annoying.
+    timeBetweenSubs:
+    - 5
+    - 6
+  - SubtitleName: Day 2 Doug
+    SubtitleText:
+    - The fool was somewhat helpful on the first day.
+    - However, I do remember
+    - being enraged by his naivety.
+    timeBetweenSubs:
+    - 5
+    - 4
+    - 4
+  - SubtitleName: Day 3 Opening
+    SubtitleText:
+    - The final day before I made my decision.
+    - The final day before I showed the police chief
+    - "he doesn\u2019t need long investigations."
+    timeBetweenSubs:
+    - 7
+    - 7
+    - 6
+  - SubtitleName: Day 3 Room Chosen
+    SubtitleText:
+    - The final room I entered for this
+    - pathetic excuse for a case.
+    timeBetweenSubs:
+    - 4
+    - 4
+  - SubtitleName: Day 3 Deliberation
+    SubtitleText:
+    - The day to make my final decision.
+    - The police chief said something about how
+    - "it wasn\u2019t right to have someone"
+    - arrested for such little evidence. Pitiful.
+    timeBetweenSubs:
+    - 3
+    - 3
+    - 2
+    - 3
+  - SubtitleName: Day 3 Accusation
+    SubtitleText:
+    - The time has come to make the choice
+    - I knew all along.
+    - It was always so simple for me.
+    timeBetweenSubs:
+    - 5
+    - 3
+    - 4
+  - SubtitleName: Day 3 Doug
+    SubtitleText:
+    - The fool did it,
+    - he was being helpful.
+    - Was the only thing I remember thinking about him.
+    timeBetweenSubs:
+    - 3
+    - 3
+    - 6
+  - SubtitleName: Chef Arrested
+    SubtitleText:
+    - The chef was a clear choice.
+    - After all, he was a master of knife work.
+    - "How the police couldn\u2019t figure it out"
+    - themselves astonishes me.
+    timeBetweenSubs:
+    - 4
+    - 4
+    - 4
+    - 3
+  - SubtitleName: Butler Arrested
+    SubtitleText:
+    - Another piece of trash off the streets.
+    - Hopefully, that scum shares the fate
+    - of Augustus in prison.
+    timeBetweenSubs:
+    - 4
+    - 4
+    - 3
+  - SubtitleName: Wife Arrested
+    SubtitleText:
+    - The deceiver thinks that a few tears
+    - ' will be enough to wash away the truth of her guilt.'
+    - Unfortunately for her, she was investigated by me.
+    timeBetweenSubs:
+    - 4
+    - 5
+    - 5
+  - SubtitleName: Idle #1
+    SubtitleText:
+    - "Wonder if they have any beer here\u2026 probably not."
+    timeBetweenSubs:
+    - 5
+  - SubtitleName: Idle #2
+    SubtitleText:
+    - Hmm
+    timeBetweenSubs:
+    - 4
+  - SubtitleName: Idle #3
+    SubtitleText:
+    - '*Sigh*'
+    - I hope the chief knows how lucky he is to have me.
+    timeBetweenSubs:
+    - 2
+    - 5
+  - SubtitleName: Knife
+    SubtitleText:
+    - "The chef\u2019s knife is an obvious murder weapon."
+    - How did the police miss this?
+    timeBetweenSubs:
+    - 5
+    - 4
+  - SubtitleName: Typewriter
+    SubtitleText:
+    - Heavy enough to break in a skull with ease.
+    - Also, the object that can just as easily
+    - incriminate someone with just a few taps.
+    timeBetweenSubs:
+    - 5
+    - 4
+    - 4
+  - SubtitleName: Rolling Pin
+    SubtitleText:
+    - "An expert could easily use this for the murder\u2026"
+    timeBetweenSubs:
+    - 5
+  - SubtitleName: Photo
+    SubtitleText:
+    - Well, I found the motive for the murder.
+    - Who knew that love would cause so much violence?
+    - Me of course.
+    timeBetweenSubs:
+    - 4
+    - 4
+    - 3
+  - SubtitleName: Frying Pan
+    SubtitleText:
+    - A good old bonk on the head
+    - "is all that is needed sometimes\u2026"
+    - but then how was there a struggle?
+    timeBetweenSubs:
+    - 4
+    - 4
+    - 4
+  - SubtitleName: Plate
+    SubtitleText:
+    - A plate of untouched food in this climate.
+    - Impossible.
+    - "Unless the murderer was using it as a distraction\u2026"
+    timeBetweenSubs:
+    - 4
+    - 3
+    - 5
+  - SubtitleName: Gun
+    SubtitleText:
+    - The failure that shot this needs another lesson.
+    timeBetweenSubs:
+    - 5
+  - SubtitleName: Sword
+    SubtitleText:
+    - 'Swordplay, '
+    - what year do these imbeciles even think this is.
+    timeBetweenSubs:
+    - 3
+    - 5
+  - SubtitleName: Bleach
+    SubtitleText:
+    - Ah, the preferred method of the mafia
+    - "to hide their tracks\u2026 how predictable."
+    timeBetweenSubs:
+    - 4
+    - 4
   subtitleDisplay: {fileID: 1546913545}
 --- !u!4 &230348681
 Transform:

@@ -89,6 +89,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
             Ctx.roomDisplayValue = 3;
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
+        Ctx.audioManager.PlayCutsceneAudio();
     }
 
 }
