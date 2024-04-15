@@ -29,6 +29,9 @@ public class GameManagerRoomState : GameManagerBaseState
         Ctx.Player.GetComponent<CharacterController>().enabled = true;
         Ctx.loadGame = false;
         DestroyCollectedEvidence();
+        string audio = "Day " + Ctx.day + " Room Chosen";
+        AudioManager.Instance.DialogueSource.Stop();
+        AudioManager.Instance.PlayDialogueAudio(audio);
     }
     public override void UpdateState()
     {
@@ -42,6 +45,7 @@ public class GameManagerRoomState : GameManagerBaseState
     {
         Ctx.hasRoomBeenChosen = false;
         Ctx.inRoom = false;
+        Ctx.evidenceInRoomCollected = 0;
         Object.Destroy(Ctx.currentRoomSummoned);
     }
     public override void CheckSwitchStates()

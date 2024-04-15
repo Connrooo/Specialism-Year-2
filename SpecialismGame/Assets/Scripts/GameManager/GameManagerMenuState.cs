@@ -22,6 +22,7 @@ public class GameManagerMenuState : GameManagerBaseState
         }
         Ctx.menuCamera.Priority = 11;
         Ctx.menuManager.GoToMenu();
+        AudioManager.Instance.DialogueSource.Stop();
     }
     public override void UpdateState()
     {

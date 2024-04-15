@@ -1193,7 +1193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a554270c5bdb4c544a8494cc729644b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  audioMixer: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: 1e46a69601886404fa87c9fb2689eb44, type: 2}
   sounds:
   - name: Vinyl
     clip: {fileID: 8300000, guid: c84752e2d447e564eadecb9923920f4e, type: 3}
@@ -1316,6 +1316,449 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
       type: 2}
+  dialogue:
+  - name: Day 1 Opening
+    clip: {fileID: 8300000, guid: 94c93d46051b6b441a4c9a59ea4342c0, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 1 Enter Hallway
+    clip: {fileID: 8300000, guid: d497e073a116d8b488ef0e068586e4d1, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 1 Room Chosen
+    clip: {fileID: 8300000, guid: 359fe9b1902f4584984e53cbd3080328, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 1 Deliberation
+    clip: {fileID: 8300000, guid: f66f3f25632a0ca42a344b0d9512670c, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 1 Accusation
+    clip: {fileID: 8300000, guid: c9c003fe035919d4ea74286985f1afc9, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 1 Doug
+    clip: {fileID: 8300000, guid: 78234e74c9ac3ce43bf50bfa56438361, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 2 Opening
+    clip: {fileID: 8300000, guid: 37fee98e006bcb441a97f0cef9d32d64, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 2 Room Chosen
+    clip: {fileID: 8300000, guid: 647e1cd8aec1f164f92fad92a31c44ac, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 2 Deliberation
+    clip: {fileID: 8300000, guid: 1d2be2b0f2b0f8842979c47ad433275a, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 2 Accusation
+    clip: {fileID: 8300000, guid: fecbdce849cc42446ae90b82cf2e8895, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 2 Doug
+    clip: {fileID: 8300000, guid: f93a186dcf340a64dbfcfb5d1252350e, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 3 Opening
+    clip: {fileID: 8300000, guid: af3deb80f75a81648956de5b01fa743e, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 3 Room Chosen
+    clip: {fileID: 8300000, guid: b3aea175b678bb240be56d72ab9ba965, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 3 Deliberation
+    clip: {fileID: 8300000, guid: 821fffbd075cac74a80e0f68e0b6a3e3, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 3 Accusation
+    clip: {fileID: 8300000, guid: 037288d09ad4b8946b444172dca923d9, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Day 3 Doug
+    clip: {fileID: 8300000, guid: 689f65dae75351e45a17b81dc94bdc9b, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Chef Arrested
+    clip: {fileID: 8300000, guid: 25b97e667402da94d95f655742ab2a35, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Butler Arrested
+    clip: {fileID: 8300000, guid: d488e9e17eafd104180e27fe9f614f2d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Wife Arrested
+    clip: {fileID: 8300000, guid: 17ef41d4ed0d802469bda34ae6aa4b43, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Idle #1
+    clip: {fileID: 8300000, guid: ad8839df4e03a504fb40a67d37458f78, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Idle #2
+    clip: {fileID: 8300000, guid: 559a8844b369391459c3eff25c9b35c8, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Idle #3
+    clip: {fileID: 8300000, guid: 6527bdd7b7ac31c4f9f8514f69455bba, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Knife
+    clip: {fileID: 8300000, guid: fa0818099ecb4914cb8a62c73711fa9c, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Typewriter
+    clip: {fileID: 8300000, guid: 78b99267a0eca554e91c129ae8bc031d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Rolling Pin
+    clip: {fileID: 8300000, guid: 571c032561bfcb745b92e268bdf0972d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Photo
+    clip: {fileID: 8300000, guid: c75f428747f2d2d4ab57a76e528c0dfb, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Frying Pan
+    clip: {fileID: 8300000, guid: 38e89fce7d32a4243a110b5841dfd87d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Plate
+    clip: {fileID: 8300000, guid: 46e96eaa6c5dc48448fd53acd531ab8d, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Gun
+    clip: {fileID: 8300000, guid: 592a934167e7eed429def0c9b56621c4, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Sword
+    clip: {fileID: 8300000, guid: a551cbeb7296f28409c72163c2aadefb, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Bleach
+    clip: {fileID: 8300000, guid: 0d68c2ab71b0be84aaaf48b3e17184cf, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Bear Rug
+    clip: {fileID: 8300000, guid: d0a76c64aeaf2dd4bba636a4991bf4d7, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Rat Poison
+    clip: {fileID: 8300000, guid: c11a12f5ae018ed44aa3c6e97af0d9b8, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Stained Cloth
+    clip: {fileID: 8300000, guid: 9718a144b636f3740988065d82e53ae1, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Earring
+    clip: {fileID: 8300000, guid: 3b2937393787ef64d81e872526f21e36, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Trophy
+    clip: {fileID: 8300000, guid: 24edf0c76f31a7d4c832dd05379c18e3, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Inheritance Letter
+    clip: {fileID: 8300000, guid: 19d0b2c56c194bf40b49de44a80eb94c, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Vase
+    clip: {fileID: 8300000, guid: dd72e0a82e68fe243bceed07b619c9a0, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Dress
+    clip: {fileID: 8300000, guid: 8092e71bcc4972049962f3f55ec53b94, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Makeup Palette
+    clip: {fileID: 8300000, guid: e3ce25c90dcbfdc4b83305c74d2ca067, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Final Evidence #1
+    clip: {fileID: 8300000, guid: 8b805aa2b95cb174ea6abde27cd18fb1, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Final Evidence #2
+    clip: {fileID: 8300000, guid: f09b4801ec73b3b4d979139a84a8c400, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Final Evidence #3
+    clip: {fileID: 8300000, guid: c1da78c8abca12544b21d29d24b4fdfd, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: Magnifying Glass
+    clip: {fileID: 8300000, guid: e200cbb7fc335e1419373d3ad2d049f3, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  idleCountdown: 0
+  DialogueSource: {fileID: 1597816833}
 --- !u!114 &63792769 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4125576805834752509, guid: f25dcd618d3acd64795bf8bb32edb6c9,
@@ -3648,10 +4091,10 @@ MonoBehaviour:
     - 'find the evidence '
     - and accuse the murderer.
     timeBetweenSubs:
-    - 4
     - 3
-    - 3
-    - 4
+    - 2
+    - 2
+    - 2
   - SubtitleName: Day 1 Room Chosen
     SubtitleText:
     - 'I knew the evidence was '
@@ -3659,21 +4102,21 @@ MonoBehaviour:
     - Three days, three rooms.
     - Simple, just as I knew it would be.
     timeBetweenSubs:
+    - 2
     - 3
     - 3
     - 3
-    - 4
   - SubtitleName: Day 1 Deliberation
     SubtitleText:
     - The police chief asked me,
     - "\u201CHave you made your decision?\u201D"
     - Clearly, he knew how good I was
-    - to ask on the first day.
+    - on the first day.
     timeBetweenSubs:
-    - 2.5
-    - 2.5
     - 3
     - 3
+    - 2
+    - 2
   - SubtitleName: Day 1 Accusation
     SubtitleText:
     - The answer was obvious,
@@ -3684,7 +4127,7 @@ MonoBehaviour:
     - 3
     - 3
     - 4
-    - 3
+    - 2
   - SubtitleName: Day 1 Doug
     SubtitleText:
     - The police saddled me with a rookie.
@@ -3693,31 +4136,33 @@ MonoBehaviour:
     - He was happy whilst living in this city.
     - That will change soon enough.
     timeBetweenSubs:
-    - 5
-    - 4
-    - 4
-    - 5
-    - 4
+    - 3
+    - 3
+    - 3
+    - 3
+    - 3
   - SubtitleName: Day 2 Opening
     SubtitleText:
     - Another day, another room.
-    - "\u201CI hope that the rookie does more than just encourage me\u201D"
+    - "\u201CI hope that the rookie"
+    - "does more than just encourage me\u201D"
     - Were my thoughts
     - as I started the second day.
     timeBetweenSubs:
     - 4
     - 6
     - 4
-    - 4
+    - 3
+    - 3
   - SubtitleName: Day 2 Room Chosen
     SubtitleText:
     - I knew I needed to choose another room.
     - After that day I only had one day left
     - to make my decision.
     timeBetweenSubs:
-    - 5
-    - 5
-    - 4
+    - 3
+    - 3
+    - 3
   - SubtitleName: Day 2 Deliberation
     SubtitleText:
     - I knew that I could choose someone.
@@ -3726,13 +4171,13 @@ MonoBehaviour:
     timeBetweenSubs:
     - 4
     - 6
-    - 4
+    - 2
   - SubtitleName: Day 2 Accusation
     SubtitleText:
     - With that, my suspicions are proven correct.
     - However, that police chief questioning me is annoying.
     timeBetweenSubs:
-    - 5
+    - 4
     - 6
   - SubtitleName: Day 2 Doug
     SubtitleText:
@@ -3740,9 +4185,9 @@ MonoBehaviour:
     - However, I do remember
     - being enraged by his naivety.
     timeBetweenSubs:
-    - 5
     - 4
-    - 4
+    - 3
+    - 3
   - SubtitleName: Day 3 Opening
     SubtitleText:
     - The final day before I made my decision.
@@ -3757,7 +4202,7 @@ MonoBehaviour:
     - The final room I entered for this
     - pathetic excuse for a case.
     timeBetweenSubs:
-    - 4
+    - 3
     - 4
   - SubtitleName: Day 3 Deliberation
     SubtitleText:
@@ -3776,18 +4221,18 @@ MonoBehaviour:
     - I knew all along.
     - It was always so simple for me.
     timeBetweenSubs:
-    - 5
+    - 2.5
+    - 2.5
     - 3
-    - 4
   - SubtitleName: Day 3 Doug
     SubtitleText:
     - The fool did it,
     - he was being helpful.
     - Was the only thing I remember thinking about him.
     timeBetweenSubs:
-    - 3
-    - 3
-    - 6
+    - 2
+    - 2
+    - 4
   - SubtitleName: Chef Arrested
     SubtitleText:
     - The chef was a clear choice.
@@ -3795,27 +4240,27 @@ MonoBehaviour:
     - "How the police couldn\u2019t figure it out"
     - themselves astonishes me.
     timeBetweenSubs:
-    - 4
-    - 4
-    - 4
     - 3
+    - 3
+    - 2.5
+    - 2.5
   - SubtitleName: Butler Arrested
     SubtitleText:
     - Another piece of trash off the streets.
     - Hopefully, that scum shares the fate
     - of Augustus in prison.
     timeBetweenSubs:
-    - 4
-    - 4
-    - 3
+    - 2.5
+    - 2.5
+    - 2
   - SubtitleName: Wife Arrested
     SubtitleText:
     - The deceiver thinks that a few tears
-    - ' will be enough to wash away the truth of her guilt.'
+    - will be enough to wash away the truth of her guilt.
     - Unfortunately for her, she was investigated by me.
     timeBetweenSubs:
+    - 3
     - 4
-    - 5
     - 5
   - SubtitleName: Idle #1
     SubtitleText:
@@ -3826,43 +4271,43 @@ MonoBehaviour:
     SubtitleText:
     - Hmm
     timeBetweenSubs:
-    - 4
+    - 3
   - SubtitleName: Idle #3
     SubtitleText:
     - '*Sigh*'
     - I hope the chief knows how lucky he is to have me.
     timeBetweenSubs:
     - 2
-    - 5
+    - 4
   - SubtitleName: Knife
     SubtitleText:
     - "The chef\u2019s knife is an obvious murder weapon."
     - How did the police miss this?
     timeBetweenSubs:
-    - 5
-    - 4
+    - 3
+    - 3
   - SubtitleName: Typewriter
     SubtitleText:
     - Heavy enough to break in a skull with ease.
     - Also, the object that can just as easily
     - incriminate someone with just a few taps.
     timeBetweenSubs:
-    - 5
-    - 4
-    - 4
+    - 3
+    - 3
+    - 3
   - SubtitleName: Rolling Pin
     SubtitleText:
-    - "An expert could easily use this for the murder\u2026"
+    - "An expert could easily use this for murder\u2026"
     timeBetweenSubs:
-    - 5
+    - 3
   - SubtitleName: Photo
     SubtitleText:
     - Well, I found the motive for the murder.
     - Who knew that love would cause so much violence?
     - Me of course.
     timeBetweenSubs:
-    - 4
-    - 4
+    - 3
+    - 3
     - 3
   - SubtitleName: Frying Pan
     SubtitleText:
@@ -3870,37 +4315,110 @@ MonoBehaviour:
     - "is all that is needed sometimes\u2026"
     - but then how was there a struggle?
     timeBetweenSubs:
-    - 4
-    - 4
-    - 4
+    - 2
+    - 2
+    - 3
   - SubtitleName: Plate
     SubtitleText:
     - A plate of untouched food in this climate.
     - Impossible.
     - "Unless the murderer was using it as a distraction\u2026"
     timeBetweenSubs:
-    - 4
     - 3
-    - 5
+    - 2
+    - 3
   - SubtitleName: Gun
     SubtitleText:
     - The failure that shot this needs another lesson.
     timeBetweenSubs:
-    - 5
+    - 3
   - SubtitleName: Sword
     SubtitleText:
     - 'Swordplay, '
     - what year do these imbeciles even think this is.
     timeBetweenSubs:
+    - 2
     - 3
-    - 5
   - SubtitleName: Bleach
     SubtitleText:
     - Ah, the preferred method of the mafia
     - "to hide their tracks\u2026 how predictable."
     timeBetweenSubs:
+    - 3
     - 4
+  - SubtitleName: Bear Rug
+    SubtitleText:
+    - I see,
+    - "so he wasn\u2019t very loyal to the italians"
+    timeBetweenSubs:
+    - 2
+    - 3
+  - SubtitleName: Rat Poison
+    SubtitleText:
+    - A rat using its own poison.
+    timeBetweenSubs:
     - 4
+  - SubtitleName: Stained Cloth
+    SubtitleText:
+    - Hmm
+    - What she stain this with this time?
+    timeBetweenSubs:
+    - 2
+    - 3
+  - SubtitleName: Earring
+    SubtitleText:
+    - This was ripped out rather violently
+    timeBetweenSubs:
+    - 4
+  - SubtitleName: Trophy
+    SubtitleText:
+    - First place to this murder
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: Inheritance Letter
+    SubtitleText:
+    - Hm, a motive has been found
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: Vase
+    SubtitleText:
+    - A broken vase.
+    - What was it broken on?
+    timeBetweenSubs:
+    - 2
+    - 3
+  - SubtitleName: Dress
+    SubtitleText:
+    - The dress was torn on purpose
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: Makeup Palette
+    SubtitleText:
+    - "Someone wasn\u2019t having a good day"
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: Final Evidence #1
+    SubtitleText:
+    - Time to head to the deliberation room.
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: Final Evidence #2
+    SubtitleText:
+    - That's all the evidence I need today.
+    - Time to deliberate.
+    timeBetweenSubs:
+    - 3
+    - 2
+  - SubtitleName: Final Evidence #3
+    SubtitleText:
+    - "That\u2019s all the evidence I will need for this case."
+    timeBetweenSubs:
+    - 4
+  - SubtitleName: Magnifying Glass
+    SubtitleText:
+    - "Maybe a little help wouldn\u2019t hurt."
+    timeBetweenSubs:
+    - 3
   subtitleDisplay: {fileID: 1546913545}
 --- !u!4 &230348681
 Transform:
@@ -29467,6 +29985,135 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1597816832
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1597816834}
+  - component: {fileID: 1597816833}
+  m_Layer: 0
+  m_Name: DialogueAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &1597816833
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597816832}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+    type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &1597816834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1597816832}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1602542839
 GameObject:
   m_ObjectHideFlags: 0
@@ -29569,6 +30216,7 @@ MonoBehaviour:
   magGlassActive: 0
   magGlassTimer: {fileID: 6574598935333468765, guid: 11631dabc47586a43b4daece21ff8fbe,
     type: 3}
+  evidenceInRoomCollected: 0
   accusingSuspect: 0
   deliberationPrefab: {fileID: 4448036342886092049, guid: fbeb51b901dc4c4458cc9f9e2b87d5b5,
     type: 3}
@@ -38373,3 +39021,4 @@ SceneRoots:
   - {fileID: 230348681}
   - {fileID: 1602542840}
   - {fileID: 231744055}
+  - {fileID: 1597816834}

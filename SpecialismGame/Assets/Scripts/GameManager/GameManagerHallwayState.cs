@@ -26,6 +26,12 @@ public class GameManagerHallwayState : GameManagerBaseState
             Ctx.Player.transform.position = new Vector3(0f,1f,0f);
         }
         LoadHallway();
+        AudioManager.Instance.DialogueSource.Stop();
+        if (Ctx.day == 1)
+        {
+            string audio = "Day " + Ctx.day + " Enter Hallway";
+            AudioManager.Instance.PlayDialogueAudio(audio);
+        }
     }
     public override void UpdateState()
     {
@@ -39,6 +45,7 @@ public class GameManagerHallwayState : GameManagerBaseState
         {
             Ctx.Player.transform.position = Ctx.roomPositions[Ctx.currentRoomNumber - 1];
         }
+        Ctx.evidenceInRoomCollected = 0;
     }
     public override void CheckSwitchStates()
     {

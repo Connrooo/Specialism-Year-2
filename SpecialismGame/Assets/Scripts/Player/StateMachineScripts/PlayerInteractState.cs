@@ -102,6 +102,12 @@ public class PlayerInteractState : PlayerBaseState
                 var clueScript = Ctx.currentObject.GetComponent<ClueScript>();
                 Ctx.gameManager.pickedUpObjects.Add(clueScript.pickup);
                 AudioManager.Instance.Play("Camera Flash");
+                AudioManager.Instance.PlayDialogueAudio(clueScript.pickup.itemName);
+                Ctx.gameManager.evidenceInRoomCollected++;
+                if (Ctx.gameManager.evidenceInRoomCollected == 3)
+                {
+                    AudioManager.Instance.PlayDialogueAudio("Final Evidence #" + Ctx.gameManager.day);
+                }
                 Object.Destroy(Ctx.currentObject);
                 break;
             case "Door":
@@ -123,9 +129,26 @@ public class PlayerInteractState : PlayerBaseState
                 break;
             case "AccuseButton":
                 Ctx.currentObject.GetComponent<AccuseButton>().ActivateButton();
+                string audio = "Day " + Ctx.gameManager.day + " Accusation";
+                AudioManager.Instance.PlayDialogueAudio(audio);
                 break;
             case "Accuse":
                 Ctx.currentObject.GetComponent<AccuseSuspectScript>().AccuseSuspect();
+                string suspect = "";
+                switch(Ctx.gameManager.suspectAccused)
+                {
+                    case 0:
+                        suspect = "Chef";
+                        break;
+                    case 1:
+                        suspect = "Wife";
+                        break;
+                    case 2:
+                        suspect = "Butler";
+                        break;
+                }
+                audio = suspect + " Arrested";
+                AudioManager.Instance.PlayDialogueAudio(audio);
                 break;
             case "MagGlass":
                 Ctx.gameManager.magGlassActive= true;
@@ -136,15 +159,16 @@ public class PlayerInteractState : PlayerBaseState
                     GameObject pointerObject = Object.Instantiate(Ctx.pointer, evidence[i].transform.position, Ctx.pointer.transform.rotation);
                     magGlassTimer.GetComponent<MagGlassScript>().pointers.Add(pointerObject);
                 }
+                AudioManager.Instance.PlayDialogueAudio("Magnifying Glass");
                 Object.Destroy(Ctx.currentObject);
                 break;
         }
     }
+    
     public void DisplayInteractionText()
     {
         if (objectHighlighted!= null)
         {
-            Debug.Log("Hi");
             var objectScript = objectHighlighted.GetComponent<Interactable>();
             switch (objectScript.interactType)
             {

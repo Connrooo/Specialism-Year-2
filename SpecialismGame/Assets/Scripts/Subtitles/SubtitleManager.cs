@@ -25,6 +25,11 @@ public class SubtitleManager : MonoBehaviour
         Instance = this;
     }
 
+    private void Update()
+    {
+        Debug.Log(amountOfSubsPlaying);
+    }
+
     public void PlaySubtitle(string name)
     {
         try
@@ -43,6 +48,7 @@ public class SubtitleManager : MonoBehaviour
         catch (Exception e)
         {
             Debug.Log($"{e.Message}");
+            Debug.Log(name);
             throw;
         }
     }
@@ -55,8 +61,6 @@ public class SubtitleManager : MonoBehaviour
         if (allowSubtitle(timeStarted)&& amountOfSubs != index)
         {
             subtitleDisplay.text = sub.SubtitleText[index];
-            Debug.Log(index);
-            Debug.Log(amountOfSubs);
             yield return new WaitForSeconds(sub.timeBetweenSubs[index]);
             if (canPlay)
             {

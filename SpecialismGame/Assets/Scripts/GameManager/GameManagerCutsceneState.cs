@@ -23,6 +23,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.stopInteract = true;
         Ctx.animator_CinematicCamera.SetBool("playing", true);
         Ctx.interactPromptText.SetBool("TurnOff", true);
+        AudioManager.Instance.DialogueSource.Stop();
         DayChecker();
     }
     public override void UpdateState()
@@ -89,7 +90,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
             Ctx.roomDisplayValue = 3;
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
-        Ctx.audioManager.PlayCutsceneAudio();
+        Ctx.audioManager.RunCutscene(true);
     }
 
 }

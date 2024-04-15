@@ -18,6 +18,7 @@ public class GameplayData
     public List<string> pickedUpObjectsDescription = new();
     public List<int> pickedUpObjectsSuspect = new();
     public bool accusingSuspect;
+    public int evidenceInRoomCollected;
     //public List<PickupObjects> pickupObjects;
 
     public GameplayData(GameManagerStateMachine gameManager) 
@@ -38,6 +39,7 @@ public class GameplayData
         roomsSearched = gameManager.roomsSearched;
         accusingSuspect = gameManager.accusingSuspect;
         gameManager.accusingSuspect = false;
+        evidenceInRoomCollected = gameManager.evidenceInRoomCollected;
         foreach (CluePickup clue in gameManager.pickedUpObjects)
         {
             //PickupObjects objectPickup = new PickupObjects();

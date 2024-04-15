@@ -242,6 +242,7 @@ MonoBehaviour:
   pointOfInterest: {x: 0, y: 0, z: 0}
   loadingReference: {x: 0, y: 0, z: 0}
   BarTransitionTime: 14
+  interactTextState: 
   cameraInputX: 0
   cameraInputY: 0
   IsInteractPressed: 0
@@ -683,13 +684,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 867931614}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalRotation: {x: -0, y: -0.9376473, z: -0, w: -0.34758848}
+  m_LocalPosition: {x: 36.995377, y: -0.25, z: 41.964935}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1095024698}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1560751471}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &993700151
 PrefabInstance:
@@ -1784,6 +1785,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 867931617}
   - {fileID: 2070776042}
   - {fileID: 7629069380994547353}
   - {fileID: 51278056}
@@ -6252,7 +6254,6 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 439023356}
-  - {fileID: 867931617}
   - {fileID: 382639015}
   - {fileID: 1188687505}
   - {fileID: 8383539835828311407}

@@ -173,6 +173,7 @@ public class MenuManager : MonoBehaviour
         gameManager.paused = true;
         PauseCanvas.SetActive(false);
         MainMenuCanvas.SetActive(true);
+        AudioManager.GetComponent<AudioManager>().DialogueSource.Stop();
         EventSystem.current.SetSelectedGameObject(FS_Menu);
     }
 

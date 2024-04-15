@@ -68,6 +68,7 @@ public class GameManagerStateMachine : MonoBehaviour
     public GameObject[] rooms;
     public bool magGlassActive;
     public GameObject magGlassTimer;
+    public int evidenceInRoomCollected;
 
     [Header("Deliberate Values")]
 

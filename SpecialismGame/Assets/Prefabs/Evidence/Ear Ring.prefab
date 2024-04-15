@@ -83,7 +83,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickup:
-    itemName: Ear Ring
+    itemName: Earring
     itemDescription: An earring that was found at the crime scene.
     suspectRelated: 1
 --- !u!1 &1378586461971390390
