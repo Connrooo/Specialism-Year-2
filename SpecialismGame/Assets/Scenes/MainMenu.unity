@@ -24299,7 +24299,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Save
+  m_text: Play Game
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb4aa3e534e6c7e4b878c3f32def52e8, type: 2}
   m_sharedMaterial: {fileID: 667028297715089567, guid: fb4aa3e534e6c7e4b878c3f32def52e8,
@@ -29513,6 +29513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   menuManager: {fileID: 0}
+  audioManager: {fileID: 0}
   saveLoadScript: {fileID: 0}
   Player: {fileID: 0}
   currentRoomSummoned: {fileID: 0}
@@ -29580,8 +29581,8 @@ MonoBehaviour:
   - {fileID: 170620508}
   caseFileExits:
   - {fileID: 718619135}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1679258386}
+  - {fileID: 296819327}
   evidenceInstances: []
   ItemsOfEvidencePrefab: {fileID: 0}
   evidenceUIPrefab: {fileID: 157863068390689730, guid: 4a95cc878b6c983489b531a23b950b98,
