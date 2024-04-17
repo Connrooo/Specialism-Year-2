@@ -24,12 +24,6 @@ public class SubtitleManager : MonoBehaviour
         }
         Instance = this;
     }
-
-    private void Update()
-    {
-        Debug.Log(amountOfSubsPlaying);
-    }
-
     public void PlaySubtitle(string name)
     {
         try

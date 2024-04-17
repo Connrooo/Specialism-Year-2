@@ -91,6 +91,11 @@ public class GameManagerCutsceneState : GameManagerBaseState
         }
         Ctx.animator_CinematicCamera.SetTrigger("activate");
         Ctx.audioManager.RunCutscene(true);
+        foreach (GameObject np in Ctx.newspapers)
+        {
+            np.SetActive(false);
+        }
+        Ctx.newspapers[Ctx.suspectAccused].SetActive(true);
     }
 
 }

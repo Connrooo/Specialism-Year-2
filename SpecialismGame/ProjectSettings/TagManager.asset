@@ -21,6 +21,9 @@ TagManager:
   - PointerPos
   - CutsceneController
   - ChiefAlt
+  - Newspaper
+  - Newspaper2
+  - Newspaper3
   layers:
   - Default
   - TransparentFX

@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
             if (idleCountdown<=0)
             {
                 idleCountdown = Random.Range(60, 120);
-                string idle = "Idle " + Random.Range(1, 4);
+                string idle = "Idle #" + Random.Range(1, 4);
                 PlayDialogueAudio(idle);
                 SubtitleManager.Instance.PlaySubtitle(idle);
             }

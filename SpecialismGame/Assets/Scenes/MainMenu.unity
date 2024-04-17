@@ -16582,10 +16582,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 78.42761, y: 0, z: 0, w: 0}
+  m_margin: {x: 89.35614, y: 0, z: 5.334038, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &826627587
@@ -23291,7 +23291,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1197625600
 RectTransform:
   m_ObjectHideFlags: 0
@@ -23311,7 +23311,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -170, y: 93}
+  m_AnchoredPosition: {x: -58, y: 93}
   m_SizeDelta: {x: 30, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1197625601
@@ -30202,6 +30202,7 @@ MonoBehaviour:
   instantiatedRoom: {fileID: 0}
   finishedInvestigating: 0
   hasRoomBeenChosen: 0
+  newspapers: []
   accessibleDoorsPrefab: {fileID: 5043982005314013928, guid: 7b7feebb3d4d8eb4aab1333d844de0a2,
     type: 3}
   inaccessibleDoorsPrefab: {fileID: 7401770424789401909, guid: 0731ccd004cfac64faffae91f8c02bda,
@@ -32542,7 +32543,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 100, y: -10}
+  m_AnchoredPosition: {x: 95.9, y: -10}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1784385578

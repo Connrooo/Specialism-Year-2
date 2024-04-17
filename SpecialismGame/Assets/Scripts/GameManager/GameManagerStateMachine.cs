@@ -59,6 +59,7 @@ public class GameManagerStateMachine : MonoBehaviour
     [Header("Cutscene Values")]
     public bool finishedInvestigating; //checks if the player has finished investigating or not, if not, they will be investigating. //*
     public bool hasRoomBeenChosen; //if true, the player will go to the room, if not, they will go to the hallway. //*
+    public List<GameObject> newspapers;
 
     [Header("Hallway Values")]
     public GameObject accessibleDoorsPrefab;
@@ -111,6 +112,9 @@ public class GameManagerStateMachine : MonoBehaviour
         animator_CinematicCamera = GameObject.FindGameObjectWithTag("CutsceneController").GetComponent <Animator>();
         gameplayCamera = GameObject.FindGameObjectWithTag("GameplayCamera").GetComponent<CinemachineVirtualCamera>();
         Player = GameObject.FindGameObjectWithTag("Player");
+        newspapers.Add(GameObject.FindGameObjectWithTag("Newspaper"));
+        newspapers.Add(GameObject.FindGameObjectWithTag("Newspaper2"));
+        newspapers.Add(GameObject.FindGameObjectWithTag("Newspaper3"));
         Cameras.Add(menuCamera);
         Cameras.Add(cinematicCamera);
         Cameras.Add(gameplayCamera);
