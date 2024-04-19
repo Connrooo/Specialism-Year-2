@@ -1757,6 +1757,66 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
       type: 2}
+  - name: DougFind#1
+    clip: {fileID: 8300000, guid: 9b3cc25a8d9fc33459a39a46b8d23b99, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: DougFind#2
+    clip: {fileID: 8300000, guid: b956115febe59964b9c77207fdc3706a, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: DougFind#3
+    clip: {fileID: 8300000, guid: 9dc6f963d2c689e48be0e44fa0d18ddb, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: DougFind#4
+    clip: {fileID: 8300000, guid: 72ac67d9abefcc343a88d2f52e162905, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: DougFind#5
+    clip: {fileID: 8300000, guid: 1f0b011f5880f0c4cb7297020c184c62, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
+  - name: DougFind#6
+    clip: {fileID: 8300000, guid: 13fd5c5fe4270ec42b20c6247e14253e, type: 3}
+    volume: 0.8
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -1244407064860835283, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
   idleCountdown: 0
   DialogueSource: {fileID: 1597816833}
 --- !u!114 &63792769 stripped
@@ -4417,6 +4477,40 @@ MonoBehaviour:
   - SubtitleName: Magnifying Glass
     SubtitleText:
     - "Maybe a little help wouldn\u2019t hurt."
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: DougFind#1
+    SubtitleText:
+    - He actually found something?
+    timeBetweenSubs:
+    - 2
+  - SubtitleName: DougFind#2
+    SubtitleText:
+    - The rookie found something?
+    timeBetweenSubs:
+    - 2
+  - SubtitleName: DougFind#3
+    SubtitleText:
+    - The rookie is better than he seniors
+    - at finding evidence? *Scoffs**
+    timeBetweenSubs:
+    - 2
+    - 2
+  - SubtitleName: DougFind#4
+    SubtitleText:
+    - The rookie was actually being useful?
+    - Well at least when it comes to finding evidence.
+    timeBetweenSubs:
+    - 2
+    - 3
+  - SubtitleName: DougFind#5
+    SubtitleText:
+    - He might actually have some value...
+    timeBetweenSubs:
+    - 3
+  - SubtitleName: DougFind#6
+    SubtitleText:
+    - Wow! He really found something?
     timeBetweenSubs:
     - 3
   subtitleDisplay: {fileID: 1546913545}
@@ -7951,7 +8045,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 1920, y: 1080}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 2
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96

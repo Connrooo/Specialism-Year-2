@@ -153,6 +153,15 @@ public class DougAI : MonoBehaviour
         Destroy(currentObject);
         Destroy(objectSelected);
         dougAnimationScript.dougPickup = false;
+        string dFind = "DougFind#" + Random.Range(1, 7);
+        AudioManager.Instance.PlayDialogueAudio(dFind);
+        AudioManager.Instance.Play("Camera Flash");
+        AudioManager.Instance.PlayDialogueAudio(clueScript.pickup.itemName);
+        gameManager.evidenceInRoomCollected++;
+        if (gameManager.evidenceInRoomCollected == 3)
+        {
+            AudioManager.Instance.PlayDialogueAudio("Final Evidence #" + gameManager.day);
+        }
     }
 
     private void DougTargetPosition()

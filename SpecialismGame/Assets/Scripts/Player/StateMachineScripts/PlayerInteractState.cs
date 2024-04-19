@@ -63,6 +63,15 @@ public class PlayerInteractState : PlayerBaseState
             Ctx.InteractPromptTextAnim.SetBool("OnObject", false);
             NotInteractingWithObject();
         }
+        if (Physics.Raycast(Ctx.cameraObject.position, front, out hit, 10, mask))
+        {
+            if (hit.collider.tag == "DougVoiceCollider")
+            {
+                Object.Destroy(hit.collider.transform.gameObject);
+                string audio = "Day " + Ctx.gameManager.day + " Doug";
+                AudioManager.Instance.PlayDialogueAudio(audio);
+            }
+        }
     }
 
     private void PlayerInteractingWithObject()

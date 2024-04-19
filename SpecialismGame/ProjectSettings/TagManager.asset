@@ -24,6 +24,7 @@ TagManager:
   - Newspaper
   - Newspaper2
   - Newspaper3
+  - DougVoiceCollider
   layers:
   - Default
   - TransparentFX

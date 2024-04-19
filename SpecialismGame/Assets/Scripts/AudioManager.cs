@@ -76,7 +76,6 @@ public class AudioManager : MonoBehaviour
                 idleCountdown = Random.Range(60, 120);
                 string idle = "Idle #" + Random.Range(1, 4);
                 PlayDialogueAudio(idle);
-                SubtitleManager.Instance.PlaySubtitle(idle);
             }
         }
         DialogueManagement();
@@ -182,7 +181,8 @@ public class AudioManager : MonoBehaviour
             Sound s = Array.Find(dialogue, sound => sound.name == name);
             if (DialogueSource.isPlaying)
             {
-                StartCoroutine(RetryDialogue(name));
+                string state = CurrentSceneSave();
+                StartCoroutine(RetryDialogue(name, state));
             }
             else
             {
@@ -208,9 +208,80 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    IEnumerator RetryDialogue(string audio)
+    IEnumerator RetryDialogue(string audio, string state)
     {
         yield return new WaitForSeconds(1);
-        PlayDialogueAudio(audio);
+        if (SameState(state))
+        {
+            PlayDialogueAudio(audio);
+        }
+    }
+
+    public string CurrentSceneSave()
+    {
+        if (gameManager.inCutscene)
+        {
+            return "cutscene";
+        }
+        else if (gameManager.inHallway)
+        {
+            return "hallway";
+        }
+        else if (gameManager.inRoom)
+        {
+            return "room";
+        }    
+        else if (gameManager.inDeliberation)
+        {
+            return "deliberation";
+        }
+        else
+        {
+            return "menu";
+        }
+    }
+
+    private bool SameState(string state)
+    {
+        switch(state)
+        {
+            case "cutscene":
+                if (gameManager.inCutscene)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            case "hallway":
+                if (gameManager.inHallway)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            case "room":
+                if (gameManager.inRoom)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            case "deliberation":
+                if (gameManager.inDeliberation)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+        }
+        return false;
     }
 }
