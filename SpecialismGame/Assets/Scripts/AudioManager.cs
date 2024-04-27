@@ -12,9 +12,12 @@ public class AudioManager : MonoBehaviour
     public Sound[] sounds;
     public Sound[] walkSounds;
     public Sound[] dialogue;
+    public Sound[] music;
     public float idleCountdown;
     public static AudioManager Instance { get; private set; }
     public AudioSource DialogueSource;
+    public AudioSource MusicSource;
+    bool playMusic;
     GameManagerStateMachine gameManager;
     float deltaPitch;
 
@@ -78,6 +81,7 @@ public class AudioManager : MonoBehaviour
                 PlayDialogueAudio(idle);
             }
         }
+        HandleMusic();
         DialogueManagement();
     }
 
@@ -134,10 +138,68 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+    private void HandleMusic()
+    {
+        if (playMusic)
+        {
+            MusicUp();
+        }
+        else
+        {
+            MusicDown();
+        }
+    }
+
+    public void PlayMusic(string name)
+    {
+        try
+        {
+            Sound s = Array.Find(music, sound => sound.name == name);
+            MusicSource.clip = s.clip;
+            playMusic = true;
+            MusicSource.Play();
+        }
+        catch (Exception e)
+        {
+            Debug.Log($"{e.Message}");
+            Debug.Log(name);
+            throw;
+        }
+    }
+
+    public void StopMusic()
+    {
+        playMusic = false;
+    }
+
+    private void MusicUp()
+    {
+        if (MusicSource.volume < .1f)
+        {
+            MusicSource.volume += .05f * Time.deltaTime;
+        }
+        else
+        {
+            MusicSource.volume = .1f;
+        }
+    }
+    private void MusicDown()
+    {
+        if (MusicSource.volume > 0)
+        {
+            MusicSource.volume -= .05f * Time.deltaTime;
+        }
+        else
+        {
+            MusicSource.volume = 0f;
+        }
+    }
+
     public void RunCutscene(bool play)
     {
         string audio = "";
-        if(gameManager.day!=4)
+        PlayMusic("Cutscene Music");
+        if (gameManager.day!=4)
         {
             if (gameManager.finishedInvestigating)
             {

@@ -23,6 +23,7 @@ public class GameManagerMenuState : GameManagerBaseState
         Ctx.menuCamera.Priority = 11;
         Ctx.menuManager.GoToMenu();
         AudioManager.Instance.DialogueSource.Stop();
+        AudioManager.Instance.PlayMusic("Menu Music");
     }
     public override void UpdateState()
     {
@@ -31,6 +32,7 @@ public class GameManagerMenuState : GameManagerBaseState
     public override void ExitState() 
     {
         Ctx.inMenu = false;
+        AudioManager.Instance.StopMusic();
     }
     public override void CheckSwitchStates()
     {

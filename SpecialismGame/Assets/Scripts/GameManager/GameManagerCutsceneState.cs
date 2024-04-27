@@ -38,6 +38,7 @@ public class GameManagerCutsceneState : GameManagerBaseState
         Ctx.animator_CinematicCamera.SetBool("playing", false);
         Ctx.animator_CinematicCamera.transform.GetComponent<CinematicCamera>().detectiveAnimator.SetBool("playing", false);
         Ctx.interactPromptText.SetBool("TurnOff", false);
+        AudioManager.Instance.StopMusic();
     }
     public override void CheckSwitchStates()
     {

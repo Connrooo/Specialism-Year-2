@@ -115,8 +115,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup:
     itemName: Inheritance Letter
-    itemDescription: A quote stating how much would be transferred from her husband's
-      inheritance fund.
+    itemDescription: A quote stating her husband's inheritance fund.
     suspectRelated: 1
 --- !u!1 &8106819190611924936
 GameObject:
