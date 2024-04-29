@@ -13,6 +13,7 @@ public class GameManagerHallwayState : GameManagerBaseState
     }
     public override void EnterState() 
     {
+        Ctx.justStarted = true;
         Ctx.inHallway= true;
         foreach (CinemachineVirtualCamera camera in Ctx.Cameras)
         {

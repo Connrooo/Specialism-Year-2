@@ -14,7 +14,10 @@ public class PlayerWalkState : PlayerBaseState
 
     float moveSoundTimer = 0.5f;
 
-    public override void EnterState() { }
+    public override void EnterState() 
+    {
+        Ctx.gameManager.justStarted = false;
+    }
     public override void UpdateState() 
     {
         CheckSwitchStates();

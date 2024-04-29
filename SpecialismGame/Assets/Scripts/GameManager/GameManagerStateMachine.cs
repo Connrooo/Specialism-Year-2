@@ -64,6 +64,7 @@ public class GameManagerStateMachine : MonoBehaviour
     [Header("Hallway Values")]
     public GameObject accessibleDoorsPrefab;
     public GameObject inaccessibleDoorsPrefab;
+    public bool justStarted;
 
     [Header("Room Values")]
     public GameObject[] rooms;

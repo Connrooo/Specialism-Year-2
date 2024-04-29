@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.Windows;
 
 public class PlayerStateMachine : MonoBehaviour
 {
@@ -52,6 +54,7 @@ public class PlayerStateMachine : MonoBehaviour
 
     [Header("Movement Controls")]
     Vector2 movementInput;
+    public InputActionReference walkActionReference;
     [Header("Camera Controls")]
     Vector2 cameraInput;
     [Header("Camera Values")]
@@ -175,5 +178,34 @@ public class PlayerStateMachine : MonoBehaviour
                 return true;
         }
         return false;
+    }
+
+    public string WalkText()
+    {
+        List<string> inputs = new();
+        int bindingAmount = new();
+        int bindingMax = walkActionReference.action.bindings.Count;
+        Debug.Log(bindingMax);
+        while (bindingAmount < bindingMax)
+        {
+            if (walkActionReference.action.bindings[bindingAmount].isComposite)
+            {
+                Debug.Log(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
+                inputs.Add(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
+            }
+            else if (walkActionReference.action.bindings[bindingAmount].isPartOfComposite)
+            {
+
+            }
+            else
+            {
+                inputs.Add(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
+                Debug.Log(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
+            }
+            bindingAmount++;
+        }
+        Debug.Log(bindingAmount);
+        return "Press " + inputs[0] + " or " + inputs[3] + " to move.";
+        //return "Press " + InputManager.GetBindingName(walkActionReference.action.name, 1) + " or " + InputManager.GetBindingName(walkActionReference.action.name, 1) + " to move.";
     }
 }
