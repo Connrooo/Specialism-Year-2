@@ -69,6 +69,7 @@ public class AudioManager : MonoBehaviour
         idleCountdown = Random.Range(60, 120);
     }
 
+
     private void Update()
     {
         if (!gameManager.inMenu && !gameManager.inCutscene)
@@ -174,9 +175,16 @@ public class AudioManager : MonoBehaviour
 
     private void MusicUp()
     {
-        if (MusicSource.volume < .1f)
+        if(!gameManager.inMenu)
         {
-            MusicSource.volume += .05f * Time.deltaTime;
+            if (MusicSource.volume < .1f)
+            {
+                MusicSource.volume += .05f * Time.deltaTime;
+            }
+            else
+            {
+                MusicSource.volume = .1f;
+            }
         }
         else
         {

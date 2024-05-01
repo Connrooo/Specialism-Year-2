@@ -1003,6 +1003,16 @@ MonoBehaviour:
     audioSource: {fileID: 0}
     mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
       type: 2}
+  - name: Door Open
+    clip: {fileID: 8300000, guid: 81960ed48ff340844b7bf9d21947643b, type: 3}
+    volume: 0.75
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    direction: 0
+    audioSource: {fileID: 0}
+    mixerGroup: {fileID: -316431996010232039, guid: 1e46a69601886404fa87c9fb2689eb44,
+      type: 2}
   walkSounds:
   - name: Wood Walk #1
     clip: {fileID: 8300000, guid: cd9b003209f25774ca875db098f02933, type: 3}
@@ -11107,7 +11117,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 60.000004
   orthographic: 0
@@ -12274,9 +12284,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "Paddington was the last to be detained since he wasn\u2019t at work when
-    the investigation began. Despite this we believe he is only one to have knife
-    work skills to deliver such clean cuts to the victim. Additionally unlike the
-    wife, Dianne, he and Jamie have fully cooperated with the police."
+    the investigation began. Despite this, we believe he is only one to have the
+    knife work skills to deliver such clean cuts to the victim. Additionally unlike
+    the wife, Dianne, he and Jamie have fully cooperated with the police."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb4aa3e534e6c7e4b878c3f32def52e8, type: 2}
   m_sharedMaterial: {fileID: 667028297715089567, guid: fb4aa3e534e6c7e4b878c3f32def52e8,
@@ -31321,7 +31331,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: "She was the first to find the victim upon which she reportedly broke down.
     It is unclear how long she was in this state since when police arrived she was
-    composed and proper. If only barely. This however didn\u2019t last when she was
+    composed and proper, if only barely. This however didn\u2019t last when she was
     detained as she went from very proper and  authoritative to an emotional mess."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fb4aa3e534e6c7e4b878c3f32def52e8, type: 2}

@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup:
     itemName: Bleach
-    itemDescription: A recently bought, but half-empty. bleach bottle.
+    itemDescription: A recently bought, but half-empty bleach bottle.
     suspectRelated: 2
 --- !u!1001 &2968770579262166990
 PrefabInstance:

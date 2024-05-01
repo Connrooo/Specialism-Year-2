@@ -185,12 +185,10 @@ public class PlayerStateMachine : MonoBehaviour
         List<string> inputs = new();
         int bindingAmount = new();
         int bindingMax = walkActionReference.action.bindings.Count;
-        Debug.Log(bindingMax);
         while (bindingAmount < bindingMax)
         {
             if (walkActionReference.action.bindings[bindingAmount].isComposite)
             {
-                Debug.Log(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
                 inputs.Add(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
             }
             else if (walkActionReference.action.bindings[bindingAmount].isPartOfComposite)
@@ -200,12 +198,9 @@ public class PlayerStateMachine : MonoBehaviour
             else
             {
                 inputs.Add(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
-                Debug.Log(InputManager.GetBindingName(walkActionReference.action.name, bindingAmount));
             }
             bindingAmount++;
         }
-        Debug.Log(bindingAmount);
         return "Press " + inputs[0] + " or " + inputs[3] + " to move.";
-        //return "Press " + InputManager.GetBindingName(walkActionReference.action.name, 1) + " or " + InputManager.GetBindingName(walkActionReference.action.name, 1) + " to move.";
     }
 }

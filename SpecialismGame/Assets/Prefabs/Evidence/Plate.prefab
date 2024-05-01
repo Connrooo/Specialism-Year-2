@@ -147,7 +147,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pickup:
     itemName: Plate
-    itemDescription: 'An ornate plate containing untouched food. '
+    itemDescription: An ornate plate containing untouched food.
     suspectRelated: 0
 --- !u!1001 &3712434741018843264
 PrefabInstance:

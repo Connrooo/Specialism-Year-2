@@ -122,7 +122,8 @@ public class PlayerInteractState : PlayerBaseState
             case "Door":
                 var doorScript = Ctx.currentObject.GetComponent<DoorScript>();
                 doorScript.doorAnimator.SetTrigger("open");
-                    break;
+                AudioManager.Instance.Play("Door Open");
+                break;
             case "Chief":
                 var chiefTemp = GameObject.FindGameObjectWithTag("ChiefAlt").GetComponent<DoorScript>();
                 chiefTemp.doorAnimator.SetTrigger("open");
