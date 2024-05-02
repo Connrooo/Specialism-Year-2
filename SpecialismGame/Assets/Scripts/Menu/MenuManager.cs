@@ -104,7 +104,6 @@ public class MenuManager : MonoBehaviour
         {
             AccessibilityCanvas.SetActive(false);
             SettingsCanvas.SetActive(true);
-            Debug.Log("Hi!");
             EventSystem.current.SetSelectedGameObject(FS_Settings);
         }
 
