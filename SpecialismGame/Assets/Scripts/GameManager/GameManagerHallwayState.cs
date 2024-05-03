@@ -26,6 +26,7 @@ public class GameManagerHallwayState : GameManagerBaseState
         {
             Ctx.Player.transform.position = new Vector3(0f,1f,0f);
         }
+        Ctx.resetRotation = true;
         LoadHallway();
         AudioManager.Instance.DialogueSource.Stop();
         if (Ctx.day == 1)
